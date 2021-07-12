@@ -1,0 +1,5 @@
+<dataset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SAMPLE ID="1" NAME="foo" />
+  <SAMPLE ID="2" NAME="bar" />
+  <SAMPLE ID="3" NAME="baz" />
+</dataset>

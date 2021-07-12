@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+  <head th:insert="~{head :: head}" />
+  <body>
+    <div th:replace="~{header :: header}" />
+    <div class="container">
+      <div class="jumbotron">
+        <h1 class="display-4" th:text="#{feature.mail.header}" />
+        <p class="lead" th:text="#{feature.mail.leadText}" />
+      </div>
+
+      <form th:object="${sendMailRequest}" th:action="@{/mail/send}" accept-charset="UTF-8" method="post">
+
+        <div class="alert alert-danger" th:if="${danger != null}">[[${danger}]]</div>
+        <div class="alert alert-warning" th:if="${warning != null}">[[${warning}]]</div>
+        <div class="alert alert-success" th:if="${success != null}">[[${success}]]</div>
+
+        <div class="form-group row">
+          <div class="col-md-2"><label for="sender" th:text="#{feature.mail.sender}" /></div>
+          <div class="col-md-10"><input id="sender" name="sender" th:value="${mail?.sender}" /></div>
+          <br />
+        </div>
+
+
+        <div class="form-group row">
+          <div class="col-md-2"><label for="recipient" th:text="#{feature.mail.recipient}" /></div>
+          <div class="col-md-10"><input id="recipient" name="recipient" th:value="${mail?.recipient}" /></div>
+          <br />
+        </div>
+
+        <div class="form-group row">
+          <div class="col-md-2"><label for="subject" th:text="#{feature.mail.subject}" /></div>
+          <div class="col-md-10"><input id="subject" name="subject" th:value="${mail?.subject}" /></div>
+          <br />
+        </div>
+
+        <div class="form-group row">
+          <div class="col-md-2"><label for="text" th:text="#{feature.mail.text}" /></div>
+          <div class="col-md-10">
+            <textarea id="text" class="form-control" rows="5" name="text">[[${mail?.text}]]</textarea>
+          </div>
+          <br />
+        </div>
+
+        <div class="form-group row">
+          <div class="col-md-10 offset-md-2">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+    <div th:insert="~{footer :: footer}" />
+    <div th:insert="~{foot :: foot}" />
+
+  </body>
+</html>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.netcetera.nca-266-7</groupId>
+    <artifactId>girders-platform-bom</artifactId>
+    <version>4.9.1-SNAPSHOT</version>
+    <relativePath>../girders-platform-bom</relativePath>
+  </parent>
+
+  <artifactId>girders-parent</artifactId>
+  <packaging>pom</packaging>
+  <name>Girders - Parent</name>
+  <description>Girders Parent</description>
+
+  <properties>
+    <java.source.version>11</java.source.version>
+    <java.target.version>11</java.target.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+    <!-- plugin versions -->
+    <!-- override the maven-enforcer-plugin version from nca-parent (1.4.1) because it is not compatible with Java 13 -->
+    <maven-enforcer-plugin.version>3.0.0-M2</maven-enforcer-plugin.version>
+    <checkstyle.version>8.43</checkstyle.version>
+    <git-commit-id-plugin.version>4.0.5</git-commit-id-plugin.version>
+    <owasp-cvss-limit>7.0</owasp-cvss-limit>
+  </properties>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <configuration>
+            <parallel>classesAndMethods</parallel>
+            <useUnlimitedThreads>true</useUnlimitedThreads>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-checkstyle-plugin</artifactId>
+          <dependencies>
+            <dependency>
+              <groupId>com.puppycrawl.tools</groupId>
+              <artifactId>checkstyle</artifactId>
+              <version>${checkstyle.version}</version>
+            </dependency>
+          </dependencies>
+          <configuration>
+            <includeTestSourceDirectory>false</includeTestSourceDirectory>
+            <!--suppress MavenModelInspection -->
+            <configLocation>
+              ${girders.basedir}/src/tools/checkstyle/checkstyle-config-88.xml
+            </configLocation>
+            <failOnViolation>true</failOnViolation>
+            <violationSeverity>info</violationSeverity>
+            <encoding>UTF-8</encoding>
+            <propertyExpansion>config_loc=src/tools/checkstyle</propertyExpansion>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.owasp</groupId>
+          <artifactId>dependency-check-maven</artifactId>
+          <configuration>
+            <format>ALL</format>
+            <failBuildOnAnyVulnerability>false</failBuildOnAnyVulnerability>
+            <failBuildOnCVSS>${owasp-cvss-limit}</failBuildOnCVSS>
+            <failOnError>true</failOnError>
+            <!--suppress MavenModelInspection -->
+            <suppressionFile>${girders.basedir}/src/tools/suppressions.xml</suppressionFile>
+          </configuration>
+          <executions>
+            <execution>
+              <goals>
+                <goal>check</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <groupId>pl.project13.maven</groupId>
+          <artifactId>git-commit-id-plugin</artifactId>
+          <version>${git-commit-id-plugin.version}</version>
+          <configuration>
+            <commitIdGenerationMode>full</commitIdGenerationMode>
+            <generateGitPropertiesFile>true</generateGitPropertiesFile>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-enforcer-plugin</artifactId>
+          <version>${maven-enforcer-plugin.version}</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>enforce</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <fail>true</fail>
+              <failFast>false</failFast>
+              <rules>
+                <requireJavaVersion>
+                  <version>${jdk.version}</version>
+                </requireJavaVersion>
+                <bannedDependencies>
+                  <excludes>
+
+                    <!-- Girders uses SLF4j as logging API and logback as default log backend -->
+                    <exclude>log4j:log4j:*</exclude>
+                    <exclude>commons-logging:commons-logging:*</exclude>
+                    <exclude>commons-logging:commons-logging-api:*</exclude>
+                    <exclude>logkit</exclude>
+
+                    <!-- Girders uses JUnit 5 -->
+                    <exclude>junit:junit:*:jar</exclude>
+                    <exclude>org.junit.vintage:junit-vintage-engine:*:*</exclude>
+
+                    <!-- Girders is based on Spring Framework 5+ -->
+                    <exclude>org.springframework:*:[*,5.*)</exclude>
+
+                    <!-- Girders is based on Spring Boot 2+ -->
+                    <exclude>org.springframework.boot:*:[*,2.*)</exclude>
+
+                    <!-- Use the actual annotations API, rather than the Tomcat flavour of it -->
+                    <exclude>org.apache.tomcat:tomcat-annotations-api:*</exclude>
+
+                    <!-- Other blacklisted dependencies -->
+                    <exclude>avalon-framework</exclude>
+                    <exclude>com.sun.jmx:jmxri</exclude>
+                    <exclude>com.sun.jdmk:jmxtools</exclude>
+                    <exclude>commons-httpclient:commons-httpclient</exclude>
+                    <exclude>org.springframework:spring-dao</exclude>
+                    <exclude>org.springframework:spring-support</exclude>
+                    <exclude>*:jackson-dataformat-xml:*</exclude>
+                  </excludes>
+                </bannedDependencies>
+                <dependencyConvergence />
+                <requireReleaseDeps>
+                  <message>No Snapshot dependencies allowed!</message>
+                  <onlyWhenRelease>true</onlyWhenRelease>
+                </requireReleaseDeps>
+              </rules>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>verify</phase>
+            <goals>
+              <goal>checkstyle</goal>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

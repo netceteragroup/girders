@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Girders"
+         xmlns="http://maven.apache.org/DECORATION/1.7.0"
+         xsi:schemaLocation="http://maven.apache.org/DECORATION/1.7.0 http://maven.apache.org/xsd/decoration-1.7.0.xsd">
+
+  <publishDate/>
+  <version position="right"/>
+
+  <skin>
+    <groupId>org.apache.maven.skins</groupId>
+    <artifactId>maven-fluido-skin</artifactId>
+    <version>1.7</version>
+  </skin>
+
+  <custom>
+    <fluidoSkin>
+      <copyrightClass>pull-right</copyrightClass>
+      <leftColumnClass>span3</leftColumnClass>
+      <bodyColumnClass>span9</bodyColumnClass>
+    </fluidoSkin>
+  </custom>
+
+  <bannerRight>
+    <name>Netcetera</name>
+    <href>https://netcetera.com/</href>
+    <src>images/netcetera.png</src>
+  </bannerRight>
+
+  <poweredBy>
+    <logo img="images/netcetera.png"/>
+  </poweredBy>
+
+  <body>
+    <menu name="Girders">
+      <item name="Welcome" href="index.html"/>
+      <item name="License" href="license.html"/>
+      <item name="Team" href="team.html"/>
+      <item name="Contributing" href="contributing.html"/>
+      <item name="Release Notes" href="https://plaza.netcetera.com/wiki/x/BCRMCw"/>
+    </menu>
+    <menu name="Documentation">
+      <item name="Concepts" href="concepts/index.html"/>
+      <item name="Getting Started" href="quickstart/index.html"/>
+      <item name="Migration Guide" href="https://plaza.netcetera.com/wiki/x/zR1MCw"/>
+      <item name="Features" href="features/index.html">
+        <item name="Actuators" href="features/actuators.html"/>
+        <item name="Admin Server" href="features/adminserver.html"/>
+        <item name="BOM" href="features/bom.html"/>
+        <item name="Caching" href="features/caching.html"/>
+        <item name="Circuit Breaker" href="features/circuit-breaker.html"/>
+        <item name="Client Logging" href="features/client-logging.html"/>
+        <item name="Configuration" href="features/configuration.html"/>
+        <item name="Content Security Policy (CSP)" href="features/csp.html"/>
+        <item name="Cross-Site Request Forgery (CSRF)" href="features/csrf.html"/>
+        <item name="Cryptography" href="features/crypto.html"/>
+        <item name="DbUnit" href="features/dbunit.html"/>
+        <item name="Internationalization" href="features/i18n.html"/>
+        <item name="JMX" href="features/jmx.html"/>
+        <item name="LDAP" href="features/ldap.html"/>
+        <item name="Logging" href="features/logging.html"/>
+        <item name="Mail" href="features/mail.html"/>
+        <item name="Metering" href="features/metering.html"/>
+        <item name="Netcetera Utilities" href="features/ncautil.html"/>
+        <item name="PDF" href="features/pdf.html"/>
+        <item name="Persistence" href="features/persistence.html"/>
+        <item name="POI" href="features/poi.html"/>
+        <item name="Rate Limiting" href="features/rate-limit.html"/>
+        <item name="REST" href="features/rest.html"/>
+        <item name="REST Template Logging" href="features/rest-template-logging.html"/>
+        <item name="Security" href="features/security.html"/>
+        <item name="Swagger" href="features/swagger.html"/>
+        <item name="Templating" href="features/templating.html"/>
+        <item name="Testing" href="features/testing.html"/>
+        <item name="Validation" href="features/validation.html"/>
+        <item name="Web" href="features/web.html"/>
+        <item name="Web Services" href="features/webservice.html"/>
+      </item>
+      <item name="Advanced Topics" href="advanced/index.html">
+        <item name="Advanced Configuration Options" href="advanced/configuration.html"/>
+        <item name="Embedded Web/Application Server" href="advanced/embedded.html"/>
+      </item>
+      <item name="JavaDoc" href="apidocs/index.html"/>
+    </menu>
+
+    <menu name="Project Information">
+      <item name="Summary" href="summary.html"/>
+      <item name="Source Code" href="scm.html"/>
+      <item name="Continuous Integration" href="ci-management.html"/>
+      <item name="Issue Management" href="issue-management.html"/>
+      <item name="Distribution" href="distribution-management.html"/>
+      <item name="Dependency Convergence" href="dependency-convergence.html"/>
+    </menu>
+  </body>
+</project>

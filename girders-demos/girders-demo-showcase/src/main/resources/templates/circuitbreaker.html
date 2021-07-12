@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+  <head th:insert="~{head :: head}" />
+  <body>
+    <div th:replace="~{header :: header}" />
+    <div class="container">
+      <div class="jumbotron">
+        <h1 class="display-4" th:text="#{feature.circuitbreaker.header} + ' - ' + ${serviceCallResponseStatus}" />
+        <p class="lead" th:text="#{feature.circuitbreaker.leadText.1}" />
+        <p class="lead" th:text="#{feature.circuitbreaker.leadText.2}" />
+      </div>
+      <div class="jumbotron">
+        <h2 class="display-4" th:text="#{feature.circuitbreaker.configuration.title}" />
+        <table>
+          <tr>
+            <td><a th:text="#{feature.circuitbreaker.configuration.failureRateThreshold}" /></td>
+            <td><a th:text="${circuitBreakerConfig.failureRateThreshold + '%'}" /></td>
+          </tr>
+          <tr>
+            <td><a th:text="#{feature.circuitbreaker.configuration.minimumNumberOfCalls}" /></td>
+            <td><a th:text="${circuitBreakerConfig.minimumNumberOfCalls}"></a></td>
+          </tr>
+          <tr>
+            <td><a th:text="#{feature.circuitbreaker.configuration.permittedNumberOfCallsInHalfOpenState}" /></td>
+            <td><a th:text="${circuitBreakerConfig.permittedNumberOfCallsInHalfOpenState}"></a></td>
+          </tr>
+        </table>
+        <h2 class="display-4" th:text="#{feature.circuitbreaker.metrics.title}" />
+        <table>
+          <tr>
+            <td><a th:text="#{feature.circuitbreaker.metrics.circuitBreakerState}" /></td>
+            <td><a th:text="${circuitBreakerState}"></a></td>
+          </tr>
+          <tr>
+            <td><a th:text="#{feature.circuitbreaker.metrics.numberOfSuccessfulCalls}" /></td>
+            <td><a th:text="${circuitBreakerMetrics.numberOfSuccessfulCalls}"></a></td>
+          </tr>
+          <tr>
+            <td><a th:text="#{feature.circuitbreaker.metrics.numberOfFailedCalls}" /></td>
+            <td><a th:text="${circuitBreakerMetrics.numberOfFailedCalls}"></a></td>
+          </tr>
+          <tr>
+            <td><a th:text="#{feature.circuitbreaker.metrics.failureRate}" /></td>
+            <td><a th:text="${circuitBreakerMetrics.failureRate + '%'}"></a></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div th:insert="~{footer :: footer}" />
+    <div th:insert="~{foot :: foot}" />
+  </body>
+</html>

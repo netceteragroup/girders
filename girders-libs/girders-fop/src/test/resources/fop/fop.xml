@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fop xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:noNamespaceSchemaLocation="http://svn.apache.org/repos/asf/xmlgraphics/fop/tags/fop-2_0/src/foschema/fop-configuration.xsd">
+  <strict-configuration>true</strict-configuration>
+  <strict-validation>false</strict-validation>
+</fop>

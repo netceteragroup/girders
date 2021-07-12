@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+  <head th:insert="~{head :: head}" />
+  <body th:with="globalRateLimitSpecPropertyName=${'showcase.rate-limit.global-rate-limit-spec'}">
+    <div th:replace="~{header :: header}" />
+    <div class="container" th:with="globalRateLimitSpec=${@environment.getProperty(globalRateLimitSpecPropertyName)}">
+
+      <div class="jumbotron">
+        <h1 class="display-4" th:text="#{feature.rateLimit.header}" />
+        <p class="lead" th:text="#{feature.rateLimit.leadText}" />
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <h3 th:text="#{feature.rateLimit.globalLimit.header}" />
+          <p
+              th:utext="#{feature.rateLimit.globalLimit.descriptionText(${globalRateLimitSpec}, ${globalRateLimitSpecPropertyName})}"
+          />
+          <form
+              th:object="${globalRateLimitRequest}" th:action="@{/rate-limit/global}" accept-charset="UTF-8"
+              method="post"
+          >
+            <input type="submit" class="button" value="Submit" />
+          </form>
+        </div>
+
+        <div class="col-md-6">
+          <h3 th:text="#{feature.rateLimit.keyedLimit.header}" />
+          <p th:text="#{feature.rateLimit.keyedLimit.descriptionText}" />
+          <form
+              th:object="${keyedRateLimitRequest}" th:action="@{/rate-limit/keyed}" accept-charset="UTF-8" method="post"
+          >
+            <label for="rateLimitKey" th:text="#{feature.rateLimit.keyedLimit.key.label}" />
+            <input id="rateLimitKey" name="rateLimitKey" th:value="${rateLimitKey} ? ${rateLimitKey} : 'key1'" />
+            &#160;
+            <input type="submit" class="button" value="Submit" />
+          </form>
+        </div>
+      </div>
+
+    </div>
+    <div th:insert="~{footer :: footer}" />
+    <div th:insert="~{foot :: foot}" />
+
+  </body>
+</html>

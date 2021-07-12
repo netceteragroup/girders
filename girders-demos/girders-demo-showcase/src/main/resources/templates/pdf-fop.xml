@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Attention: Adding a schema location will cause the FOP validator to fail unless you specify
+  'strict-validation=false' in the FOP configuration.
+-->
+<!--suppress ALL -->
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:th="http://www.thymeleaf.org"
+         xsi:schemaLocation="http://www.w3.org/1999/XSL/Format http://svn.apache.org/repos/asf/xmlgraphics/fop/tags/fop-2_0/src/foschema/fop.xsd">
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="content" page-width="210mm" page-height="297mm">
+      <fo:region-body margin="20mm"/>
+    </fo:simple-page-master>
+  </fo:layout-master-set>
+  <fo:page-sequence master-reference="content">
+    <fo:flow flow-name="xsl-region-body">
+      <fo:table table-layout="fixed" width="100%">
+        <fo:table-column column-width="proportional-column-width(1)"/>
+        <fo:table-column column-width="proportional-column-width(5)"/>
+        <fo:table-body>
+          <fo:table-row>
+            <fo:table-cell display-align="center">
+              <fo:block text-align="left">
+                <fo:inline font-weight="bold">Project ID</fo:inline>
+              </fo:block>
+            </fo:table-cell>
+            <fo:table-cell display-align="center">
+              <fo:block text-align="left">
+                <fo:inline font-weight="bold">Project Name</fo:inline>
+              </fo:block>
+            </fo:table-cell>
+          </fo:table-row>
+          <fo:table-row th:each="project: ${projects}">
+            <fo:table-cell display-align="center">
+              <fo:block text-align="left" th:text="${project.id}"/>
+            </fo:table-cell>
+            <fo:table-cell display-align="center">
+              <fo:block text-align="left" th:text="${project.title}"/>
+            </fo:table-cell>
+          </fo:table-row>
+        </fo:table-body>
+      </fo:table>
+    </fo:flow>
+  </fo:page-sequence>
+</fo:root>

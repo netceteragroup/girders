@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+  <body>
+    <footer class="navbar navbar-light bg-light fixed-bottom small" th:fragment="footer">
+      <div class="container" >
+        <div class="col-md-6 nav-text">
+          <strong th:text="${appVersion}" />
+          <br />
+          <span th:text="${girdersVersion}" />, <span th:text="${springBootVersion}" />
+          <br />
+          <br />
+          <span th:text="#{footer.request.duration(${timerDuration})}" />
+        </div>
+        <div class="col-md-6 text-right">
+          <div>
+            <form th:action="@{/logout}" th:method="post" th:if="${#request?.userPrincipal?.name?.length() > 0}">
+              <span th:text="${#request?.userPrincipal?.name}" />&nbsp;&nbsp;&nbsp;
+              <input class="btn btn-link btn-sm" type="submit" th:value="#{footer.logout}" />
+            </form>
+            <div th:if="${#request?.userPrincipal?.name?.length() <= 0}">
+              <a th:href="@{/login}" th:text="#{footer.login}" />
+            </div>
+            <br />
+            <br />
+            <a th:href="@{/actuator}" target="_blank" th:text="#{footer.managementApi}" />
+            <br />
+            <a
+            th:href="${@environment.getProperty('spring.boot.admin.client.url')}" target="_blank"
+            th:text="#{footer.adminServer}"
+            />
+          </div>
+        </div>
+    </footer>
+  </body>
+</html>

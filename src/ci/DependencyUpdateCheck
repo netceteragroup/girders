@@ -1,0 +1,84 @@
+pipeline {
+
+  agent any
+
+  triggers {
+    cron('H 1 * * 5')
+  }
+
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '5'))
+    skipStagesAfterUnstable()
+    timeout(time: 30, unit: 'MINUTES')
+    disableConcurrentBuilds()
+  }
+
+  tools {
+    maven '3.6.3'
+    jdk '11.0.1'
+  }
+
+  environment {
+    BITBUCKET_USER = credentials('11d1c8ab-bef2-4ed4-b79d-eb8d3db3d9f2')
+    BUILD_DATESTAMP = sh(returnStdout: true, script: "date \"+%Y%m%d\"")
+  }
+
+  stages {
+
+    stage('Update Maven Dependencies') {
+      steps {
+        sh "mvn -DgenerateBackupPoms=false -DallowSnapshots=false org.commonjava.maven.plugins:directory-maven-plugin:directory-of@directories versions:update-parent versions:update-properties"
+      }
+    }
+
+    stage('Create Feature Branch') {
+      steps {
+        script {
+          def changes = sh(returnStdout: true, script: "git status --porcelain")
+
+          if (changes?.trim()) {
+            def diff = sh(returnStdout: true, script: "git diff --minimal -U0")
+
+            sh "git checkout -b feature/version-updates-${env.BUILD_DATESTAMP}"
+            sh "find . -name 'pom.xml' -exec git add {} \\;"
+            sh "git commit -m \"[no-issue] Dependencies updated\n\n${diff}\""
+            sh "git config --global push.default simple"
+            sh "git push --set-upstream https://${env.BITBUCKET_USER}@extranet.netcetera.biz/bitbucket/scm/nca266gird/girders-boot.git feature/version-updates-${env.BUILD_DATESTAMP}"
+
+            env.UPDATES_MAIL_SUBJECT = "${env.JOB_NAME} ${env.BUILD_DISPLAY_NAME}: dependency updates found"
+            env.UPDATES_MAIL_BODY = "New branch feature/version-updates-${env.BUILD_DATESTAMP} was created.\n\n${env.BUILD_URL}"
+          } else {
+            env.UPDATES_MAIL_SUBJECT = "${env.JOB_NAME} ${env.BUILD_DISPLAY_NAME}: No dependency updates found"
+            env.UPDATES_MAIL_BODY = "All the dependencies are up to date.\n\n${env.BUILD_URL}"
+          }
+        }
+      }
+    }
+
+  }
+
+  post {
+
+    success {
+      script {
+        mail to: 'girders@netcetera.com',
+             cc: '', from: 'ci@netcetera.com',
+             bcc: '',
+             replyTo: 'girders@netcetera.com',
+             subject: env.UPDATES_MAIL_SUBJECT,
+             body: env.UPDATES_MAIL_BODY
+      }
+    }
+
+    changed {
+      step([$class                  : 'Mailer',
+            notifyEveryUnstableBuild: true,
+            recipients              : 'girders@netcetera.com',
+            from                    : 'ci@netcetera.com',
+            replyTo                 : 'girders@netcetera.com',
+            sendToIndividuals       : true])
+    }
+
+  }
+
+}

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.netcetera.nca-266-7</groupId>
+    <artifactId>girders-parent</artifactId>
+    <version>4.9.1-SNAPSHOT</version>
+    <relativePath>../girders-parent</relativePath>
+  </parent>
+
+  <artifactId>girders-libs</artifactId>
+  <packaging>pom</packaging>
+  <name>Girders - Libraries</name>
+  <description>Girders Libraries</description>
+
+  <modules>
+    <module>girders-csp</module>
+    <module>girders-csrf</module>
+    <module>girders-mail</module>
+    <module>girders-ratelimit</module>
+    <module>girders-resttemplatelogging</module>
+    <module>girders-i18n</module>
+    <module>girders-web</module>
+    <module>girders-perfmon</module>
+    <module>girders-logging</module>
+    <module>girders-clientlogging</module>
+    <module>girders-cache</module>
+    <module>girders-ncautil</module>
+    <module>girders-fop</module>
+    <module>girders-dbunit</module>
+    <module>girders-ldap</module>
+  </modules>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest-library</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-junit-jupiter</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jcl-over-slf4j</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apiguardian</groupId>
+      <artifactId>apiguardian-api</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+</project>

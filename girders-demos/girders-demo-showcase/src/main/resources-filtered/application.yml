@@ -1,0 +1,111 @@
+# Application
+spring:
+  application.name: ${project.artifactId}
+  main:
+    banner-mode: 'off'
+    allow-bean-definition-overriding: true
+
+# Spring Boot Admin Client
+spring.boot:
+  admin:
+    client:
+      username: monitoring
+      password: monitoring
+      url: https://girders.extranet.netcetera.biz/demo-adminserver
+      instance:
+        service-base-url: https://girders.extranet.netcetera.biz
+        metadata:
+          user.name: monitoring
+          user.password: monitoring
+
+info.app:
+  project: ${nca.project.id}
+  name: ${project.artifactId}
+  version: ${project.version}
+  girders.version: ${girders.version}
+  spring-boot.version: ${spring-boot.version}
+
+# Server
+server:
+  servlet:
+    context-path: /demo-showcase
+
+# Actuators
+management:
+  info.git.mode: full
+  endpoints:
+    enabled-by-default: true
+    web.exposure.include: '*'
+    jmx.exposure.include: '*'
+  endpoint:
+    health:
+      show-details: when_authorized
+    flyway:
+      enabled: true
+    logfile:
+      external-file: /var/www/girders/logs/demo-showcase.log
+
+girders:
+  actuator:
+    web:
+      overwriteVendorSpecificJsonMimeType: false
+
+# Caching
+spring.cache.jcache.config: classpath:ehcache.xml
+
+# LDAP (Note: The LDAP URLs do not actually belong in the config of the app, but should be injected from the environment).
+spring.ldap:
+  urls: ldap://iam.extranet.nca
+  base: dc=netcetera,dc=com
+  username:
+  password:
+
+# Content Security Policy (CSP)
+girders.csp:
+  header-value: "default-src 'self'; style-src 'self'; img-src 'self' data:"
+  report-url: /csp/report
+  enable-default-csp-violation-report-servlet: true
+
+# Apache FOP
+girders.fop:
+  base: "classpath:."
+  config: "classpath:fop.xml"
+
+# Cryptography
+girders.crypto:
+  text.clear: "This value is shown in clear-text here, but is stored as an encrypted string in the configuration file."
+  text: "ENC(luBvjOGpuKOE8SLYmpkUSTDDc4WhvqlqlLyjwIoQCZvGUcKf8JwTaDxxuUemq4iLjcNXQoRAOsPkI5QycC8+fR7SXXVUf3oxYDrxJglYmSsIBeSnvf+gTU5SNdXZZwCjqMKhXpYOreXsEgTThTEtP5pfEaoxbp0T64l7Z0Dfch+S0kieQ4sfdEysDTS3UOB+)"
+
+# Circuit Breaker
+resilience4j.circuitbreaker:
+  configs:
+    default:
+      permittedNumberOfCallsInHalfOpenState: 1
+      failureRateThreshold: 30
+      minimumNumberOfCalls: 5
+      eventConsumerBufferSize: 10
+      registerHealthIndicator: true
+  instances:
+    girders-circuitbreaker-example-service:
+      baseConfig: default
+      waitDurationInOpenState: 50000
+
+# Rest Template Logging
+girders.rest-template-logging.log-format: JSON
+
+# Mail (Note: The mail server name does not actually belong in the config of the app, but should be injected from the environment).
+spring.mail.host: mail.netcetera.com
+
+# Rate Limiting
+showcase.rate-limit.global-rate-limit-spec: 3/m
+
+# RestTemplate Logging
+showcase.rest-template-logging.wikipedia-api-url: "https://en.wikipedia.org/w/api.php?action=query&list=random&format=json&rnnamespace=0&rnlimit=5"
+
+# Logging
+logging:
+  pattern:
+    console: "%d{HH:mm:ss.SSS} | %-12.12thread | %-8.8mdc{user.id} | %-6.6mdc{session.id} | %-6.6mdc{transaction.id} | %-6.6mdc{client.ip} | %highlight(%-5.5level) | %-48.48logger{32} | %message %exception%n"
+  level:
+    net.jperf.TimingLogger: WARN
+    ClientHttpRequest: TRACE

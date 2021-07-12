@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.netcetera.nca-266-7</groupId>
+    <artifactId>girders-parent</artifactId>
+    <version>4.9.1-SNAPSHOT</version>
+    <relativePath>../girders-parent</relativePath>
+  </parent>
+
+  <artifactId>girders-autoconfigure</artifactId>
+  <name>Girders - Auto Configuration</name>
+  <description>Girders Auto Configuration</description>
+
+  <dependencies>
+    <!-- base mandatory dependencies -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-autoconfigure</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>commons-pool</groupId>
+      <artifactId>commons-pool</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-logging</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>org.apache.tomcat</groupId>
+          <artifactId>tomcat-annotations-api</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apiguardian</groupId>
+      <artifactId>apiguardian-api</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- optional Girders dependencies -->
+    <dependency>
+      <groupId>com.netcetera.nca-266-7</groupId>
+      <artifactId>girders-cache</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>com.netcetera.nca-266-7</groupId>
+      <artifactId>girders-clientlogging</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>com.netcetera.nca-266-7</groupId>
+      <artifactId>girders-csp</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>com.netcetera.nca-266-7</groupId>
+      <artifactId>girders-ldap</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>com.netcetera.nca-266-7</groupId>
+      <artifactId>girders-dbunit</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>com.netcetera.nca-266-7</groupId>
+      <artifactId>girders-fop</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>com.netcetera.nca-266-7</groupId>
+      <artifactId>girders-i18n</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>com.netcetera.nca-266-7</groupId>
+      <artifactId>girders-mail</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>com.netcetera.nca-266-7</groupId>
+      <artifactId>girders-perfmon</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>com.netcetera.nca-266-7</groupId>
+      <artifactId>girders-ratelimit</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>com.netcetera.nca-266-7</groupId>
+      <artifactId>girders-resttemplatelogging</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>com.netcetera.nca-266-7</groupId>
+      <artifactId>girders-web</artifactId>
+      <optional>true</optional>
+    </dependency>
+
+    <!-- other optional dependencies -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-security</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.ldap</groupId>
+      <artifactId>spring-ldap-core</artifactId>
+      <optional>true</optional>
+    </dependency>
+
+    <!-- enable the Spring Boot annotation processor to generate metadata for configuration properties -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-configuration-processor</artifactId>
+      <optional>true</optional>
+    </dependency>
+
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jul-to-slf4j</artifactId>
+      <optional>true</optional>
+    </dependency>
+
+    <dependency>
+      <groupId>io.micrometer</groupId>
+      <artifactId>micrometer-core</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>false</filtering>
+      </resource>
+      <resource>
+        <directory>src/main/resources-filtered</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+  </build>
+
+</project>

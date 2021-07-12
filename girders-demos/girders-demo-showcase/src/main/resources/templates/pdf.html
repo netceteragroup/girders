@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+  <head th:insert="~{head :: head}" />
+  <body>
+    <div th:replace="~{header :: header}" />
+    <div class="container">
+      <div class="jumbotron">
+        <h1 class="display-4" th:text="#{feature.pdf.header}" />
+        <p class="lead" th:text="#{feature.pdf.leadText}" />
+      </div>
+      <ul>
+        <li><a th:href="@{/pdf/pdfbox}" th:text="#{feature.pdf.pdfbox}" /></li>
+        <li><a th:href="@{/pdf/fop}" th:text="#{feature.pdf.fop}" /></li>
+      </ul>
+    </div>
+    <div th:insert="~{footer :: footer}" />
+    <div th:insert="~{foot :: foot}" />
+  </body>
+</html>

@@ -1,0 +1,17 @@
+org.springframework.context.ApplicationListener=\
+com.netcetera.girders.autoconfigure.ehcache.EhCacheSystemPropertyInitializer,\
+com.netcetera.girders.autoconfigure.terracotta.TerracottaSystemPropertyInitializer
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.netcetera.girders.autoconfigure.common.CommonAutoConfiguration,\
+com.netcetera.girders.autoconfigure.cache.CacheAutoConfiguration,\
+com.netcetera.girders.autoconfigure.clientlogging.ClientLoggingAutoConfiguration,\
+com.netcetera.girders.autoconfigure.csp.CspAutoConfiguration,\
+com.netcetera.girders.autoconfigure.dbunit.DbUnitAutoConfiguration,\
+com.netcetera.girders.autoconfigure.fop.FopAutoConfiguration,\
+com.netcetera.girders.autoconfigure.i18n.I18NAutoConfiguration,\
+com.netcetera.girders.autoconfigure.ldap.LdapTemplateAutoConfiguration,\
+com.netcetera.girders.autoconfigure.mail.MailAutoConfiguration,\
+com.netcetera.girders.autoconfigure.perfmon.PerfmonAutoConfiguration,\
+com.netcetera.girders.autoconfigure.ratelimit.RateLimitAutoConfiguration,\
+com.netcetera.girders.autoconfigure.resttemplatelogging.RestTemplateLoggingAutoConfiguration,\
+com.netcetera.girders.autoconfigure.web.WebAutoConfiguration

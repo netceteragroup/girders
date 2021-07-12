@@ -1,0 +1,5 @@
+<dataset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <PROJECT ID="1" TITLE="foo" />
+  <PROJECT ID="2" TITLE="bar" />
+  <PROJECT ID="3" TITLE="baz" />
+</dataset>

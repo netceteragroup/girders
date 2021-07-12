@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+  <head th:insert="~{head :: head}" />
+  <body>
+    <div th:replace="~{header :: header}" />
+    <div class="container">
+      <div class="jumbotron">
+        <h1 class="display-4" th:text="#{application.title}" />
+      </div>
+
+      <div class="alert alert-danger" th:if="${param.error != null}" th:text="#{login.error}" />
+      <div class="alert alert-success" th:if="${param.logout != null}" th:text="#{login.logout}" />
+
+      <h2 th:text="#{login.title}" />
+      <p class="lead" th:text="#{login.leadText}" />
+
+      <form th:action="@{/login}" accept-charset="UTF-8" method="post">
+        <div class="form-group">
+          <div class="col-md-4"><label for="username" th:text="#{login.username}" /></div>
+          <div class="col-md-8"><input id="username" name="username" /></div>
+          <br />
+        </div>
+        <div class="form-group">
+          <div class="col-md-4"><label for="password" th:text="#{login.password}" /></div>
+          <div class="col-md-8"><input id="password" name="password" type="password" /></div>
+          <br />
+        </div>
+        <div class="form-group">
+          <div class="col-md-1">
+            <button type="submit" class="btn btn-primary" th:text="#{login.submit}" />
+          </div>
+        </div>
+      </form>
+
+      <br />
+      <br />
+      <br />
+      <br />
+
+      <table class="table table-tm">
+        <thead>
+          <tr>
+            <th th:text="#{login.username}" />
+            <th th:text="#{login.password}" />
+            <th th:text="#{login.description}" />
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>user</td>
+            <td>user</td>
+            <td th:text="#{login.user.description}" />
+          </tr>
+          <tr>
+            <td>admin</td>
+            <td>admin</td>
+            <td th:text="#{login.admin.description}" />
+          </tr>
+          <tr>
+            <td>monitoring</td>
+            <td>monitoring</td>
+            <td th:text="#{login.monitoring.description}" />
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+    <div th:insert="~{footer :: footer}" />
+    <div th:insert="~{foot :: foot}" />
+
+  </body>
+</html>

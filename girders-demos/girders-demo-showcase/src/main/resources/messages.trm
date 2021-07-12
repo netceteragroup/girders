@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<trema masterLang="en">
+
+  <!-- Navigation -->
+  <text key="navigation.netcetera">
+    <context>Navigation</context>
+    <value lang="de" status="initial">Netcetera</value>
+    <value lang="en" status="initial">Netcetera</value>
+  </text>
+  <text key="navigation.home">
+    <context>Navigation</context>
+    <value lang="de" status="initial">Start</value>
+    <value lang="en" status="initial">Home</value>
+  </text>
+  <text key="navigation.features">
+    <context>Navigation</context>
+    <value lang="de" status="initial">Funktionalitäten</value>
+    <value lang="en" status="initial">Features</value>
+  </text>
+
+  <!-- Footer -->
+  <text key="footer.managementApi">
+    <context>Footer</context>
+    <value lang="de" status="initial">Verwaltungs-API</value>
+    <value lang="en" status="initial">Management API</value>
+  </text>
+  <text key="footer.adminServer">
+    <context>Footer</context>
+    <value lang="de" status="initial">Administrations-Server</value>
+    <value lang="en" status="initial">Admin Server</value>
+  </text>
+  <text key="footer.request.duration">
+    <context>Footer</context>
+    <value lang="de" status="initial">Request-Verarbeitung: {0}ms</value>
+    <value lang="en" status="initial">Request Processing: {0}ms</value>
+  </text>
+  <text key="footer.login">
+    <context>Footer</context>
+    <value lang="de" status="initial">Anmelden</value>
+    <value lang="en" status="initial">Login</value>
+  </text>
+  <text key="footer.logout">
+    <context>Footer</context>
+    <value lang="de" status="initial">Abmeldung</value>
+    <value lang="en" status="initial">Logout</value>
+  </text>
+
+  <!-- Application -->
+  <text key="application.title">
+    <context>Index Page</context>
+    <value lang="de" status="initial">Girders Vorzeigeapplikation</value>
+    <value lang="en" status="initial">Girders Showcase Application</value>
+  </text>
+
+  <!-- Home -->
+  <text key="home.leadText">
+    <context>Home Page</context>
+    <value lang="de" status="initial">Willkommen zur Girders Vorzeigeapplikation. Diese Applikation demonstriert
+      verschiedene Funktionalitäten, die von Girders angeboten werden. Einzelne Funktionalitäten werden wann immer
+      möglich unabhängig voneinander demonstriert, um einen besseren Einblick in die angebotene Funktionalität zu
+      bieten.
+    </value>
+    <value lang="en" status="initial">Welcome to the Girders Showcase Application. This application demonstrates
+      different features provided by Girders. Individual features are showcased independently wherever possible to
+      allow for a better insight into the provided functionality.
+    </value>
+  </text>
+
+  <!-- CSP Feature -->
+  <text key="feature.csp.header">
+    <context>CSP Feature Page</context>
+    <value lang="en" status="initial">Content Security Policy (CSP)</value>
+  </text>
+  <text key="feature.csp.leadText">
+    <context>CSP Feature Page</context>
+    <value lang="en" status="initial">This is a demo of the Content Security Policy (CSP) feature provided by Girders
+      Boot.
+    </value>
+  </text>
+  <text key="feature.csp.generalDescription">
+    <context>CSP Feature Page</context>
+    <value lang="en" status="initial">
+      <![CDATA[The following button has an <code>onclick</code> handler which would trigger the execution of inline JavaScript code. Since the CSP directives <code>{0}</code> configured for the application forbid the execution of inline JavaScript, clicking on the button has no effect and the browser reports the CSP violation by sending a POST request with the details of the violation to the report URL configured in the application. The violation report request can be inspected using the browser's developer tools and the contents are logged by the <code>CspViolationReportServlet</code> which handles the report.]]></value>
+  </text>
+  <text key="feature.csp.technicalDescription">
+    <context>CSP Feature Page</context>
+    <value lang="en" status="initial">
+      <![CDATA[Depending on the browser you use, the violation might get reported when loading the page or when clicking the button for the first time. Some browsers might not support the <code>Content-Security-Policy</code> header at all.]]></value>
+  </text>
+  <text key="feature.csp.buttonText">
+    <context>CSP Feature Page</context>
+    <value lang="en" status="initial">Execute inline JavaScript</value>
+  </text>
+  <text key="feature.csp.alertText">
+    <context>CSP Feature Page</context>
+    <value lang="en" status="initial">Oops.. your browser does not support the Content-Security-Policy header!</value>
+  </text>
+
+  <!-- CSRF Feature -->
+  <text key="feature.csrf.header">
+    <context>CSRF Feature Page</context>
+    <value lang="en" status="initial">Cross-Site Request Forgery (CSRF)</value>
+  </text>
+  <text key="feature.csrf.leadText">
+    <context>CSRF Feature Page</context>
+    <value lang="en" status="initial">This is a demo of the Cross-Site Request Forgery (CSRF) feature provided by
+      Girders.
+    </value>
+  </text>
+  <text key="feature.csrf.javascriptForm.header">
+    <context>CSRF Feature Page</context>
+    <value lang="en" status="initial">JavaScript submitted form</value>
+  </text>
+  <text key="feature.csrf.javascriptForm.description">
+    <context>CSRF Feature Page</context>
+    <value lang="en" status="initial">
+      <![CDATA[The following form is submitted using JavaScript where the submitting JavaScript code extracts the CSRF token from the <code>CSRF-TOKEN</code> cookie provided by the Girders filter <code>CsrfTokenCookieBindingFilter</code>. The CSRF token is sent to the server in the <code>X-CSRF-TOKEN</code> HTTP header when submitting the form. The cookie and HTTP header can be inspected using the browser's developer tools.]]></value>
+  </text>
+  <text key="feature.csrf.htmlForm.header">
+    <context>CSRF Feature Page</context>
+    <value lang="en" status="initial">Raw HTML form</value>
+  </text>
+  <text key="feature.csrf.htmlForm.description">
+    <context>CSRF Feature Page</context>
+    <value lang="en" status="initial">
+      <![CDATA[The following form does not include any CSRF token and hence posting the form will trigger a <code>403</code> HTTP response.]]></value>
+  </text>
+
+  <!-- Internationalization -->
+  <text key="feature.locale.current">
+    <context>Internationalization</context>
+    <value lang="en" status="initial">English</value>
+    <value lang="de" status="initial">Deutsch</value>
+  </text>
+  <text key="feature.locale.en">
+    <context>Internationalization</context>
+    <value lang="en" status="initial">English</value>
+    <value lang="de" status="initial">English</value>
+  </text>
+  <text key="feature.locale.de">
+    <context>Internationalization</context>
+    <value lang="en" status="initial">Deutsch</value>
+    <value lang="de" status="initial">Deutsch</value>
+  </text>
+
+  <!-- Mail Feature -->
+  <text key="feature.mail.header">
+    <context>Mail Feature Page</context>
+    <value lang="en" status="initial">Mail</value>
+  </text>
+  <text key="feature.mail.leadText">
+    <context>Mail Feature Page</context>
+    <value lang="en" status="initial">This is a demo of the mail feature provided by Girders.</value>
+  </text>
+  <text key="feature.mail.sender">
+    <context>Mail Feature Page</context>
+    <value lang="en" status="initial">Sender</value>
+  </text>
+  <text key="feature.mail.recipient">
+    <context>Mail Feature Page</context>
+    <value lang="en" status="initial">Recipient</value>
+  </text>
+  <text key="feature.mail.subject">
+    <context>Mail Feature Page</context>
+    <value lang="en" status="initial">Subject</value>
+  </text>
+  <text key="feature.mail.text">
+    <context>Mail Feature Page</context>
+    <value lang="en" status="initial">Text</value>
+  </text>
+
+  <!-- LDAP Feature -->
+  <text key="feature.ldap.header">
+    <context>LDAP Feature Page</context>
+    <value lang="en" status="initial">LDAP</value>
+  </text>
+  <text key="feature.ldap.leadText">
+    <context>LDAP Feature Page</context>
+    <value lang="en"
+           status="initial">This is a demo of the LDAP feature provided by Spring Boot. The page looks up all the Extranet accounts of Netcetera Group employees in our Extranet LDAP server.
+    </value>
+  </text>
+  <text key="feature.ldap.uid.label">
+    <context>LDAP Feature Page</context>
+    <value lang="en" status="initial">UID</value>
+  </text>
+  <text key="feature.ldap.name.label">
+    <context>LDAP Feature Page</context>
+    <value lang="en" status="initial">Name</value>
+  </text>
+  <text key="feature.ldap.email.label">
+    <context>LDAP Feature Page</context>
+    <value lang="en" status="initial">Email</value>
+  </text>
+
+  <!-- RestTemplate Logging Feature -->
+  <text key="feature.restTemplateLogging.header">
+    <context>RestTemplate Logging Feature Page</context>
+    <value lang="en" status="initial">RestTemplate Logging</value>
+  </text>
+  <text key="feature.restTemplateLogging.leadText">
+    <context>RestTemplate Logging Feature Page</context>
+    <value lang="en" status="initial">This is a demo of the RestTemplate logging feature provided by Girders.
+    </value>
+  </text>
+  <text key="feature.restTemplateLogging.descriptionText">
+    <context>RestTemplate Logging Feature Page</context>
+    <value lang="en" status="initial">
+      <![CDATA[The table below lists some random Wikipedia articles retrieved through the Wikipedia API which is served from the <code>en.wikipedia.org</code> host. HTTP requests/responses to that host can be logged by setting the log level of the <code>ClientHttpRequest.en.wikipedia.org</code> logger to <code>TRACE</code> as indicated in the documentation. The management API provides access to the <a href="{0}" target="_blank">current logger configuration</a> as well as the <a href="{1}" target="_blank">log file contents</a> (the latter management endpoint for getting the log file contents is only available when logging to a file).]]></value>
+  </text>
+  <text key="feature.restTemplateLogging.wikipediaArticleTable.header.title">
+    <context>RestTemplate Logging Feature Page</context>
+    <value lang="en" status="initial">Title</value>
+  </text>
+  <text key="feature.restTemplateLogging.wikipediaArticleTable.header.url">
+    <context>RestTemplate Logging Feature Page</context>
+    <value lang="en" status="initial">URL</value>
+  </text>
+
+  <!-- Rate Limiting Feature -->
+  <text key="feature.rateLimit.header">
+    <context>Rate Limiting Feature Page</context>
+    <value lang="en" status="initial">Rate Limiting</value>
+  </text>
+  <text key="feature.rateLimit.leadText">
+    <context>Rate Limiting Feature Page</context>
+    <value lang="en" status="initial">This is a demo of the rate limiting feature provided by Girders.</value>
+  </text>
+  <text key="feature.rateLimit.globalLimit.header">
+    <context>Rate Limiting Feature Page</context>
+    <value lang="en" status="initial">Global rate limits</value>
+  </text>
+  <text key="feature.rateLimit.globalLimit.descriptionText">
+    <context>Rate Limiting Feature Page</context>
+    <value lang="en" status="initial">
+      <![CDATA[Submitting the following form triggers a request with a global rate limit where the limit is expressed using the <code>spec</code> value <code>{0}</code> externalized through the <code>{1}</code> application property.]]></value>
+  </text>
+  <text key="feature.rateLimit.keyedLimit.header">
+    <context>Rate Limiting Feature Page</context>
+    <value lang="en" status="initial">Keyed rate limits</value>
+  </text>
+  <text key="feature.rateLimit.keyedLimit.descriptionText">
+    <context>Rate Limiting Feature Page</context>
+    <value lang="en" status="initial">
+      <![CDATA[Submitting the following form triggers a request with a keyed rate limit where the text entered into the text field is used as the rate limiting key. The requests are limited to 1 per minute for every distinct key.]]></value>
+  </text>
+  <text key="feature.rateLimit.keyedLimit.key.label">
+    <context>Rate Limiting Feature Page</context>
+    <value lang="en" status="initial">Key</value>
+  </text>
+  <text key="feature.rateLimit.exceeded.header">
+    <context>Rate Limiting Feature Page</context>
+    <value lang="en" status="initial">Hold your horses...</value>
+  </text>
+  <text key="feature.rateLimit.exceeded.leadText">
+    <context>Rate Limiting Feature Page</context>
+    <value lang="en"
+           status="initial">Please slow down a bit and try not to overload the system with too many requests.
+    </value>
+  </text>
+
+  <!-- Swagger API documentation -->
+  <text key="feature.apidoc.header">
+    <context>Swagger API documentation</context>
+    <value lang="en" status="initial">REST API Documentation</value>
+  </text>
+
+  <!-- JDBC -->
+  <text key="feature.jdbc.header">
+    <context>JDBC Feature</context>
+    <value lang="en" status="initial">JDBC Support</value>
+  </text>
+  <text key="feature.jdbc.leadText">
+    <context>JDBC Feature</context>
+    <value lang="en" status="initial">The following data is loaded from a relational database:</value>
+  </text>
+  <text key="feature.jdbc.id.label">
+    <context>JDBC Feature</context>
+    <value lang="en" status="initial">ID</value>
+  </text>
+  <text key="feature.jdbc.title.label">
+    <context>JDBC Feature</context>
+    <value lang="en" status="initial">Name</value>
+  </text>
+
+  <!-- PDF -->
+  <text key="feature.pdf.header">
+    <context>PDF Feature</context>
+    <value lang="en" status="initial">PDF Support</value>
+  </text>
+  <text key="feature.pdf.leadText">
+    <context>PDF Feature</context>
+    <value lang="en" status="initial">Support for dynamically generated PDF documentations, based on...</value>
+  </text>
+  <text key="feature.pdf.pdfbox">
+    <context>PDF Feature</context>
+    <value lang="en" status="initial">Apache PDFbox</value>
+  </text>
+  <text key="feature.pdf.fop">
+    <context>PDF Feature</context>
+    <value lang="en" status="initial">Apache FOP</value>
+  </text>
+
+  <!-- Error Page -->
+  <text key="error.title">
+    <context>Error Page</context>
+    <value lang="en" status="initial">We are terribly sorry...</value>
+    <value lang="de" status="initial">Es tut uns schrecklich Leid...</value>
+  </text>
+
+  <text key="error.lead">
+    <context>Error Page</context>
+    <value lang="en" status="initial">An error occurred during the processing of your request.</value>
+    <value lang="de" status="initial">Ein Fehler bei der Bearbeitung deiner Anfrage ist aufgetreten.</value>
+  </text>
+
+  <!-- Login Page -->
+  <text key="login.title">
+    <context>Login</context>
+    <value lang="en" status="initial">Login</value>
+    <value lang="de" status="initial">Anmeldung</value>
+  </text>
+
+  <text key="login.leadText">
+    <context>Login</context>
+    <value lang="en" status="initial">Please provide your credentials to log in to the application.</value>
+    <value lang="de" status="initial">Bitte gib deine Credentials an, um dich in die Applikation einloggen zu können.
+    </value>
+  </text>
+
+  <text key="login.username">
+    <context>Login</context>
+    <value lang="en" status="initial">Username</value>
+    <value lang="de" status="initial">Benutzername</value>
+  </text>
+
+  <text key="login.password">
+    <context>Login</context>
+    <value lang="en" status="initial">Password</value>
+    <value lang="de" status="initial">Passwort</value>
+  </text>
+
+  <text key="login.submit">
+    <context>Login</context>
+    <value lang="en" status="initial">Log in</value>
+    <value lang="de" status="initial">Anmelden</value>
+  </text>
+
+  <text key="login.logout">
+    <context>Login</context>
+    <value lang="en" status="initial">You have been logged out successfully.</value>
+    <value lang="de" status="initial">Sie wurden erfolgreich abgemeldet.</value>
+  </text>
+
+  <text key="login.error">
+    <context>Login</context>
+    <value lang="en" status="initial">The login failed.</value>
+    <value lang="de" status="initial">Die Anmeldung ist fehlgeschlagen.</value>
+  </text>
+
+  <text key="login.description">
+    <context>Login</context>
+    <value lang="en" status="initial">Description</value>
+    <value lang="de" status="initial">Beschreibung</value>
+  </text>
+
+  <text key="login.user.description">
+    <context>Login</context>
+    <value lang="en" status="initial">Normal user with access to the application, but without administration access.
+    </value>
+    <value lang="de"
+           status="initial">Normaler Benutzer mit Zugang zur Applikation, aber ohne Administrations-Privilegien.
+    </value>
+  </text>
+
+  <text key="login.admin.description">
+    <context>Login</context>
+    <value lang="en" status="initial">Admin user with access to the application as well as the monitoring endpoints.
+    </value>
+    <value lang="de"
+           status="initial">Administrations-Benutzer mit Zugang zur Applikation und zu den Monitoring-Ressources.
+    </value>
+  </text>
+
+  <text key="login.monitoring.description">
+    <context>Login</context>
+    <value lang="en"
+           status="initial">Technical user with access to the monitoring endpoints, but not to the application.
+    </value>
+    <value lang="de"
+           status="initial">Technischer Benutzer mit Zugang zu den Monitoring-Ressourcen, aber nicht zur Applikation.
+    </value>
+  </text>
+
+  <text key="feature.circuitbreaker.header">
+    <context>Circuit Breaker</context>
+    <value lang="en">Circuit Breaker</value>
+  </text>
+  <text key="feature.circuitbreaker.configuration.title">
+    <context>Circuit Breaker Configuration</context>
+    <value lang="en">Configuration</value>
+  </text>
+  <text key="feature.circuitbreaker.configuration.failureRateThreshold">
+    <context>Circuit Breaker failure rate threshold</context>
+    <value lang="en">Failure rate threshold:</value>
+  </text>
+  <text key="feature.circuitbreaker.configuration.minimumNumberOfCalls">
+    <context>Circuit Breaker minimum number of calls</context>
+    <value lang="en">Minimum number of calls to calculate the failure rate with:</value>
+  </text>
+  <text key="feature.circuitbreaker.configuration.permittedNumberOfCallsInHalfOpenState">
+    <context>Circuit Breaker permitted number of calls in half-open state</context>
+    <value lang="en">Permitted number of calls in half-open state:</value>
+  </text>
+  <text key="feature.circuitbreaker.metrics.title">
+    <context>Circuit Breaker Metrics Title</context>
+    <value lang="en">Circuit Breaker Metrics</value>
+  </text>
+  <text key="feature.circuitbreaker.metrics.circuitBreakerState">
+    <context>Circuit Breaker Metrics - state</context>
+    <value lang="en">Circuitbreaker state:</value>
+  </text>
+  <text key="feature.circuitbreaker.metrics.numberOfSuccessfulCalls">
+    <context>Circuit Breaker Metrics - number of successful calls</context>
+    <value lang="en">Successful calls:</value>
+  </text>
+  <text key="feature.circuitbreaker.metrics.numberOfFailedCalls">
+    <context>Circuit Breaker Metrics - number of failed calls</context>
+    <value lang="en">Failed calls:</value>
+  </text>
+  <text key="feature.circuitbreaker.metrics.failureRate">
+    <context>Circuit Breaker Metrics - failure rate</context>
+    <value lang="en">Failure rate:</value>
+  </text>
+  <text key="feature.circuitbreaker.leadText.1">
+    <context>Circuit Breaker</context>
+    <value
+        lang="en">This resource will deliberately return errors for about 50% of the requests. You can reload the page to get a new result. If the resource returns too many errors in a given time frame, the circuit breaker will step in and return an error right away for some time frame (default is 60 seconds). After this time, the circuit breaker will close again and let requests through to the actual resource.
+    </value>
+  </text>
+  <text key="feature.circuitbreaker.leadText.2">
+    <context>Circuit Breaker</context>
+    <value
+        lang="en">If you see SUCCESS in the title, the request was successfully processed. ERROR signals the randomly occurring error. And if you see OPEN in the circuitbreaker's metrics, the circuit breaker stepped in and prevented the request from being processed.
+    </value>
+  </text>
+
+  <text key="feature.poi.header">
+    <context>POI</context>
+    <value lang="en">POI</value>
+  </text>
+  <text key="feature.poi.leadText">
+    <context>POI</context>
+    <value lang="en">Support for Microsoft Office documents based on Apache POI.</value>
+  </text>
+  <text key="feature.poi.file">
+    <context>POI</context>
+    <value lang="en">Example of an Excel Spreadsheet generated dynamically with Apache POI.</value>
+  </text>
+
+  <text key="feature.crypto.header">
+    <context>Crypto</context>
+    <value lang="en">Cryptography</value>
+  </text>
+  <text key="feature.crypto.leadText">
+    <context>Crypto</context>
+    <value lang="en">Support for cryptography, including encrypted Spring Configuration Properties, based on Jasypt.
+    </value>
+  </text>
+  <text key="feature.crypto.encryptedValue.label">
+    <context>Crypto</context>
+    <value lang="en">Spring Configuration Property (encrypted storage)</value>
+  </text>
+
+</trema>

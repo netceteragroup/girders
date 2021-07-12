@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+  <head th:insert="~{head :: head}" />
+  <body>
+    <div th:replace="~{header :: header}" />
+    <div class="container">
+      <div class="jumbotron">
+        <h1 class="display-4" th:text="#{feature.poi.header}" />
+        <p class="lead" th:text="#{feature.poi.leadText}" />
+      </div>
+      <ul>
+        <li><a th:href="@{/poi/file.xls}" th:text="#{feature.poi.file}" /></li>
+      </ul>
+    </div>
+    <div th:insert="~{footer :: footer}" />
+    <div th:insert="~{foot :: foot}" />
+  </body>
+</html>

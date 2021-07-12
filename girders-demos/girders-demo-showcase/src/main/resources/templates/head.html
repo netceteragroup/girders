@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+  <head th:fragment="head">
+    <meta charset="UTF-8" />
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <title th:text="#{application.title}" />
+
+    <link rel="icon" type="image/png" th:href="@{/images/favicon.png}" />
+
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/styles/netcetera.css}" />
+  </head>
+</html>

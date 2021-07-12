@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+  <head th:insert="~{head :: head}" />
+  <body>
+    <div th:replace="~{header :: header}" />
+    <div class="container">
+      <div class="jumbotron">
+        <h1 class="display-4" th:text="#{error.title}" />
+        <p class="lead" th:text="#{error.lead}" />
+      </div>
+      <p><span th:text="${status}" />&nbsp;<span th:text="${error}" /></p>
+      <p th:text="${message}" />
+    </div>
+    <div th:insert="~{footer :: footer}" />
+    <div th:insert="~{foot :: foot}" />
+
+  </body>
+</html>

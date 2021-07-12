@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+  <head th:insert="~{head :: head}" />
+  <body>
+    <div th:replace="~{header :: header}" />
+    <div class="container">
+      <div class="jumbotron">
+        <h1 class="display-4" th:text="#{feature.ldap.header}" />
+        <p class="lead" th:text="#{feature.ldap.leadText}" />
+      </div>
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <th th:text="#{feature.ldap.uid.label}" />
+            <th th:text="#{feature.ldap.name.label}" />
+            <th th:text="#{feature.ldap.email.label}" />
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="account: ${accounts}">
+            <td th:text="${account.uid}" />
+            <td><span th:text="${account.firstName}" />&nbsp;<span th:text="${account.lastName}" /></td>
+            <td th:text="${account.email}" />
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div th:insert="~{footer :: footer}" />
+    <div th:insert="~{foot :: foot}" />
+  </body>
+</html>

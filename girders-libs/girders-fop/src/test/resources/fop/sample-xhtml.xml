@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--suppress ALL -->
+<html xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml"
+      xsi:schemaLocation="http://www.w3.org/1999/xhtml http://www.w3.org/2002/08/xhtml/xhtml1-transitional.xsd">
+  <head>
+    <title>Title</title>
+  </head>
+  <body>
+    <h1>Heading 1</h1>
+    <p>A first paragraph</p>
+    <p>A second paragraph</p>
+  </body>
+</html>

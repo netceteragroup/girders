@@ -1,0 +1,15 @@
+{
+  "correlation": "id-123",
+  "type": "request",
+  "uri": "http://foo.bar/hotels/42",
+  "method": "GET",
+  "headers": {
+    "Accept": [
+      "text/plain",
+      "application/json"
+    ],
+    "X-Test-Header": [
+      "test-value"
+    ]
+  }
+}

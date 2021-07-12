@@ -1,0 +1,41 @@
+# Application
+spring:
+  application.name: ${project.artifactId}
+  main.banner-mode: 'off'
+
+info.app:
+  project: ${nca.project.id}
+  name: ${project.artifactId}
+  version: ${project.version}
+  girders.version: ${girders.version}
+
+# Server
+server:
+  servlet:
+    context-path: /demo-adminserver
+
+# Actuators
+management:
+  info.git.mode: full
+  endpoints:
+    enabled-by-default: true
+    web:
+      exposure:
+        include: '*'
+    jmx:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+    flyway:
+      enabled: true
+
+# Logging
+logging:
+  pattern:
+    console: "%d{HH:mm:ss.SSS} | %-12.12thread | %-8.8mdc{user.id} | %-6.6mdc{session.id} | %-6.6mdc{transaction.id} | %-6.6mdc{client.ip} | %highlight(%-5.5level) | %-48.48logger{32} | %message %exception%n"
+  level:
+    net.jperf.TimingLogger: WARN
+#    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
+#    org.springframework.jdbc.core.JdbcTemplate: DEBUG

@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.netcetera.nca-266-7</groupId>
+    <artifactId>girders</artifactId>
+    <version>4.9.1-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>girders-platform-bom</artifactId>
+  <packaging>pom</packaging>
+  <name>Girders - Platform BOM</name>
+  <description>Girders on which applications should be based either by inheritance or by BOM dependency
+  </description>
+
+  <properties>
+    <apiguardian.version>1.1.2</apiguardian.version>
+    <!-- TODO gbachmei 2020-08-17: temporarily managing version of io.github.classgraph:classgraph manually because of
+          divergence of transitive dependencies in girders-demo-showcase; remove explicit management once dependencies
+          converge again -->
+    <classgraph.version>4.8.83</classgraph.version>
+    <commons-collections.version>3.2.2</commons-collections.version>
+    <commons-io.version>2.10.0</commons-io.version>
+    <commons-jexl.version>1.1</commons-jexl.version>
+    <dbunit.version>2.7.0</dbunit.version>
+    <fontbox.version>2.0.24</fontbox.version>
+    <fop.version>2.6</fop.version>
+    <!-- NOTE vmeier 2020-06-12: The "fop" dependency contains "ant" 1.8.2 which has CVE-2020-1945.
+       Excluded "ant" from "fop" and defined explicit dependency with "ant" > 1.8.2 .
+       Remove when upgrading "fop" to newer version! -->
+    <ant.version>1.10.10</ant.version>
+    <guava.version>30.1.1-jre</guava.version>
+    <jasypt-spring-boot.version>3.0.2</jasypt-spring-boot.version>
+    <javax.activation.version>1.2.0</javax.activation.version>
+    <jperf.version>1.0.3</jperf.version>
+    <pdfbox.version>2.0.24</pdfbox.version>
+    <poi.version>5.0.0</poi.version>
+    <spring-boot.version>2.5.2</spring-boot.version>
+    <spring-boot-admin.version>2.4.2</spring-boot-admin.version>
+    <spring-cloud.version>2020.0.3</spring-cloud.version>
+    <spring-web-flow.version>2.5.1.RELEASE</spring-web-flow.version>
+    <springfox.version>3.0.0</springfox.version>
+    <swagger.version>1.6.2</swagger.version>
+    <token-bucket.version>1.7</token-bucket.version>
+    <xmlgraphics-commons.version>2.6</xmlgraphics-commons.version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+
+      <!-- Spring Platform Management -->
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>${spring-boot.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>${spring-cloud.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <!-- Girders -->
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-autoconfigure</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-cache</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-starter-cache</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-starter-circuitbreaker</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-clientlogging</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-starter-clientlogging</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-starter-crypto</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-csp</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-starter-csp</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-csrf</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-starter-csrf</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-dbunit</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-starter-dbunit</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-fop</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-starter-fop</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-starter-i18n</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-i18n</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-starter-ldap</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-ldap</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-starter-logging</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-logging</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-ncautil</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-starter-ncautil</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-mail</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-starter-mail</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-starter-pdfbox</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-perfmon</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-starter-perfmon</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-starter-poi</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-resttemplatelogging</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-starter-resttemplatelogging</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-ratelimit</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-starter-ratelimit</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-starter-swagger</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-starter-test</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-starter-validation</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-web</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-starter-web</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-starter-webflow</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <!-- Spring Boot -->
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+        <version>${spring-boot.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.junit.vintage</groupId>
+            <artifactId>junit-vintage-engine</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+
+      <!-- Spring Boot Admin -->
+      <dependency>
+        <groupId>de.codecentric</groupId>
+        <artifactId>spring-boot-admin-dependencies</artifactId>
+        <version>${spring-boot-admin.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+
+      <!-- Spring WebFlow -->
+      <dependency>
+        <groupId>org.springframework.webflow</groupId>
+        <artifactId>spring-binding</artifactId>
+        <version>${spring-web-flow.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.webflow</groupId>
+        <artifactId>spring-faces</artifactId>
+        <version>${spring-web-flow.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.webflow</groupId>
+        <artifactId>spring-webflow</artifactId>
+        <version>${spring-web-flow.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apiguardian</groupId>
+        <artifactId>apiguardian-api</artifactId>
+        <version>${apiguardian.version}</version>
+      </dependency>
+
+      <!-- Token bucket -->
+      <dependency>
+        <groupId>org.isomorphism</groupId>
+        <artifactId>token-bucket</artifactId>
+        <version>${token-bucket.version}</version>
+      </dependency>
+
+      <!-- JPerf -->
+      <dependency>
+        <groupId>net.jperf</groupId>
+        <artifactId>jperf</artifactId>
+        <version>${jperf.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>commons-jexl</groupId>
+        <artifactId>commons-jexl</artifactId>
+        <version>${commons-jexl.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+
+      <!-- Swagger -->
+      <dependency>
+        <groupId>io.springfox</groupId>
+        <artifactId>springfox-boot-starter</artifactId>
+        <version>${springfox.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.swagger</groupId>
+        <artifactId>swagger-annotations</artifactId>
+        <version>${swagger.version}</version>
+      </dependency>
+
+      <!-- javax.activation is disabled by default in the JDK and will be removed in a future version -->
+      <dependency>
+        <groupId>com.sun.activation</groupId>
+        <artifactId>javax.activation</artifactId>
+        <version>${javax.activation.version}</version>
+      </dependency>
+
+      <!-- Apache PDFBox -->
+      <dependency>
+        <groupId>org.apache.pdfbox</groupId>
+        <artifactId>pdfbox</artifactId>
+        <version>${pdfbox.version}</version>
+      </dependency>
+
+      <!-- Apache FOP -->
+      <dependency>
+        <groupId>org.apache.ant</groupId>
+        <artifactId>ant</artifactId>
+        <version>${ant.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.xmlgraphics</groupId>
+        <artifactId>fop</artifactId>
+        <version>${fop.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>org.apache.ant</groupId>
+            <artifactId>ant</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>xalan</groupId>
+            <artifactId>xalan</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.xmlgraphics</groupId>
+        <artifactId>xmlgraphics-commons</artifactId>
+        <version>${xmlgraphics-commons.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+
+      <!-- Apache Font Box (used by FOP and PDFbox) -->
+      <dependency>
+        <groupId>org.apache.pdfbox</groupId>
+        <artifactId>fontbox</artifactId>
+        <version>${fontbox.version}</version>
+      </dependency>
+
+      <!-- Apache POI -->
+      <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi</artifactId>
+        <version>${poi.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi-ooxml</artifactId>
+        <version>${poi.version}</version>
+        <!-- todo Remove batik exclusion within next version -->
+        <exclusions>
+          <exclusion>
+            <groupId>org.apache.xmlgraphics</groupId>
+            <artifactId>batik-all</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+
+      <!-- Apache Commons -->
+      <dependency>
+        <groupId>commons-io</groupId>
+        <artifactId>commons-io</artifactId>
+        <version>${commons-io.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>commons-collections</groupId>
+        <artifactId>commons-collections</artifactId>
+        <version>${commons-collections.version}</version>
+      </dependency>
+
+      <!-- Guava -->
+      <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>${guava.version}</version>
+      </dependency>
+
+      <!-- Jasypt -->
+      <dependency>
+        <groupId>com.github.ulisesbocchio</groupId>
+        <artifactId>jasypt-spring-boot-starter</artifactId>
+        <version>${jasypt-spring-boot.version}</version>
+      </dependency>
+
+      <!-- DBUnit -->
+      <dependency>
+        <groupId>org.dbunit</groupId>
+        <artifactId>dbunit</artifactId>
+        <version>${dbunit.version}</version>
+        <exclusions>
+          <!-- exclude for being banned-->
+          <exclusion>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-maven-plugin</artifactId>
+          <version>${spring-boot.version}</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+</project>

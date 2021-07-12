@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suppressions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd"
+              xsi:schemaLocation="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
+
+  <!-- Actual issues -->
+
+  <suppress>
+    <notes><![CDATA[CVE-2018-1258 is a vulnerability in Spring Framework 5.0.5 when used in combination with any other
+      version of Spring Security. We are suppressing this since we have updated to a higher version of
+      Spring Framework.]]></notes>
+    <cpe>cpe:/a:pivotal_software:spring_security:*</cpe>
+    <cpe>org.springframework.security:spring-security-core:*</cpe>
+    <cve>CVE-2018-1258</cve>
+  </suppress>
+
+  <suppress>
+    <notes><![CDATA[CVE-2020-7791 affects org.apache.xmlgraphics:batik-i18n:1.14.; reevaluate this suppression once an
+      upgrade exists.]]></notes>
+    <cpe>cpe:2.3:a:i18n_project:i18n:*</cpe>
+    <cve>CVE-2020-7791</cve>
+  </suppress>
+
+  <suppress>
+    <notes><![CDATA[CVE-2020-10693 affects org.hibernate.validator:hibernate-validator:6.2.0; reevaluate this
+      suppression once an upgrade gets pulled in via spring boot.]]></notes>
+    <cpe>cpe:2.3:a:redhat:hibernate_validator:*</cpe>
+    <cve>CVE-2020-10693</cve>
+  </suppress>
+
+  <!-- Wrong matches -->
+
+  <suppress>
+    <notes><![CDATA[Suppress wrong identification as Spring Boot Starter Netty as Netty itself.]]></notes>
+    <packageUrl regex="true">^pkg:maven/org\.springframework\.boot/spring\-boot\-starter\-reactor\-netty@.*$
+    </packageUrl>
+    <cpe>cpe:/a:netty:netty</cpe>
+  </suppress>
+
+  <suppress>
+    <notes><![CDATA[Suppress wrong identification as Spring Boot Starter Netty as Netty itself.]]></notes>
+    <packageUrl regex="true">^pkg:maven/io\.projectreactor\.netty/reactor\-netty@.*$</packageUrl>
+    <cpe>cpe:/a:netty:netty</cpe>
+  </suppress>
+
+  <suppress>
+    <notes><![CDATA[Suppress the wrongful identification of Spring Security RSA as Spring Security.]]></notes>
+    <gav regex="true">^org\.springframework\.security:spring-security-rsa:.*$</gav>
+    <cpe>cpe:/a:vmware:springsource_spring_security</cpe>
+    <cpe>cpe:/a:pivotal_software:spring_security</cpe>
+    <cpe>cpe:/a:pivotal_software:spring_security_oauth</cpe>
+    <cpe>cpe:/a:pivotal:spring_security_oauth</cpe>
+  </suppress>
+
+  <suppress>
+    <notes><![CDATA[Suppress the wrongful identification of spring-boot-starter-data-ldap as spring-ldap.]]></notes>
+    <gav regex="true">^org\.springframework\.boot:spring-boot-starter-data-ldap:.*$</gav>
+    <cpe>cpe:/a:pivotal_software:spring-ldap</cpe>
+  </suppress>
+
+  <suppress>
+    <notes><![CDATA[Suppress the wrongful identification of spring-data-ldap as spring-ldap.]]></notes>
+    <gav regex="true">^org\.springframework\.data:spring-data-ldap:.*$</gav>
+    <cpe>cpe:/a:pivotal_software:spring-ldap</cpe>
+  </suppress>
+
+</suppressions>

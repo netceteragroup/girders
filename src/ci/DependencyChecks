@@ -1,0 +1,59 @@
+pipeline {
+
+  agent any
+
+  triggers {
+    cron('H 23 * * *')
+  }
+
+  options {
+    skipStagesAfterUnstable()
+    disableConcurrentBuilds()
+    buildDiscarder(logRotator(numToKeepStr: '5', artifactNumToKeepStr: '0'))
+
+    // Set a timeout for the build. This prevents broken builds from blocking resources on Jenkins forever.
+    timeout(time: 30, unit: 'MINUTES')
+  }
+
+  // Configuration of the specific versions of build tools that you need.
+  tools {
+    maven '3.6.3'
+    jdk '11.0.1'
+  }
+
+  stages {
+    stage('Compile') {
+      steps {
+        // Download dependencies and compile the code
+        sh "mvn --batch-mode compile"
+      }
+    }
+    stage('Quality Checks') {
+      parallel {
+        stage('Maven Dependency Vulnerability Checks') {
+          steps {
+            sh "mvn --batch-mode org.commonjava.maven.plugins:directory-maven-plugin:directory-of@directories " +
+            "-Dowasp-cvss-limit=7 dependency-check:check"
+          }
+        }
+      }
+    }
+  }
+
+  post {
+
+    always {
+      script {
+        currentBuild.result = currentBuild.result ?: 'SUCCESS'
+      }
+    }
+    changed {
+      step([$class                  : 'Mailer',
+            notifyEveryUnstableBuild: true,
+            recipients              : 'girders@netcetera.com',
+            from                    : 'ci@netcetera.com',
+            replyTo                 : 'girders@netcetera.com',
+            sendToIndividuals       : true])
+    }
+  }
+}

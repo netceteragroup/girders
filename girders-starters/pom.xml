@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.netcetera.nca-266-7</groupId>
+    <artifactId>girders-parent</artifactId>
+    <version>4.9.1-SNAPSHOT</version>
+    <relativePath>../girders-parent</relativePath>
+  </parent>
+
+  <artifactId>girders-starters</artifactId>
+  <packaging>pom</packaging>
+  <name>Girders - Starters</name>
+  <description>Girders Starters</description>
+
+  <modules>
+    <module>girders-starter-csp</module>
+    <module>girders-starter-csrf</module>
+    <module>girders-starter-mail</module>
+    <module>girders-starter-logging</module>
+    <module>girders-starter-ratelimit</module>
+    <module>girders-starter-resttemplatelogging</module>
+    <module>girders-starter-i18n</module>
+    <module>girders-starter-web</module>
+    <module>girders-starter-perfmon</module>
+    <module>girders-starter-clientlogging</module>
+    <module>girders-starter-swagger</module>
+    <module>girders-starter-cache</module>
+    <module>girders-starter-validation</module>
+    <module>girders-starter-test</module>
+    <module>girders-starter-ncautil</module>
+    <module>girders-starter-pdfbox</module>
+    <module>girders-starter-fop</module>
+    <module>girders-starter-circuitbreaker</module>
+    <module>girders-starter-poi</module>
+    <module>girders-starter-crypto</module>
+    <module>girders-starter-dbunit</module>
+    <module>girders-starter-webflow</module>
+    <module>girders-starter-ldap</module>
+  </modules>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.netcetera.nca-266-7</groupId>
+      <artifactId>girders-autoconfigure</artifactId>
+    </dependency>
+  </dependencies>
+
+</project>

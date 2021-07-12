@@ -1,0 +1,14 @@
+{
+  "correlation": "id-123",
+  "type": "response",
+  "status": 200,
+  "headers": {
+    "Content-Type": [
+      "application/json"
+    ],
+    "X-Test-Header": [
+      "test-value"
+    ]
+  },
+  "body": "{ \"id\" : \"42\", \"name\" : \"Holiday Inn\"}"
+}

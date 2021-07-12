@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+  <head th:insert="~{head :: head}" />
+  <body>
+    <div th:replace="~{header :: header}" />
+    <div class="container">
+
+      <div class="jumbotron">
+        <h1 class="display-4" th:text="#{feature.restTemplateLogging.header}" />
+        <p class="lead" th:text="#{feature.restTemplateLogging.leadText}" />
+      </div>
+
+      <p th:utext="#{feature.restTemplateLogging.descriptionText(@{/actuator/loggers/ClientHttpRequest.en.wikipedia.org},@{/actuator/logfile})}" />
+
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <th th:text="#{feature.restTemplateLogging.wikipediaArticleTable.header.title}" />
+            <th th:text="#{feature.restTemplateLogging.wikipediaArticleTable.header.url}" />
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="article : ${articles}">
+            <td th:text="${article.title}" />
+            <td><a
+                th:href="'https://en.wikipedia.org/?curid=' + ${article.id}"
+                th:text="'https://en.wikipedia.org/?curid=' + ${article.id}"
+            /></td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+    <div th:insert="~{footer :: footer}" />
+    <div th:insert="~{foot :: foot}" />
+
+  </body>
+</html>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.netcetera.nca-266-7</groupId>
+    <artifactId>girders-parent</artifactId>
+    <version>4.9.1-SNAPSHOT</version>
+    <relativePath>../girders-parent</relativePath>
+  </parent>
+
+  <groupId>com.netcetera.nca-266-7.demos</groupId>
+  <artifactId>girders-demos</artifactId>
+  <packaging>pom</packaging>
+  <name>Girders - Demos</name>
+  <description>Girders Demos</description>
+
+  <modules>
+    <module>girders-demo-adminserver</module>
+    <module>girders-demo-showcase</module>
+    <module>girders-demo-test</module>
+  </modules>
+
+  <properties>
+    <nca.project.id>nca-266-7</nca.project.id>
+    <jdk.version>11</jdk.version>
+
+    <!-- version properties -->
+    <bootstrap.version>4.6.0-1</bootstrap.version>
+    <girders.version>4.9.1-SNAPSHOT</girders.version>
+    <jquery.version>3.6.0</jquery.version>
+    <jquery-cookie.version>1.4.1-1</jquery-cookie.version>
+    <webjars-locator.version>0.41</webjars-locator.version>
+
+    <git-commit-id-plugin.version>4.0.5</git-commit-id-plugin.version>
+    <directory-maven-plugin.version>0.3.1</directory-maven-plugin.version>
+
+    <owasp-cvss-limit>11</owasp-cvss-limit>
+    <site.baseurl>dav:http://builddoc.netcetera.com/dav/projects/${nca.project.id}/${project.version}/demo/</site.baseurl>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.netcetera.nca-266-7</groupId>
+        <artifactId>girders-platform-bom</artifactId>
+        <version>${girders.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.webjars</groupId>
+        <artifactId>webjars-locator</artifactId>
+        <version>${webjars-locator.version}</version>
+      </dependency>
+      <!-- TODO gbachmei 2020-08-17: temporarily managing version of io.github.classgraph:classgraph manually because of
+            divergence of transitive dependencies in girders-demo-showcase; remove explicit management once dependencies
+            converge again -->
+      <dependency>
+        <groupId>io.github.classgraph</groupId>
+        <artifactId>classgraph</artifactId>
+        <version>${classgraph.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.webjars</groupId>
+        <artifactId>jquery</artifactId>
+        <version>${jquery.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.webjars</groupId>
+        <artifactId>jquery-cookie</artifactId>
+        <version>${jquery-cookie.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.webjars</groupId>
+        <artifactId>bootstrap</artifactId>
+        <version>${bootstrap.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>pl.project13.maven</groupId>
+          <artifactId>git-commit-id-plugin</artifactId>
+          <version>${git-commit-id-plugin.version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.commonjava.maven.plugins</groupId>
+          <artifactId>directory-maven-plugin</artifactId>
+          <version>${directory-maven-plugin.version}</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+</project>

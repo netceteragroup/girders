@@ -1,0 +1,75 @@
+/* Typography */
+body {
+  line-height: 1.8;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+a {
+  color: #4e72a9;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 200;
+  line-height: inherit;
+  padding: 0;
+  margin: 1em 0 .5em;
+}
+
+h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child {
+  margin-top: 0;
+}
+
+/* Geometry */
+.section {
+  margin-bottom: 3em;
+}
+
+.section p {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Limit the size of the Netcetera logo. */
+#bannerLeft img, #bannerRight img {
+  max-height: 2em;
+}
+
+.brand img {
+  max-height: 1em;
+}
+
+#poweredBy img {
+  margin: 1em;
+  max-width: 60%;
+}
+
+/*noinspection CssUnknownTarget*/
+a.externalLink[href^=https] {
+  background: url('../images/internet-web-browser.png') right center no-repeat;
+  padding-right: 18px;
+}
+
+/*noinspection CssUnknownTarget*/
+a.externalLink[href^=http] {
+  background: url('../images/internet-web-browser.png') right center no-repeat;
+  padding-right: 18px;
+}
+
+tt {
+  padding: 0.2em 0.4em;
+  margin: 0;
+  font-weight: bold;
+  background-color: #f5f5f5;
+  border-radius: 3px;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  white-space: nowrap;
+}
+
+code, pre {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.source .prettyprint {
+  padding: .5em 1em;
+}

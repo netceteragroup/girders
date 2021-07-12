@@ -1,0 +1,35 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Dependencies Update Check" type="MavenRunConfiguration" factoryName="Maven" singleton="true">
+    <MavenSettings>
+      <option name="myGeneralSettings" />
+      <option name="myRunnerSettings" />
+      <option name="myRunnerParameters">
+        <MavenRunnerParameters>
+          <option name="profiles">
+            <set />
+          </option>
+          <option name="goals">
+            <list>
+              <option value="org.commonjava.maven.plugins:directory-maven-plugin:directory-of@directories" />
+              <option value="versions:display-property-updates" />
+              <option value="versions:display-parent-updates" />
+            </list>
+          </option>
+          <option name="profilesMap">
+            <map />
+          </option>
+          <option name="resolveToWorkspace" value="true" />
+          <option name="workingDirPath" value="$PROJECT_DIR$" />
+        </MavenRunnerParameters>
+      </option>
+    </MavenSettings>
+    <RunnerSettings RunnerId="JRebel Debug">
+      <option name="DEBUG_PORT" value="" />
+      <option name="TRANSPORT" value="0" />
+      <option name="LOCAL" value="true" />
+    </RunnerSettings>
+    <RunnerSettings RunnerId="Run" />
+    <ConfigurationWrapper RunnerId="Run" />
+    <method />
+  </configuration>
+</component>

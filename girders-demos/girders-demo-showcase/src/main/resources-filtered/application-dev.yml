@@ -1,0 +1,8 @@
+# Spring Boot Admin Client
+spring:
+  boot:
+    admin:
+      client:
+        url: http://localhost:8081/demo-adminserver
+        instance:
+          service-base-url: http://localhost:8080

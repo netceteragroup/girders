@@ -1,0 +1,148 @@
+pipeline {
+
+  agent any
+
+  triggers {
+    cron('H 0 * * 5')
+  }
+
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '10'))
+    skipStagesAfterUnstable()
+    timeout(time: 60, unit: 'MINUTES')
+    disableConcurrentBuilds()
+  }
+
+  tools {
+    maven '3.6.3'
+    jdk '1.8.0_222'
+  }
+
+  stages {
+
+    stage('Preparation') {
+      steps {
+        step([$class                       : 'StashNotifier',
+              commitSha1                   : '',
+              credentialsId                : '11d1c8ab-bef2-4ed4-b79d-eb8d3db3d9f2',
+              disableInprogressNotification: false,
+              ignoreUnverifiedSSLPeer      : false,
+              includeBuildNumberInKey      : false,
+              prependParentProjectKey      : false,
+              projectKey                   : '',
+              stashServerBaseUrl           : 'https://extranet.netcetera.biz/bitbucket/'])
+        sh "mvn --batch-mode clean"
+      }
+    }
+
+    stage('Build') {
+      steps {
+        script {
+          def buildGoal = "${BRANCH_NAME}" == 'master' ? 'deploy' : 'install';
+          sh "mvn --batch-mode -Ppedantic ${buildGoal}"
+        }
+      }
+    }
+
+    stage('Integration Test (Java 8)') {
+      steps {
+        sh "mvn --batch-mode -f girders-demos/girders-demo-test/pom.xml install"
+      }
+    }
+
+    stage('Integration Test (Java 11)') {
+      tools {
+        jdk '11.0.1'
+      }
+      steps {
+        sh "mvn --batch-mode -f girders-demos/girders-demo-test/pom.xml install"
+      }
+    }
+
+    stage('Integration Test (Java 14)') {
+          tools {
+            jdk '14'
+          }
+          steps {
+            sh "mvn --batch-mode -f girders-demos/girders-demo-test/pom.xml install"
+          }
+        }
+
+    stage ('Deploy Test Environment & Publish Documentation') {
+      parallel {
+        stage('Deploy Test Environment') {
+          when {
+            branch "master"
+          }
+          steps {
+            step([$class: "RundeckNotifier",
+                  includeRundeckLogs: true,
+                  jobId: "nca-266-7-girdersboot-demos-deployment",
+                  nodeFilters: "",
+                  options: "",
+                  rundeckInstance: "Default",
+                  shouldFailTheBuild: true,
+                  shouldWaitForRundeckJob: true,
+                  tags: "",
+                  tailLog: true])
+          }
+        }
+        stage ('Publish Documentation') {
+          steps {
+            script {
+              def buildGoal = "${BRANCH_NAME}" == 'master' ? 'site-deploy' : 'site';
+              sh "mvn --batch-mode ${buildGoal}"
+            }
+          }
+        }
+      }
+    }
+    // we don't run this step in parallel in order for the deployment & starting up of the applications
+    // to complete before running the integration tests
+    stage('Metrics') {
+      steps {
+        sh "mvn --batch-mode " +
+          "-Ddependency-logger-infostore-maven-plugin=1.0.1 " +
+          "-DinfostoreUrl=https://buildcrew.extranet.netcetera.biz/webis-ws " +
+          "-Dmavengraph.create=true -Dmaven.test.failure.ignore=true " +
+          "clean " +
+          "org.commonjava.maven.plugins:directory-maven-plugin:directory-of@directories " +
+          "-Dowasp-cvss-limit=11 dependency-check:check " +
+          "org.jacoco:jacoco-maven-plugin:prepare-agent " +
+          "install " +
+          "sonar:sonar " +
+          "com.netcetera.nca-301-5:dependency-logger-infostore-maven-plugin:aggregate"
+      }
+    }
+  }
+
+  post {
+
+    always {
+      script {
+        currentBuild.result = currentBuild.result ?: 'SUCCESS'
+      }
+      step([$class                       : 'StashNotifier',
+            commitSha1                   : '',
+            credentialsId                : '11d1c8ab-bef2-4ed4-b79d-eb8d3db3d9f2',
+            disableInprogressNotification: false,
+            ignoreUnverifiedSSLPeer      : false,
+            includeBuildNumberInKey      : false,
+            prependParentProjectKey      : false,
+            projectKey                   : '',
+            stashServerBaseUrl           : 'https://extranet.netcetera.biz/bitbucket/'])
+      junit '**/target/surefire-reports/*.xml'
+    }
+
+    changed {
+      step([$class                  : 'Mailer',
+            notifyEveryUnstableBuild: true,
+            recipients              : emailextrecipients([[$class: 'CulpritsRecipientProvider']]),
+            from                    : 'ci@netcetera.com',
+            replyTo                 : '',
+            sendToIndividuals       : true])
+    }
+
+  }
+
+}

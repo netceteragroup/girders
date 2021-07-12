@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+  <head th:insert="~{head :: head}" />
+  <body>
+    <div th:replace="~{header :: header}" />
+    <div class="container">
+      <div class="jumbotron">
+        <h1 class="display-4" th:text="#{feature.csrf.header}" />
+        <p class="lead" th:text="#{feature.csrf.leadText}" />
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <h3 th:text="#{feature.csrf.javascriptForm.header}" />
+          <p th:utext="#{feature.csrf.javascriptForm.description}" />
+          <form id="csrf-javascript-form" th:action="@{/csrf/target}" method="post" accept-charset="UTF-8">
+            <input type="submit" class="button" value="Submit" />
+          </form>
+        </div>
+        <div class="col-md-6">
+          <h3 th:text="#{feature.csrf.htmlForm.header}" />
+          <p th:utext="#{feature.csrf.htmlForm.description}" />
+          <form action="#" method="post" accept-charset="UTF-8">
+            <input type="submit" class="button" value="Submit" />
+          </form>
+        </div>
+      </div>
+    </div>
+    <div th:insert="~{footer :: footer}" />
+    <div th:insert="~{foot :: foot}" />
+
+  </body>
+</html>

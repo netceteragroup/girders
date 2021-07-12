@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration debug="false" scan="false">
+
+  <property name="logging.directory" value="${catalina.base:-.}/logs"/>
+
+  <property name="logPattern"
+            value="%d{ISO8601} | ${PID} | %thread | %mdc{client.ip} | %mdc{user.id} | %mdc{session.id} | %mdc{transaction.id} | %level | %marker | %logger | %message %exception%n"/>
+
+  <appender name="fileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>${logging.directory}/demo-showcase.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>${logging.directory}/demo-showcase-%d{yyyy-MM-dd}.log.gz</fileNamePattern>
+      <maxHistory>10</maxHistory>
+    </rollingPolicy>
+
+    <encoder>
+      <pattern>${logPattern}</pattern>
+      <charset>UTF-8</charset>
+    </encoder>
+  </appender>
+
+  <logger name="net.jperf.TimingLogger" level="WARN"/>
+
+  <root level="INFO"/>
+
+  <root>
+    <appender-ref ref="fileAppender"/>
+  </root>
+
+</configuration>

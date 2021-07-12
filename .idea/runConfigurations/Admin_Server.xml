@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Admin Server" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.netcetera.girders.demo.adminserver.GirdersDemoAdminServerApplication" />
+    <option name="VM_PARAMETERS" value="-Dserver.port=8081" />
+    <option name="ALTERNATIVE_JRE_PATH" />
+    <module name="girders-demo-adminserver" />
+    <envs />
+    <method />
+  </configuration>
+</component>

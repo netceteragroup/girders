@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+  <head th:insert="~{head :: head}" />
+  <body>
+    <div th:replace="~{header :: header}" />
+    <div class="container">
+      <div class="jumbotron">
+        <h1 class="display-4" th:text="#{feature.csp.header}" />
+        <p class="lead" th:text="#{feature.csp.leadText}" />
+      </div>
+
+      <p th:utext="#{feature.csp.generalDescription(${@environment.getProperty('girders.csp.header-value')})}" />
+      <p th:utext="#{feature.csp.technicalDescription}" />
+
+      <button onclick="alert('#{feature.csp.alertText}')" th:text="#{feature.csp.buttonText}" />
+    </div>
+    <div th:insert="~{footer :: footer}" />
+    <div th:insert="~{foot :: foot}" />
+
+  </body>
+</html>

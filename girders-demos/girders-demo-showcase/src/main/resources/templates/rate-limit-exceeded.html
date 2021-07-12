@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+  <head th:insert="~{head :: head}" />
+  <body>
+    <div th:replace="~{header :: header}" />
+    <div class="container">
+
+      <div class="jumbotron">
+        <h1 class="display-4" th:text="#{feature.rateLimit.exceeded.header}" />
+        <p class="lead" th:text="#{feature.rateLimit.exceeded.leadText}" />
+      </div>
+
+      <p th:text="${message}" />
+
+    </div>
+    <div th:insert="~{footer :: footer}" />
+    <div th:insert="~{foot :: foot}" />
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top" th:fragment="header">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" th:href="@{/}" th:text="#{navigation.netcetera}" />
+          <button
+              class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item"><a th:href="@{/}" th:text="#{navigation.home}" class="nav-link" /></li>
+            <li class="nav-item dropdown">
+              <a
+                  href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                  aria-expanded="false"
+              ><span th:text="#{navigation.features}" /><span class="caret" /></a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" th:href="@{/circuitbreaker}" th:text="#{feature.circuitbreaker.header}" />
+                <a class="dropdown-item" th:href="@{/crypto}" th:text="#{feature.crypto.header}" />
+                <a class="dropdown-item" th:href="@{/csp}" th:text="#{feature.csp.header}" />
+                <a class="dropdown-item" th:href="@{/csrf}" th:text="#{feature.csrf.header}" />
+                <a class="dropdown-item" th:href="@{/jdbc}" th:text="#{feature.jdbc.header}" />
+                <a class="dropdown-item" th:href="@{/mail}" th:text="#{feature.mail.header}" />
+                <a class="dropdown-item" th:href="@{/ldap}" th:text="#{feature.ldap.header}" />
+                <a class="dropdown-item" th:href="@{/pdf}" th:text="#{feature.pdf.header}" />
+                <a class="dropdown-item" th:href="@{/poi}" th:text="#{feature.poi.header}" />
+                <a class="dropdown-item" th:href="@{/rate-limit}" th:text="#{feature.rateLimit.header}" />
+                <a class="dropdown-item" th:href="@{/swagger-ui/index.html}" th:text="#{feature.apidoc.header}" />
+                <a
+                    class="dropdown-item" th:href="@{/rest-template-logging}"
+                    th:text="#{feature.restTemplateLogging.header}"
+                />
+              </div>
+            </li>
+          </ul>
+          <ul class="navbar-nav my-2 my-lg-0">
+            <li class="nav-item dropdown">
+              <a
+                  href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                  aria-expanded="false"
+              ><span th:text="#{feature.locale.current}" /><span class="caret" /></a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="?locale=en" th:text="#{feature.locale.en}" />
+                <a class="dropdown-item" href="?locale=de" th:text="#{feature.locale.de}" />
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </body>
+</html>

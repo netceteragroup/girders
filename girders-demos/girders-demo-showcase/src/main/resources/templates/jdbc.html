@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+  <head th:insert="~{head :: head}" />
+  <body>
+    <div th:replace="~{header :: header}" />
+    <div class="container">
+      <div class="jumbotron">
+        <h1 class="display-4" th:text="#{feature.jdbc.header}" />
+        <p class="lead" th:text="#{feature.jdbc.leadText}" />
+      </div>
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <th th:text="#{feature.jdbc.id.label}" />
+            <th th:text="#{feature.jdbc.title.label}" />
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="project: ${projects}">
+            <td th:text="${project.id}" />
+            <td th:text="${project.title}" />
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div th:insert="~{footer :: footer}" />
+    <div th:insert="~{foot :: foot}" />
+  </body>
+</html>
