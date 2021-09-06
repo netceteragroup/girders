@@ -30,6 +30,7 @@ jobs:
         mvn --batch-mode --errors --debug -Ppedantic install
       shell: bash
     - name: upload surefire report
+      if: ${{ failure() }}
       uses: actions/upload-artifact@v1
       with:
         name: surefire-reports
