@@ -31,7 +31,7 @@ jobs:
       shell: bash
     - name: upload surefire report
       if: ${{ failure() }}
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v2
       with:
         name: surefire-reports
-        path: girders-demos/girders-demo-test/target/surefire-reports/**
+        path: girders-demos/girders-demo-test/target/surefire-reports/
