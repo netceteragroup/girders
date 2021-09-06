@@ -39,6 +39,7 @@ jobs:
   integration_test_Java_11:
     name: integration test Java 11
     runs-on: ubuntu-latest
+    needs: build_girders
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 11
@@ -54,6 +55,7 @@ jobs:
   integration_test_Java_16:
     name: integration test Java 16
     runs-on: ubuntu-latest
+    needs: build_girders
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 16
