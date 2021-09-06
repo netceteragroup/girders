@@ -27,5 +27,5 @@ jobs:
     - name: build girders
       run: |
         mvn --batch-mode clean
-        mvn --batch-mode -Ppedantic install
+        mvn --batch-mode --errors --debug -Ppedantic install
       shell: bash
