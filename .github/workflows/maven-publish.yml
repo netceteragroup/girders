@@ -34,4 +34,4 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: surefire-reports
-        path: girders/girders-demos/girders-demo-test/target/surefire-reports/**
+        path: girders-demos/girders-demo-test/target/surefire-reports/**
