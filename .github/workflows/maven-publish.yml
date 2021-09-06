@@ -24,3 +24,8 @@ jobs:
         distribution: 'zulu'
         server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
         settings-path: ${{ github.workspace }} # location for the settings.xml file
+    - name: build girders
+      run: |
+        mvn --batch-mode clean
+        mvn --batch-mode -Ppedantic install
+      shell: bash
