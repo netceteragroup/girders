@@ -73,7 +73,7 @@ class ClientLogEntryTest {
     // given
     ClientLogEntry logEntry = new ClientLogEntry();
     logEntry.setMessage("message");
-    ZonedDateTime clientTime = ZonedDateTime.of(2012, 1, 1, 0, 0, 0, 0, ZoneId.systemDefault());
+    ZonedDateTime clientTime = ZonedDateTime.of(2012, 1, 1, 0, 0, 0, 0, ZoneId.of("Europe/Zurich"));
     logEntry.setClientTime(clientTime);
 
     // when
@@ -81,7 +81,7 @@ class ClientLogEntryTest {
 
     // then
     assertThat(logMessage, is("2012-01-01T00:00:00.000+01:00 | message"));
-    assertThat(logEntry.getClientTime(), is(ZonedDateTime.of(2012, 1, 1, 0, 0, 0, 0, ZoneId.systemDefault())));
+    assertThat(logEntry.getClientTime(), is(ZonedDateTime.of(2012, 1, 1, 0, 0, 0, 0, ZoneId.of("Europe/Zurich"))));
   }
 
   /**
