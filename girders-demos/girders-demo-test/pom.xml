@@ -192,6 +192,7 @@
           <configuration>
             <parallel>classesAndMethods</parallel>
             <useUnlimitedThreads>true</useUnlimitedThreads>
+            <trimStackTrace>false</trimStackTrace>
           </configuration>
         </plugin>
       </plugins>
