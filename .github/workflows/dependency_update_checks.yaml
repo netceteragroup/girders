@@ -25,6 +25,5 @@ jobs:
     - name: run checks
       run: |
         mvn -DgenerateBackupPoms=false -DallowSnapshots=false org.commonjava.maven.plugins:directory-maven-plugin:directory-of@directories versions:update-parent versions:update-properties
-        def diff = sh(returnStdout: true, script: "git diff --minimal -U0")
-        echo diff
+        git diff --minimal -U0
       shell: bash
