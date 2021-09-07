@@ -8,7 +8,7 @@ on:
 
 jobs:
   run_owasp_checks:
-    name: run owasp checks - ${GITHUB_REF##*/}
+    name: run owasp checks
     runs-on: ubuntu-latest
     permissions:
       contents: read
