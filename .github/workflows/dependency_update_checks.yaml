@@ -28,7 +28,7 @@ jobs:
         diff=$(git diff --minimal -U0)
         git checkout -b feature/version-updates-thisorthat
         echo $diff
-        $(find . -name 'pom.xml' -exec git add {} \;)
+        find . -name 'pom.xml' -exec git add {} \;
         echo "well find worked"
-        git commit -m \"[no-issue] Dependencies updated\n\n$diff\"
+        git commit -m \"[no-issue] Dependencies updated\\n\\n\"
       shell: bash
