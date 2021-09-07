@@ -4,6 +4,8 @@
 name: Maven Package
 
 on:
+  schedule:
+    - cron: '52 10 * * 2'
   release:
     types: [created]
 
