@@ -25,6 +25,7 @@ jobs:
       with:
         java-version: '11.0.11'
         distribution: 'zulu'
+        cache: 'maven'
         server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
         settings-path: ${{ github.workspace }} # location for the settings.xml file
     - name: build girders
