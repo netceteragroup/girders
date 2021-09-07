@@ -1,0 +1,30 @@
+name: Dependency updates
+on:
+  schedule:
+    - cron: '0 1,2 * * 5' # schedule multiple times because github does not guarantee a scheduled job to actually run: https://github.community/t/no-assurance-on-scheduled-jobs/133753/2
+  workflow_dispatch:
+
+jobs:
+  check_dependency_updates:
+    name: check dependency updates
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up JDK 11
+      uses: actions/setup-java@v2
+      with:
+        java-version: '11.0.11'
+        distribution: 'zulu'
+        cache: 'maven'
+        server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
+        settings-path: ${{ github.workspace }} # location for the settings.xml file
+    - name: run checks
+      run: |
+        mvn -DgenerateBackupPoms=false -DallowSnapshots=false org.commonjava.maven.plugins:directory-maven-plugin:directory-of@directories versions:update-parent versions:update-properties
+        def diff = sh(returnStdout: true, script: "git diff --minimal -U0")
+        echo diff
+      shell: bash
