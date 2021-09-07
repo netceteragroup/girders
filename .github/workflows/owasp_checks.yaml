@@ -1,5 +1,4 @@
-name: OWASP checks - ${GITHUB_REF##*/}
-
+name: OWASP checks
 on:
   schedule:
     - cron: '0 21,22,23 * * *' # schedule multiple times because github does not guarantee a scheduled job to actually run: https://github.community/t/no-assurance-on-scheduled-jobs/133753/2
@@ -9,7 +8,7 @@ on:
 
 jobs:
   run_owasp_checks:
-    name: run owasp checks
+    name: run owasp checks - ${GITHUB_REF##*/}
     runs-on: ubuntu-latest
     permissions:
       contents: read
