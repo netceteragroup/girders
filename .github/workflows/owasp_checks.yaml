@@ -2,9 +2,10 @@ name: OWASP checks
 
 on:
   schedule:
-    - cron: '5 * * * *' # schedule multiple times because github does not guarantee a scheduled job to actually run: https://github.community/t/no-assurance-on-scheduled-jobs/133753/2
+    - cron: '0 21,22,23* * * *' # schedule multiple times because github does not guarantee a scheduled job to actually run: https://github.community/t/no-assurance-on-scheduled-jobs/133753/2
   release:
     types: [created]
+  workflow_dispatch:
 
 jobs:
   run_owasp_checks:
