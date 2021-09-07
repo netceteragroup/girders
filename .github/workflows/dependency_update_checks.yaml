@@ -30,5 +30,7 @@ jobs:
         echo $diff
         find . -name 'pom.xml' -exec git add {} \;
         echo "well find worked"
+        git config --global user.email "girders@netcetera.com"
+        git config --global user.name "NCA"
         git commit -m "[no-issue] Dependencies updated"
       shell: bash
