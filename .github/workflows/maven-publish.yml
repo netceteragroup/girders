@@ -1,11 +1,11 @@
 # This workflow will build a package using Maven and then publish it to GitHub packages when a release is created
 # For more information see: https://github.com/actions/setup-java/blob/main/docs/advanced-usage.md#apache-maven-with-a-settings-path
 
-name: Maven Package
+name: Build Girders
 
 on:
   schedule:
-    - cron: '58 8 * * 2'
+    - cron: '0 0,1,2,3 * * 5' # schedule multiple times because github does not guarantee a scheduled job to actually run: https://github.community/t/no-assurance-on-scheduled-jobs/133753/2
   release:
     types: [created]
 
