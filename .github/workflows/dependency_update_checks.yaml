@@ -33,5 +33,5 @@ jobs:
         git config --global user.email "girders@netcetera.com"
         git config --global user.name "NCA"
         git commit -m "[no-issue] Dependencies updated"
-        git push
+        git push --set-upstream origin feature/version-updates-thisorthat
       shell: bash
