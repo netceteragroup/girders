@@ -1,6 +1,5 @@
 # This workflow will build a package using Maven and then publish it to GitHub packages when a release is created
 # For more information see: https://github.com/actions/setup-java/blob/main/docs/advanced-usage.md#apache-maven-with-a-settings-path
-
 name: Build Girders
 
 on:
@@ -17,7 +16,6 @@ jobs:
     permissions:
       contents: read
       packages: write
-
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 11
@@ -39,13 +37,13 @@ jobs:
       with:
         name: surefire-reports
         path: girders-demos/girders-demo-test/target/surefire-reports/
+
   integration_tests_11:
     runs-on: ubuntu-latest
     needs: build_girders
     permissions:
       contents: read
       packages: write
-
     steps:
       - uses: actions/checkout@v2
       - name: Set up JDK 11
