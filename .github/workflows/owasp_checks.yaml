@@ -1,4 +1,4 @@
-name: OWASP checks
+name: OWASP checks - ${GITHUB_REF##*/}
 
 on:
   schedule:
