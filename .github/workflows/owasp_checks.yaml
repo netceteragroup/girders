@@ -25,6 +25,6 @@ jobs:
         settings-path: ${{ github.workspace }} # location for the settings.xml file
     - name: run checks
       run: |
-        mvn --batch-mode package
+        mvn --batch-mode clean install
         mvn --batch-mode org.commonjava.maven.plugins:directory-maven-plugin:directory-of@directories -Dowasp-cvss-limit=7 dependency-check:check
       shell: bash
