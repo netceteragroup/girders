@@ -8,6 +8,7 @@ on:
     - cron: '0 0,1,2,3 * * 5' # schedule multiple times because github does not guarantee a scheduled job to actually run: https://github.community/t/no-assurance-on-scheduled-jobs/133753/2
   release:
     types: [created]
+  workflow_dispatch:
 
 jobs:
   build_girders:
