@@ -22,23 +22,28 @@
           converge again -->
     <classgraph.version>4.8.83</classgraph.version>
     <commons-collections.version>3.2.2</commons-collections.version>
-    <commons-io.version>2.10.0</commons-io.version>
+    <!-- TODO gbachmei 2021-09-01: manually managing version of transitive dependency
+          org.apache.commons:commons-compress because the version currently used by our direct dependencies (1.20) has
+          known security issues; you can remove this version and the dependency declaration where it's used once all
+          our dependencies have migrated to a version of commons-compress that has no security issues -->
+    <commons-compress.version>1.21</commons-compress.version>
+    <commons-io.version>2.11.0</commons-io.version>
     <commons-jexl.version>1.1</commons-jexl.version>
-    <dbunit.version>2.7.0</dbunit.version>
+    <dbunit.version>2.7.2</dbunit.version>
     <fontbox.version>2.0.24</fontbox.version>
     <fop.version>2.6</fop.version>
     <!-- NOTE vmeier 2020-06-12: The "fop" dependency contains "ant" 1.8.2 which has CVE-2020-1945.
        Excluded "ant" from "fop" and defined explicit dependency with "ant" > 1.8.2 .
        Remove when upgrading "fop" to newer version! -->
-    <ant.version>1.10.10</ant.version>
+    <ant.version>1.10.11</ant.version>
     <guava.version>30.1.1-jre</guava.version>
     <jasypt-spring-boot.version>3.0.2</jasypt-spring-boot.version>
     <javax.activation.version>1.2.0</javax.activation.version>
     <jperf.version>1.0.3</jperf.version>
     <pdfbox.version>2.0.24</pdfbox.version>
     <poi.version>5.0.0</poi.version>
-    <spring-boot.version>2.5.2</spring-boot.version>
-    <spring-boot-admin.version>2.4.2</spring-boot-admin.version>
+    <spring-boot.version>2.5.4</spring-boot.version>
+    <spring-boot-admin.version>2.5.1</spring-boot-admin.version>
     <spring-cloud.version>2020.0.3</spring-cloud.version>
     <spring-web-flow.version>2.5.1.RELEASE</spring-web-flow.version>
     <springfox.version>3.0.0</springfox.version>
@@ -446,6 +451,11 @@
         <groupId>commons-collections</groupId>
         <artifactId>commons-collections</artifactId>
         <version>${commons-collections.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-compress</artifactId>
+        <version>${commons-compress.version}</version>
       </dependency>
 
       <!-- Guava -->
