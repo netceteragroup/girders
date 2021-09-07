@@ -25,8 +25,8 @@ jobs:
     - name: run checks
       run: |
         mvn -DgenerateBackupPoms=false -DallowSnapshots=false org.commonjava.maven.plugins:directory-maven-plugin:directory-of@directories versions:update-parent versions:update-properties
-        sh "diff=git diff --minimal -U0"
+        sh "diff=echo git diff --minimal -U0"
         git checkout -b feature/version-updates-thisorthat
         find . -name 'pom.xml' -exec git add {} \\;
-        git commit -m \"[no-issue] Dependencies updated\n\n${{ diff }}\"
+        git commit -m \"[no-issue] Dependencies updated\n\n${{ el }}\"
       shell: bash
