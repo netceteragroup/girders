@@ -27,6 +27,6 @@ jobs:
         find . -name 'pom.xml' -exec git add {} \;
         git config --global user.email girders@netcetera.com
         git config --global user.name NCA
-        git commit -m "[no-issue] Dependencies updated: \\n $diff"
+        git commit -m "[no-issue] Dependencies updated: $diff"
         git push --set-upstream origin feature/version-updates-thisorthat
       shell: bash
