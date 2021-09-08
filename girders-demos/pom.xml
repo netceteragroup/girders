@@ -31,7 +31,7 @@
     <girders.version>4.9.1-SNAPSHOT</girders.version>
     <jquery.version>3.6.0</jquery.version>
     <jquery-cookie.version>1.4.1-1</jquery-cookie.version>
-    <webjars-locator.version>0.41</webjars-locator.version>
+    <webjars-locator.version>0.42</webjars-locator.version>
 
     <git-commit-id-plugin.version>4.9.10</git-commit-id-plugin.version>
     <directory-maven-plugin.version>0.3.1</directory-maven-plugin.version>
