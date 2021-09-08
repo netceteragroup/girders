@@ -1,7 +1,7 @@
 name: Dependency updates
 on:
   schedule:
-    - cron: '0 1,2 * * 5' # schedule multiple times because github does not guarantee a scheduled job to actually run: https://github.community/t/no-assurance-on-scheduled-jobs/133753/2
+    - cron: '0 1 * * 5,6' # schedule multiple times because github does not guarantee a scheduled job to actually run: https://github.community/t/no-assurance-on-scheduled-jobs/133753/2
   workflow_dispatch:
 
 jobs:
