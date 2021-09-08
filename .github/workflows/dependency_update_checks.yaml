@@ -23,7 +23,7 @@ jobs:
       run: |
         mvn -DgenerateBackupPoms=false -DallowSnapshots=false org.commonjava.maven.plugins:directory-maven-plugin:directory-of@directories versions:update-parent versions:update-properties
         diff=$(git diff --minimal -U0)
-        date=$(date '+%Y-%m-%d')
+        date=$(date '+%Y%m%d')
         git checkout -b feature/version-updates-$date
         find . -name 'pom.xml' -exec git add {} \;
         git config --global user.email girders@netcetera.com
