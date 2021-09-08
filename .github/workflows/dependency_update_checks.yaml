@@ -24,11 +24,10 @@ jobs:
         mvn -DgenerateBackupPoms=false -DallowSnapshots=false org.commonjava.maven.plugins:directory-maven-plugin:directory-of@directories versions:update-parent versions:update-properties
         diff=$(git diff --minimal -U0)
         date=$(date '+%Y-%m-%d')
-        echo $date
-        git checkout -b feature/version-updates-thisorthat
+        git checkout -b feature/version-updates-$date
         find . -name 'pom.xml' -exec git add {} \;
         git config --global user.email girders@netcetera.com
         git config --global user.name NCA
-        git commit -m "[no-issue] Dependencies updated: $diff"
-        git push --set-upstream origin feature/version-updates-thisorthat
+        git commit -m "[no-issue] Dependencies updated" -m "$diff"
+        git push --set-upstream origin feature/version-updates-$date
       shell: bash
