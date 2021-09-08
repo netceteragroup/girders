@@ -28,8 +28,8 @@ jobs:
         diff=$(git diff --minimal -U0)
         git checkout -b feature/version-updates-thisorthat
         find . -name 'pom.xml' -exec git add {} \;
-        git config --global user.email "girders@netcetera.com"
-        git config --global user.name "NCA"
-        git commit -m "[no-issue] Dependencies updated: $diff"
-        git push --set-upstream origin feature/version-updates-thisorthat
+        git config --global user.email girders@netcetera.com
+        git config --global user.name NCA
+        git commit -m "[no-issue] Dependencies updated:\n$diff"
+        git push
       shell: bash
