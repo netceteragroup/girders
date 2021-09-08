@@ -99,7 +99,7 @@
     </sonar.dependencyCheck.jsonReportPath>
     <sonar.dependencyCheck.htmlReportPath>${dependency.check.report.dir}/dependency-check-report.html
     </sonar.dependencyCheck.htmlReportPath>
-    <dependency.check.version>6.3.1</dependency.check.version>
+    <dependency.check.version>6.1.5</dependency.check.version>
   </properties>
 
   <build>
