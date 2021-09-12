@@ -21,8 +21,6 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
     <!-- plugin versions -->
-    <!-- override the maven-enforcer-plugin version from nca-parent (1.4.1) because it is not compatible with Java 13 -->
-    <maven-enforcer-plugin.version>3.0.0</maven-enforcer-plugin.version>
     <checkstyle.version>9.0</checkstyle.version>
     <git-commit-id-plugin.version>4.9.10</git-commit-id-plugin.version>
     <owasp-cvss-limit>7.0</owasp-cvss-limit>
