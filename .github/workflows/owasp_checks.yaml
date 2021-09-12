@@ -3,6 +3,9 @@ on:
   schedule:
     - cron: '0 21,22,23 * * *' # schedule multiple times because github does not guarantee a scheduled job to actually run: https://github.community/t/no-assurance-on-scheduled-jobs/133753/2
   workflow_dispatch:
+  workflow_run:
+    workflows: ["Build Girders"]
+    types: [completed]
 
 jobs:
   run_owasp_checks:
