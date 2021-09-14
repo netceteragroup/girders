@@ -101,6 +101,9 @@
     <sonar.dependencyCheck.htmlReportPath>${dependency.check.report.dir}/dependency-check-report.html
     </sonar.dependencyCheck.htmlReportPath>
     <dependency.check.version>6.3.1</dependency.check.version>
+    <!-- Sonar checks -->
+    <sonar.organization>girders-java</sonar.organization>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
   </properties>
 
   <build>
