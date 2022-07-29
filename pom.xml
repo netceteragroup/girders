@@ -5,7 +5,7 @@
 
   <groupId>com.netcetera.nca-266-7</groupId>
   <artifactId>girders</artifactId>
-  <version>4.9.1-SNAPSHOT</version>
+  <version>4.11.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Girders</name>
   <description>Netcetera technology stack and components based on Spring Boot.</description>
@@ -19,15 +19,6 @@
   </mailingLists>
 
   <developers>
-    <developer>
-      <name>Georg Bachmeier</name>
-      <organization>Netcetera</organization>
-      <organizationUrl>https://netcetera.com/</organizationUrl>
-      <roles>
-        <role>Girders Team</role>
-        <role>Developer</role>
-      </roles>
-    </developer>
     <developer>
       <name>Marija Popova</name>
       <organization>Netcetera</organization>
@@ -82,12 +73,13 @@
     <site.baseurl>dav:http://builddoc.netcetera.com/dav/projects/${nca.project.id}/${project.version}/</site.baseurl>
     <coverage.minimum>0.8</coverage.minimum>
 
+    <license.dir>${project.basedir}</license.dir>
+
     <!--plugin versions-->
-    <directory-maven-plugin.version>0.3.1</directory-maven-plugin.version>
+    <directory-maven-plugin.version>1.0</directory-maven-plugin.version>
     <jacoco-maven-plugin.version>0.8.7</jacoco-maven-plugin.version>
     <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
-    <!-- Use Maven Enforcer 3.0.0-M2 because 3.0.0 is not compatible with Java 13 -->
-    <maven-enforcer-plugin.version>3.0.0-M2</maven-enforcer-plugin.version>
+    <maven-enforcer-plugin.version>3.1.0</maven-enforcer-plugin.version>
     <maven-site-plugin.version>3.9.1</maven-site-plugin.version>
     <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
     <maven-surefire-report-plugin.version>2.22.2</maven-surefire-report-plugin.version>

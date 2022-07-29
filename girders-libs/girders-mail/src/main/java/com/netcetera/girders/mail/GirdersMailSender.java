@@ -19,9 +19,11 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.MimeMessage;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 
 /**
@@ -33,6 +35,7 @@ import java.util.concurrent.TimeUnit;
 public class GirdersMailSender extends JavaMailSenderImpl {
 
   private String overrideRecipientAddress;
+  private boolean maskEmailsInLogs;
 
   @Setter
   private MeterRegistry meterRegistry;
@@ -41,9 +44,11 @@ public class GirdersMailSender extends JavaMailSenderImpl {
    * Constructs a GirdersMailSender with a given address to overwrite with.
    *
    * @param overrideRecipientAddress the address to overwrite the recipient address with
+   * @param maskEmailsInLogs flag that indicates if masking in log file is needed
    */
-  public GirdersMailSender(String overrideRecipientAddress) {
+  public GirdersMailSender(String overrideRecipientAddress, boolean maskEmailsInLogs) {
     this.overrideRecipientAddress = overrideRecipientAddress;
+    this.maskEmailsInLogs = maskEmailsInLogs;
   }
 
   /**
@@ -64,6 +69,26 @@ public class GirdersMailSender extends JavaMailSenderImpl {
   @ManagedAttribute
   public void setOverrideRecipientAddress(String overrideRecipientAddress) {
     this.overrideRecipientAddress = overrideRecipientAddress;
+  }
+
+  /**
+   * Set the maskEmailsInLogs flag, used for logging full email addresses / or masking them.
+   *
+   * @param maskEmailsInLogs boolean value indicating the wanted behaviour
+   */
+  @ManagedAttribute
+  public void setMaskEmailsInLogs(boolean maskEmailsInLogs) {
+    this.maskEmailsInLogs = maskEmailsInLogs;
+  }
+
+  /**
+   * Get the flag value if masking of emails in logs should be done.
+   *
+   * @return true if masking is wanted, false otherwise (default value)
+   */
+  @ManagedAttribute
+  public boolean isMaskEmailsInLogs() {
+    return maskEmailsInLogs;
   }
 
   @Override
@@ -113,10 +138,11 @@ public class GirdersMailSender extends JavaMailSenderImpl {
     Joiner joiner = Joiner.on(" / ");
     for (MimeMessage message : mimeMessages) {
       try {
-        mails.add(String.format("From: '%s', To: '%s', CC: '%s', BCC: '%s'", addressesToString(message.getFrom()),
-            addressesToString(message.getRecipients(RecipientType.TO)),
-            addressesToString(message.getRecipients(RecipientType.CC)),
-            addressesToString(message.getRecipients(RecipientType.BCC))));
+        mails.add(String.format("From: '%s', To: '%s', CC: '%s', BCC: '%s'", addressesToString(message.getFrom(),
+            maskEmailsInLogs),
+            addressesToString(message.getRecipients(RecipientType.TO), maskEmailsInLogs),
+            addressesToString(message.getRecipients(RecipientType.CC), maskEmailsInLogs),
+            addressesToString(message.getRecipients(RecipientType.BCC), maskEmailsInLogs)));
       } catch (MessagingException e) {
         logger.error("Error while trying to read MimeMessage.", e);
       }
@@ -124,9 +150,18 @@ public class GirdersMailSender extends JavaMailSenderImpl {
     return joiner.join(mails);
   }
 
-  private static String addressesToString(Address[] recipients) {
+  private static String addressesToString(Address[] recipients, boolean maskEmailsInLogs) {
+    if (recipients == null) {
+      return StringUtils.EMPTY;
+    }
     Joiner commaJoiner = Joiner.on(", ").skipNulls();
-    return (recipients == null) ? StringUtils.EMPTY : commaJoiner.join(recipients);
+    if (maskEmailsInLogs) {
+      List<String> maskedRecipients = Arrays.stream(recipients)
+          .map(address -> maskEmail(address.toString()))
+          .collect(Collectors.toList());
+      return commaJoiner.join(maskedRecipients);
+    }
+    return commaJoiner.join(recipients);
   }
 
   @SuppressWarnings({"NullableProblems", "EmptyMethod"})
@@ -134,5 +169,12 @@ public class GirdersMailSender extends JavaMailSenderImpl {
   protected Transport getTransport(Session session) throws NoSuchProviderException {
     return super.getTransport(session);
   }
+
+  // improvement, fre: this should be moved into a utility class for masking personal information that
+  // other Netcetera projects can benefit of (ACS, 3DSS, NCA-Auth). Check ACS code repo for more info.
+  private static String maskEmail(String email) {
+    return email.replaceAll("(?<=.{2}).(?=.*@)", "*");
+  }
+
 
 }

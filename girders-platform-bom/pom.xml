@@ -6,7 +6,7 @@
   <parent>
     <groupId>com.netcetera.nca-266-7</groupId>
     <artifactId>girders</artifactId>
-    <version>4.9.1-SNAPSHOT</version>
+    <version>4.11.1-SNAPSHOT</version>
   </parent>
 
   <artifactId>girders-platform-bom</artifactId>
@@ -16,11 +16,16 @@
   </description>
 
   <properties>
+    <!-- TODO twimmer 2022-04-04: temporarily managing versions of jboss-logging manually because of
+          divergence of transitive dependencies in girders-starter-validation; remove explicit management once dependencies
+          converge again -->
+    <jboss-logging-processor.version>2.2.1.Final</jboss-logging-processor.version>
+    <jboss-logging-annotations.version>2.2.1.Final</jboss-logging-annotations.version>
     <apiguardian.version>1.1.2</apiguardian.version>
     <!-- TODO gbachmei 2020-08-17: temporarily managing version of io.github.classgraph:classgraph manually because of
           divergence of transitive dependencies in girders-demo-showcase; remove explicit management once dependencies
           converge again -->
-    <classgraph.version>4.8.83</classgraph.version>
+    <classgraph.version>4.8.147</classgraph.version>
     <commons-collections.version>3.2.2</commons-collections.version>
     <!-- TODO gbachmei 2021-09-01: manually managing version of transitive dependency
           org.apache.commons:commons-compress because the version currently used by our direct dependencies (1.20) has
@@ -29,27 +34,27 @@
     <commons-compress.version>1.21</commons-compress.version>
     <commons-io.version>2.11.0</commons-io.version>
     <commons-jexl.version>1.1</commons-jexl.version>
-    <dbunit.version>2.7.2</dbunit.version>
-    <fontbox.version>2.0.24</fontbox.version>
-    <fop.version>2.6</fop.version>
+    <dbunit.version>2.7.3</dbunit.version>
+    <fontbox.version>2.0.26</fontbox.version>
+    <fop.version>2.7</fop.version>
     <!-- NOTE vmeier 2020-06-12: The "fop" dependency contains "ant" 1.8.2 which has CVE-2020-1945.
        Excluded "ant" from "fop" and defined explicit dependency with "ant" > 1.8.2 .
        Remove when upgrading "fop" to newer version! -->
-    <ant.version>1.10.11</ant.version>
-    <guava.version>30.1.1-jre</guava.version>
+    <ant.version>1.10.12</ant.version>
+    <guava.version>31.1-jre</guava.version>
     <jasypt-spring-boot.version>3.0.2</jasypt-spring-boot.version>
     <javax.activation.version>1.2.0</javax.activation.version>
     <jperf.version>1.0.3</jperf.version>
-    <pdfbox.version>2.0.24</pdfbox.version>
-    <poi.version>5.0.0</poi.version>
-    <spring-boot.version>2.5.4</spring-boot.version>
-    <spring-boot-admin.version>2.5.1</spring-boot-admin.version>
-    <spring-cloud.version>2020.0.3</spring-cloud.version>
+    <pdfbox.version>2.0.26</pdfbox.version>
+    <poi.version>5.2.2</poi.version>
+    <spring-boot.version>2.7.1</spring-boot.version>
+    <spring-boot-admin.version>2.7.1</spring-boot-admin.version>
+    <spring-cloud.version>2021.0.3</spring-cloud.version>
     <spring-web-flow.version>2.5.1.RELEASE</spring-web-flow.version>
     <springfox.version>3.0.0</springfox.version>
-    <swagger.version>1.6.2</swagger.version>
+    <swagger.version>1.6.6</swagger.version>
     <token-bucket.version>1.7</token-bucket.version>
-    <xmlgraphics-commons.version>2.6</xmlgraphics-commons.version>
+    <xmlgraphics-commons.version>2.7</xmlgraphics-commons.version>
   </properties>
 
   <dependencyManagement>
@@ -282,6 +287,14 @@
             <groupId>org.junit.vintage</groupId>
             <artifactId>junit-vintage-engine</artifactId>
           </exclusion>
+          <exclusion>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-to-slf4j</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+          </exclusion>
         </exclusions>
       </dependency>
 
@@ -488,6 +501,18 @@
             <artifactId>postgresql</artifactId>
           </exclusion>
         </exclusions>
+      </dependency>
+
+      <!-- JBoss Logging -->
+      <dependency>
+        <groupId>org.jboss.logging</groupId>
+        <artifactId>jboss-logging-processor</artifactId>
+        <version>${jboss-logging-processor.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.jboss.logging</groupId>
+        <artifactId>jboss-logging-annotations</artifactId>
+        <version>${jboss-logging-annotations.version}</version>
       </dependency>
 
     </dependencies>

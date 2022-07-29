@@ -7,7 +7,7 @@
   <parent>
     <groupId>com.netcetera.nca-266-7</groupId>
     <artifactId>girders-libs</artifactId>
-    <version>4.9.1-SNAPSHOT</version>
+    <version>4.11.1-SNAPSHOT</version>
   </parent>
 
   <artifactId>girders-fop</artifactId>
@@ -23,6 +23,12 @@
     <dependency>
       <groupId>org.apache.xmlgraphics</groupId>
       <artifactId>fop</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>javax.servlet</groupId>
+          <artifactId>servlet-api</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.apache.xmlgraphics</groupId>

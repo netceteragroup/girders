@@ -39,6 +39,13 @@
   </suppress>
 
   <suppress>
+    <notes><![CDATA[According to the explanation here: https://github.com/codecentric/spring-boot-admin/issues/1869,
+     we are not affected by this issue.]]> </notes>
+    <cpe>cpe:2.3:a:thymeleaf:thymeleaf:3.0.12:*:*:*:*:*:*:*</cpe>
+    <cve>CVE-2021-43466</cve>
+  </suppress>
+
+  <suppress>
     <notes><![CDATA[Suppress wrong identification as Spring Boot Starter Netty as Netty itself.]]></notes>
     <packageUrl regex="true">^pkg:maven/io\.projectreactor\.netty/reactor\-netty@.*$</packageUrl>
     <cpe>cpe:/a:netty:netty</cpe>
@@ -63,6 +70,18 @@
     <notes><![CDATA[Suppress the wrongful identification of spring-data-ldap as spring-ldap.]]></notes>
     <gav regex="true">^org\.springframework\.data:spring-data-ldap:.*$</gav>
     <cpe>cpe:/a:pivotal_software:spring-ldap</cpe>
+  </suppress>
+
+  <suppress>
+    <notes><![CDATA[ We don't use "secureValidation" property in our project directly. ]]></notes>
+    <packageUrl regex="true">^pkg:maven/org\.apache\.santuario/xmlsec@.*$</packageUrl>
+    <cve>CVE-2021-40690</cve>
+  </suppress>
+
+  <suppress>
+    <notes><![CDATA[ We are not affected by this issue, because we are not using it. ]]></notes>
+    <gav regex="true">^com\.h2database:h2:.*$</gav>
+    <cve>CVE-2021-23463</cve>
   </suppress>
 
 </suppressions>

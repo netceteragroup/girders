@@ -4,7 +4,6 @@ spring:
   main:
     banner-mode: 'off'
     allow-bean-definition-overriding: true
-
 # Spring Boot Admin Client
 spring.boot:
   admin:

@@ -6,7 +6,6 @@ import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.AppenderBase;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.apache.logging.log4j.LogManager;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -50,16 +49,6 @@ class LoggingTest {
 
     Log logger = LogFactory.getLog("commons-logging");
     logger.info("This entry is logged through commons-logging");
-
-    assertEquals(1, appender.loggingEvents.size());
-  }
-
-  @Test
-  void log4j() {
-    RecordingAppender appender = createAppender("log4j");
-
-    org.apache.logging.log4j.Logger logger = LogManager.getLogger("log4j");
-    logger.info("This entry is logged through log4j");
 
     assertEquals(1, appender.loggingEvents.size());
   }
