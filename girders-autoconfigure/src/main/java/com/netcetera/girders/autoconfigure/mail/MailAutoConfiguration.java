@@ -91,7 +91,8 @@ public class MailAutoConfiguration {
    */
   @Bean
   public JavaMailSenderImpl mailSender() {
-    GirdersMailSender mailSender = new GirdersMailSender(girdersMailProperties.getOverrideTo());
+    GirdersMailSender mailSender = new GirdersMailSender(girdersMailProperties.getOverrideTo(),
+        girdersMailProperties.isMaskEmailsInLogs());
     if (session != null) {
       mailSender.setSession(session);
     } else {

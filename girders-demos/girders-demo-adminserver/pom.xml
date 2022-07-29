@@ -6,11 +6,11 @@
   <parent>
     <groupId>com.netcetera.nca-266-7.demos</groupId>
     <artifactId>girders-demos</artifactId>
-    <version>4.9.1-SNAPSHOT</version>
+    <version>4.11.1-SNAPSHOT</version>
   </parent>
 
   <artifactId>girders-demo-adminserver</artifactId>
-  <version>4.9.1-SNAPSHOT</version>
+  <version>4.11.1-SNAPSHOT</version>
   <packaging>war</packaging>
   <name>Girders - Demos - Admin Server</name>
   <description>Girders Demo Admin Server</description>

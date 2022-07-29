@@ -6,7 +6,7 @@
   <parent>
     <groupId>com.netcetera.nca-266-7</groupId>
     <artifactId>girders-starters</artifactId>
-    <version>4.9.1-SNAPSHOT</version>
+    <version>4.11.1-SNAPSHOT</version>
   </parent>
 
   <artifactId>girders-starter-swagger</artifactId>

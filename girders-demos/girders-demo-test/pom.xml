@@ -6,11 +6,11 @@
   <parent>
     <groupId>com.netcetera.nca-266-7.demos</groupId>
     <artifactId>girders-demos</artifactId>
-    <version>4.9.1-SNAPSHOT</version>
+    <version>4.11.1-SNAPSHOT</version>
   </parent>
 
   <artifactId>girders-demo-test</artifactId>
-  <version>4.9.1-SNAPSHOT</version>
+  <version>4.11.1-SNAPSHOT</version>
   <name>Girders - Demos - Test</name>
   <description>Integration tests for the Girders demo applications</description>
 
@@ -114,6 +114,12 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-ldap</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>com.google.code.findbugs</groupId>
+          <artifactId>jsr305</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>

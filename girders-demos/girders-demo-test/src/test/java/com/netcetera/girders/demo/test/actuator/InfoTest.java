@@ -39,7 +39,6 @@ class InfoTest {
   void testInfo() {
     String url = "http://localhost:" + port + "/demo-showcase/actuator/info";
     JsonNode result = client.getForObject(url, JsonNode.class);
-    assertEquals("girders-demo-showcase", result.path("app").path("name").asText());
     assertTrue(!StringUtils.contains(result.path("app").path("version").asText(), '?'));
     assertTrue(!StringUtils.contains(result.path("app").path("version").asText(), '{'));
     assertTrue(!StringUtils.contains(result.path("app").path("version").asText(), '}'));

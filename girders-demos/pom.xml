@@ -6,7 +6,7 @@
   <parent>
     <groupId>com.netcetera.nca-266-7</groupId>
     <artifactId>girders-parent</artifactId>
-    <version>4.9.1-SNAPSHOT</version>
+    <version>4.11.1-SNAPSHOT</version>
     <relativePath>../girders-parent</relativePath>
   </parent>
 
@@ -27,14 +27,14 @@
     <jdk.version>11</jdk.version>
 
     <!-- version properties -->
-    <bootstrap.version>4.6.0-1</bootstrap.version>
-    <girders.version>4.9.1-SNAPSHOT</girders.version>
+    <bootstrap.version>4.6.1</bootstrap.version>
+    <girders.version>4.11.1-SNAPSHOT</girders.version>
     <jquery.version>3.6.0</jquery.version>
     <jquery-cookie.version>1.4.1-1</jquery-cookie.version>
-    <webjars-locator.version>0.42</webjars-locator.version>
+    <webjars-locator.version>0.45</webjars-locator.version>
 
     <git-commit-id-plugin.version>4.9.10</git-commit-id-plugin.version>
-    <directory-maven-plugin.version>0.3.1</directory-maven-plugin.version>
+    <directory-maven-plugin.version>1.0</directory-maven-plugin.version>
 
     <owasp-cvss-limit>11</owasp-cvss-limit>
     <site.baseurl>dav:http://builddoc.netcetera.com/dav/projects/${nca.project.id}/${project.version}/demo/</site.baseurl>

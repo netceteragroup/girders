@@ -32,16 +32,19 @@ class GirdersMailSenderTest {
 
   @Test
   void shouldAllowEnablingAndDisablingOverrideRecipientAddress() {
-    GirdersMailSender sender = new GirdersMailSender("nobody@netcetera.com");
+    GirdersMailSender sender = new GirdersMailSender("nobody@netcetera.com", false);
     assertThat(sender.getOverrideRecipientAddress(), is(equalTo("nobody@netcetera.com")));
     sender.setOverrideRecipientAddress(null);
     assertThat(sender.getOverrideRecipientAddress(), is(nullValue()));
+    assertThat(sender.isMaskEmailsInLogs(), is(false));
+    sender.setMaskEmailsInLogs(true);
+    assertThat(sender.isMaskEmailsInLogs(), is(true));
   }
 
   @Test
   void shouldReplaceMessageToAddressWithTheOneProvidedByTheMailSender() throws MessagingException {
     // given
-    createAndConfigureMailSender("nobody@netcetera.com");
+    createAndConfigureMailSender("nobody@netcetera.com", true);
     SimpleMailMessage msg = new SimpleMailMessage();
     msg.setSubject("Test");
     msg.setText("girders-mail sending a test message");
@@ -73,8 +76,9 @@ class GirdersMailSenderTest {
     }
   }
 
-  private void createAndConfigureMailSender(String overriddenRecipientAddress) throws NoSuchProviderException {
-    GirdersMailSender girdersMailSender = new GirdersMailSender(overriddenRecipientAddress);
+  private void createAndConfigureMailSender(String overriddenRecipientAddress,
+      boolean maskEmailsInLogs) throws NoSuchProviderException {
+    GirdersMailSender girdersMailSender = new GirdersMailSender(overriddenRecipientAddress, maskEmailsInLogs);
     girdersMailSender.setHost("mail.netcetera.com");
     girdersMailSender.setMeterRegistry(new SimpleMeterRegistry());
     mailSender = Mockito.spy(girdersMailSender);
@@ -85,7 +89,7 @@ class GirdersMailSenderTest {
   @Test
   void shouldNotFailIfToAddressIsMissing() throws MessagingException {
     // given
-    createAndConfigureMailSender(null);
+    createAndConfigureMailSender(null, false);
     SimpleMailMessage msg = new SimpleMailMessage();
     msg.setSubject("Test");
     msg.setText("girders-mail sending a test message");

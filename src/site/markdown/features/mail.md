@@ -33,10 +33,12 @@ The following properties are relevant for the configuration of the Girders mail 
 | spring.mail.encoding | UTF-8 | Character encoding that is used for the mail (optional) |
 | spring.mail.properties | n/a | Further properties that you want to to pass on to the email system. See the [documentation of Spring Boot](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-email) for more details. (optional) |
 | girders.mail.overrideTo | n/a | Overrides the recipient address for every mail with the given address and all CC and Bcc recipients are removed (optional) |
+| girders.mail.maskEmailsInLogs | n/a | Flag that indicates if email addresses should be masked in logs or not. Default value is false (optional) |
 
 ## JMX
 
 The `girders.mail.overrideTo` property is exposed over JMX and can be changed at runtime.
+The `girders.mail.maskEmailsInLogs` property is exposed over JMX and can be changed at runtime.
 
 ## Testing
 

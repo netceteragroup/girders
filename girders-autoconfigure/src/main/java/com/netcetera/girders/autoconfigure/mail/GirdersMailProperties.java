@@ -18,4 +18,9 @@ public class GirdersMailProperties {
    */
   private String overrideTo;
 
+  /**
+   * If true, then emails are masked in log files.
+   */
+  private boolean maskEmailsInLogs = false;
+
 }
