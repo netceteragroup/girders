@@ -24,7 +24,7 @@ be autowired into `AbstractDbTestCase`. A test case then looks as follows:
 To run your tests against a h2 in memory Database you would define the following dependencies:       
       
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-starter-dbunit</artifactId>
       <scope>test</scope>
     </dependency>

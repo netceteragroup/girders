@@ -6,7 +6,7 @@ The `girders-starter-test` module did provide support for JUnit 5 as Spring and 
 default. As this is no longer the case this module got obsolete and will be removed in version 5.
 
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-starter-test</artifactId>
       <scope>test</scope>
     </dependency>

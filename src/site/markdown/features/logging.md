@@ -7,7 +7,7 @@ Girders 4 uses [slf4j](https://www.slf4j.org/) as logging API and [logback](http
 You can add the Girders 4 logging support by adding the logging starter of Spring Boot:
 
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-starter-logging</artifactId>
     </dependency>
 

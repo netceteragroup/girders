@@ -10,7 +10,7 @@ You can add the Girders Platform BOM to your project by adding the following sni
     <dependencyManagement>
       <dependencies>
         <dependency>
-          <groupId>com.netcetera.nca-266-7</groupId>
+          <groupId>com.netcetera.girders</groupId>
           <artifactId>girders-platform-bom</artifactId>
           <version>${girders.version}</version>
           <type>pom</type>
@@ -23,7 +23,7 @@ You can now add dependencies that are supported by the Girders Platform BOM to y
 number:
 
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-starter-i18n</artifactId>
     </dependency>
     

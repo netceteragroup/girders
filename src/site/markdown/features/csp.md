@@ -5,7 +5,7 @@ The Content Security Policy (CSP) feature provides building blocks to specify a 
 Add the module by including the following dependency in your POM:
 
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-starter-csp</artifactId>
     </dependency>
 

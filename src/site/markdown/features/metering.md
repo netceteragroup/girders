@@ -39,7 +39,7 @@ post-processors and exporters for the performance measurements.
 In order to use JPerf in your application, make sure you add the girders-starter-perfmon as a dependency:
 
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-starter-perfmon</artifactId>
     </dependency>
 

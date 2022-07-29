@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>com.netcetera.nca-266-7</groupId>
+    <groupId>com.netcetera.girders</groupId>
     <artifactId>girders-libs</artifactId>
     <version>4.11.1-SNAPSHOT</version>
   </parent>
@@ -17,7 +17,7 @@
 
   <dependencies>
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-web</artifactId>
       <optional>true</optional>
     </dependency>

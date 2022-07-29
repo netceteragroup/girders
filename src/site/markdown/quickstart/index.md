@@ -79,7 +79,7 @@ pom.xml:
       <dependencyManagement>
         <dependencies>
           <dependency>
-            <groupId>com.netcetera.nca-266-7</groupId>
+            <groupId>com.netcetera.girders</groupId>
             <artifactId>girders-platform-bom</artifactId>
             <version>${girders.version}</version>
             <type>pom</type>
@@ -92,13 +92,13 @@ pom.xml:
 
         <!-- Girders starter dependency for the logging dependencies -->      
         <dependency>
-          <groupId>com.netcetera.nca-266-7</groupId>
+          <groupId>com.netcetera.girders</groupId>
           <artifactId>girders-starter-logging</artifactId>
         </dependency>
         
         <!-- Girders starter for web applications -->
         <dependency>
-          <groupId>com.netcetera.nca-266-7</groupId>
+          <groupId>com.netcetera.girders</groupId>
           <artifactId>girders-starter-web</artifactId>
         </dependency>
         

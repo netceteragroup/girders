@@ -6,7 +6,7 @@ wired up automatically as soon as you include the dependency in your application
 Add the module by including the following dependency in your POM:
 
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-starter-web</artifactId>
     </dependency>
 

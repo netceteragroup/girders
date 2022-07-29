@@ -22,7 +22,7 @@ from website):
 Girders provides a starter dependencies for the integration of PDFBox:
 
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-starter-pdfbox</artifactId>
     </dependency>
     
@@ -65,7 +65,7 @@ driven by XSL formatting objects (XSL-FO) and an output independent formatter.
 Add the module by including the following dependency in your POM:
 
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-starter-fop</artifactId>
     </dependency>
 

@@ -6,7 +6,7 @@ hashing/digesting through an integration of [Jasypt](http://jasypt.org) and the
 following dependency in your POM:
 
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-starter-crypto</artifactId>
     </dependency>
     

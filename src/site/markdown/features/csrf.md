@@ -10,7 +10,7 @@ HTML rendering (i.e. multi-page applications).
 Add the module by including the following dependency in your POM:
 
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-starter-csrf</artifactId>
     </dependency>
 

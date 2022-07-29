@@ -4,7 +4,7 @@
 
   <parent>
     <artifactId>girders-starters</artifactId>
-    <groupId>com.netcetera.nca-266-7</groupId>
+    <groupId>com.netcetera.girders</groupId>
     <version>4.11.1-SNAPSHOT</version>
   </parent>
 

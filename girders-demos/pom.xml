@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>com.netcetera.nca-266-7</groupId>
+    <groupId>com.netcetera.girders</groupId>
     <artifactId>girders-parent</artifactId>
     <version>4.11.1-SNAPSHOT</version>
     <relativePath>../girders-parent</relativePath>
   </parent>
 
-  <groupId>com.netcetera.nca-266-7.demos</groupId>
+  <groupId>com.netcetera.girders.demos</groupId>
   <artifactId>girders-demos</artifactId>
   <packaging>pom</packaging>
   <name>Girders - Demos</name>
@@ -43,7 +43,7 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>com.netcetera.nca-266-7</groupId>
+        <groupId>com.netcetera.girders</groupId>
         <artifactId>girders-platform-bom</artifactId>
         <version>${girders.version}</version>
         <type>pom</type>

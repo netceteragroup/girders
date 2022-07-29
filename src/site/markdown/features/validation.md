@@ -7,7 +7,7 @@ and using [Hibernate Validator](http://hibernate.org/validator/) as implementati
 Add the module by including the following dependency in your POM:
 
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-starter-validation</artifactId>
     </dependency>
 

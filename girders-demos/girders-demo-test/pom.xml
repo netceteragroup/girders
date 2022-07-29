@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>com.netcetera.nca-266-7.demos</groupId>
+    <groupId>com.netcetera.girders.demos</groupId>
     <artifactId>girders-demos</artifactId>
     <version>4.11.1-SNAPSHOT</version>
   </parent>
@@ -16,85 +16,85 @@
 
   <dependencies>
     <dependency>
-      <groupId>com.netcetera.nca-266-7.demos</groupId>
+      <groupId>com.netcetera.girders.demos</groupId>
       <artifactId>girders-demo-showcase</artifactId>
       <version>${project.version}</version>
       <classifier>classes</classifier>
     </dependency>
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-starter-cache</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-starter-circuitbreaker</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-starter-clientlogging</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-starter-crypto</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-starter-csp</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-starter-csrf</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-starter-fop</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-starter-i18n</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-starter-mail</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-starter-logging</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-starter-pdfbox</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-starter-perfmon</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-starter-poi</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-starter-ratelimit</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-starter-resttemplatelogging</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-starter-swagger</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-starter-validation</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-starter-web</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-starter-dbunit</artifactId>
       <scope>test</scope>
     </dependency>
@@ -179,7 +179,7 @@
               <configuration>
                 <property>girders.basedir</property>
                 <project>
-                  <groupId>com.netcetera.nca-266-7</groupId>
+                  <groupId>com.netcetera.girders</groupId>
                   <artifactId>girders</artifactId>
                 </project>
               </configuration>

@@ -5,7 +5,7 @@ support for Swagger in the `girders-swagger` and `girders-starter-swagger` modul
 following dependency to your POM:
 
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-starter-swagger</artifactId>
     </dependency>
 

@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>com.netcetera.nca-266-7.demos</groupId>
+    <groupId>com.netcetera.girders.demos</groupId>
     <artifactId>girders-demos</artifactId>
     <version>4.11.1-SNAPSHOT</version>
   </parent>
@@ -17,7 +17,7 @@
 
   <dependencies>
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-starter-logging</artifactId>
     </dependency>
 
@@ -64,7 +64,7 @@
               <configuration>
                 <property>girders.basedir</property>
                 <project>
-                  <groupId>com.netcetera.nca-266-7</groupId>
+                  <groupId>com.netcetera.girders</groupId>
                   <artifactId>girders</artifactId>
                 </project>
               </configuration>

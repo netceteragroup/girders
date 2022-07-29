@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>com.netcetera.nca-266-7</groupId>
+    <groupId>com.netcetera.girders</groupId>
     <artifactId>girders-parent</artifactId>
     <version>4.11.1-SNAPSHOT</version>
     <relativePath>../girders-parent</relativePath>
@@ -75,62 +75,62 @@
 
     <!-- optional Girders dependencies -->
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-cache</artifactId>
       <optional>true</optional>
     </dependency>
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-clientlogging</artifactId>
       <optional>true</optional>
     </dependency>
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-csp</artifactId>
       <optional>true</optional>
     </dependency>
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-ldap</artifactId>
       <optional>true</optional>
     </dependency>
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-dbunit</artifactId>
       <optional>true</optional>
     </dependency>
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-fop</artifactId>
       <optional>true</optional>
     </dependency>
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-i18n</artifactId>
       <optional>true</optional>
     </dependency>
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-mail</artifactId>
       <optional>true</optional>
     </dependency>
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-perfmon</artifactId>
       <optional>true</optional>
     </dependency>
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-ratelimit</artifactId>
       <optional>true</optional>
     </dependency>
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-resttemplatelogging</artifactId>
       <optional>true</optional>
     </dependency>
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-web</artifactId>
       <optional>true</optional>
     </dependency>

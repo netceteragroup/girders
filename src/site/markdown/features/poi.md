@@ -5,6 +5,6 @@ the [Apache POI library](https://poi.apache.org). The module only provides a dep
 contain any Spring configurations or components.
 
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-starter-poi</artifactId>
     </dependency>

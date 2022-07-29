@@ -11,7 +11,7 @@ Resilience4j is an implementation of the [Circuit Breaker pattern](https://marti
 Add the module by including the following dependency in your POM:
 
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-starter-circuitbreaker</artifactId>
     </dependency>
 

@@ -10,7 +10,7 @@ information that must not be logged.
 Add the module by including the following dependency in your POM:
 
     <dependency>
-      <groupId>com.netcetera.nca-266-7</groupId>
+      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-resttemplatelogging</artifactId>
     </dependency>
 
