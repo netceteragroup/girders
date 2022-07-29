@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="girders-starter-pdfbox" />
+        <module name="girders-starter-logging" />
+        <module name="girders-perfmon" />
+        <module name="girders-logging" />
+        <module name="girders-i18n" />
+        <module name="girders-web" />
+        <module name="girders-starter-perfmon" />
+        <module name="girders-csrf" />
+        <module name="girders-starter-cache" />
+        <module name="girders-starter-crypto" />
+        <module name="girders-starter-ldap" />
+        <module name="girders-starter-clientlogging" />
+        <module name="girders-starter-swagger" />
+        <module name="girders-fop" />
+        <module name="girders-starter-mail" />
+        <module name="girders-starter-resttemplatelogging" />
+        <module name="girders-csp" />
+        <module name="girders-dbunit" />
+        <module name="girders-starter-fop" />
+        <module name="girders-starter-test" />
+        <module name="girders-starter-validation" />
+        <module name="girders-starter-csp" />
+        <module name="girders-demo-test" />
+        <module name="girders-mail" />
+        <module name="girders-demo-adminserver" />
+        <module name="girders-resttemplatelogging" />
+        <module name="girders-clientlogging" />
+        <module name="girders-ratelimit" />
+        <module name="girders-autoconfigure" />
+        <module name="girders-starter-web" />
+        <module name="girders-starter-circuitbreaker" />
+        <module name="girders-starter-dbunit" />
+        <module name="girders-ncautil" />
+        <module name="girders-starter-webflow" />
+        <module name="girders-starter-csrf" />
+        <module name="girders-demo-showcase" />
+        <module name="girders-starter-poi" />
+        <module name="girders-cache" />
+        <module name="girders-starter-i18n" />
+        <module name="girders-starter-ratelimit" />
+        <module name="girders-starter-ncautil" />
+        <module name="girders-ldap" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="girders" target="1.5" />
+      <module name="girders-autoconfigure" target="11" />
+      <module name="girders-cache" target="11" />
+      <module name="girders-clientlogging" target="11" />
+      <module name="girders-csp" target="11" />
+      <module name="girders-csrf" target="11" />
+      <module name="girders-dbunit" target="11" />
+      <module name="girders-demo-adminserver" target="11" />
+      <module name="girders-demo-showcase" target="11" />
+      <module name="girders-demo-test" target="11" />
+      <module name="girders-demos" target="1.5" />
+      <module name="girders-fop" target="11" />
+      <module name="girders-i18n" target="11" />
+      <module name="girders-ldap" target="11" />
+      <module name="girders-libs" target="1.5" />
+      <module name="girders-logging" target="11" />
+      <module name="girders-mail" target="11" />
+      <module name="girders-ncautil" target="11" />
+      <module name="girders-parent" target="1.5" />
+      <module name="girders-perfmon" target="11" />
+      <module name="girders-platform-bom" target="1.5" />
+      <module name="girders-ratelimit" target="11" />
+      <module name="girders-resttemplatelogging" target="11" />
+      <module name="girders-starter-cache" target="11" />
+      <module name="girders-starter-circuitbreaker" target="11" />
+      <module name="girders-starter-clientlogging" target="11" />
+      <module name="girders-starter-crypto" target="11" />
+      <module name="girders-starter-csp" target="11" />
+      <module name="girders-starter-csrf" target="11" />
+      <module name="girders-starter-dbunit" target="11" />
+      <module name="girders-starter-fop" target="11" />
+      <module name="girders-starter-i18n" target="11" />
+      <module name="girders-starter-ldap" target="11" />
+      <module name="girders-starter-logging" target="11" />
+      <module name="girders-starter-mail" target="11" />
+      <module name="girders-starter-ncautil" target="11" />
+      <module name="girders-starter-pdfbox" target="11" />
+      <module name="girders-starter-perfmon" target="11" />
+      <module name="girders-starter-poi" target="11" />
+      <module name="girders-starter-ratelimit" target="11" />
+      <module name="girders-starter-resttemplatelogging" target="11" />
+      <module name="girders-starter-swagger" target="11" />
+      <module name="girders-starter-test" target="11" />
+      <module name="girders-starter-validation" target="11" />
+      <module name="girders-starter-web" target="11" />
+      <module name="girders-starter-webflow" target="11" />
+      <module name="girders-starters" target="1.5" />
+      <module name="girders-web" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
