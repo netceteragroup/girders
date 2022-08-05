@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
 
@@ -74,20 +75,20 @@
     <url>https://github.com/netceteragroup/girders</url>
   </scm>
 
-<!--  <distributionManagement>-->
-<!--    <repository>-->
-<!--      <id>nexus</id>-->
-<!--      <name>nexus</name>-->
-<!--      <url>${distribution.release.url}</url>-->
-<!--      <uniqueVersion>false</uniqueVersion>-->
-<!--    </repository>-->
-<!--    <snapshotRepository>-->
-<!--      <id>nexus</id>-->
-<!--      <name>nexus</name>-->
-<!--      <url>${distribution.snapshot.url}</url>-->
-<!--      <uniqueVersion>false</uniqueVersion>-->
-<!--    </snapshotRepository>-->
-<!--  </distributionManagement>-->
+  <!--  <distributionManagement>-->
+  <!--    <repository>-->
+  <!--      <id>nexus</id>-->
+  <!--      <name>nexus</name>-->
+  <!--      <url>${distribution.release.url}</url>-->
+  <!--      <uniqueVersion>false</uniqueVersion>-->
+  <!--    </repository>-->
+  <!--    <snapshotRepository>-->
+  <!--      <id>nexus</id>-->
+  <!--      <name>nexus</name>-->
+  <!--      <url>${distribution.snapshot.url}</url>-->
+  <!--      <uniqueVersion>false</uniqueVersion>-->
+  <!--    </snapshotRepository>-->
+  <!--  </distributionManagement>-->
 
   <modules>
     <module>girders-platform-bom</module>
@@ -109,6 +110,7 @@
     <license.dir>${project.basedir}</license.dir>
 
     <!--plugin versions-->
+    <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
     <directory-maven-plugin.version>1.0</directory-maven-plugin.version>
     <jacoco-maven-plugin.version>0.8.7</jacoco-maven-plugin.version>
     <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
@@ -134,6 +136,14 @@
   <build>
     <pluginManagement>
       <plugins>
+        <plugin>
+          <artifactId>maven-release-plugin</artifactId>
+          <version>${maven-release-plugin.version}</version>
+          <configuration>
+            <scmCommentPrefix>[maven-release-plugin]</scmCommentPrefix>
+            <tagNameFormat>girders-@{project.version}</tagNameFormat>
+          </configuration>
+        </plugin>
         <plugin>
           <groupId>org.commonjava.maven.plugins</groupId>
           <artifactId>directory-maven-plugin</artifactId>
