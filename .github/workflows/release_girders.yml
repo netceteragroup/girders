@@ -14,12 +14,10 @@ on:
       publishTo:
         description: 'Publish to'
         required: true
-        default: 'GitHub & MavenCentral'
+        default: 'MavenCentral'
         type: choice
         options:
-          - 'GitHub'
           - 'MavenCentral'
-          - 'GitHub & MavenCentral'
           - 'none (dry run)'
 
 env:
@@ -44,6 +42,8 @@ jobs:
       contents: write
       packages: write
       deployments: write
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -53,7 +53,11 @@ jobs:
           java-version: '11.0.11'
           distribution: 'zulu'
           cache: 'maven'
-          server-id: 'github'
+          server-id: 'maven-central' # Value of the distributionManagement/repository/id field of the pom.xml
+          server-username: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
+          server-password: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
+          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
+          gpg-passphrase: ${{ secrets.GPG_PASSPHRASE }}
       - name: Configure git user
         run: |
           git config user.email "girders@netcetera.com"
@@ -64,12 +68,12 @@ jobs:
       - name: Maven release:prepare
         run: mvn --batch-mode -DdryRun=${{ env.PUBLISH_TO == 'none (dry run)' }} -DdevelopmentVersion=$DEVELOPMENT_VERSION -DreleaseVersion=$RELEASE_VERSION release:prepare
         shell: bash
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Maven release:perform
         run: mvn --batch-mode -DdryRun=${{ env.PUBLISH_TO == 'none (dry run)' }} release:perform
         shell: bash
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MAVEN_USERNAME: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
+          MAVEN_CENTRAL_TOKEN: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
+          MAVEN_GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
 
 
