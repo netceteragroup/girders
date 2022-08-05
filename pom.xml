@@ -11,6 +11,18 @@
   <description>Netcetera technology stack and components based on Spring Boot.</description>
   <inceptionYear>2008</inceptionYear>
 
+  <organization>
+    <name>Netcetera AG</name>
+    <url>http://netcetera.com</url>
+  </organization>
+
+  <licenses>
+    <license>
+      <name>Apache 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
 
   <mailingLists>
     <mailingList>
