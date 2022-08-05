@@ -11,6 +11,18 @@
   <description>Netcetera technology stack and components based on Spring Boot.</description>
   <inceptionYear>2008</inceptionYear>
 
+  <organization>
+    <name>Netcetera AG</name>
+    <url>http://netcetera.com</url>
+  </organization>
+
+  <licenses>
+    <license>
+      <name>Apache 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
 
   <mailingLists>
     <mailingList>
@@ -80,7 +92,7 @@
     <jacoco-maven-plugin.version>0.8.7</jacoco-maven-plugin.version>
     <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
     <maven-enforcer-plugin.version>3.1.0</maven-enforcer-plugin.version>
-    <maven-site-plugin.version>3.9.1</maven-site-plugin.version>
+    <maven-site-plugin.version>3.12.1</maven-site-plugin.version>
     <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
     <maven-surefire-report-plugin.version>2.22.2</maven-surefire-report-plugin.version>
     <oss-trema-maven-plugin.version>0.3.0</oss-trema-maven-plugin.version>
