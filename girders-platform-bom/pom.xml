@@ -48,7 +48,7 @@
     <pdfbox.version>2.0.26</pdfbox.version>
     <poi.version>5.2.2</poi.version>
     <spring-boot.version>2.7.1</spring-boot.version>
-    <spring-boot-admin.version>2.7.1</spring-boot-admin.version>
+    <spring-boot-admin.version>2.7.4</spring-boot-admin.version>
     <spring-cloud.version>2021.0.3</spring-cloud.version>
     <spring-web-flow.version>2.5.1.RELEASE</spring-web-flow.version>
     <springfox.version>3.0.0</springfox.version>
