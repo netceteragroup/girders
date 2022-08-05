@@ -29,8 +29,6 @@ jobs:
         java-version: '11.0.11'
         distribution: 'zulu'
         cache: 'maven'
-        server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
-        settings-path: ${{ github.workspace }} # location for the settings.xml file
     - name: Cache SonarCloud packages
       uses: actions/cache@v1
       with:
@@ -75,8 +73,6 @@ jobs:
           java-version: '11.0.11'
           distribution: 'zulu'
           cache: 'maven'
-          server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
-          settings-path: ${{ github.workspace }} # location for the settings.xml file
       - run: mvn --batch-mode -f girders-demos/girders-demo-test/pom.xml install
       
   integration_tests_16:
@@ -94,8 +90,6 @@ jobs:
         java-version: '16.0.0'
         distribution: 'zulu'
         cache: 'maven'
-        server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
-        settings-path: ${{ github.workspace }} # location for the settings.xml file
     - name: run integration tests
       run: mvn --batch-mode -f girders-demos/girders-demo-test/pom.xml install
 
@@ -114,8 +108,6 @@ jobs:
           java-version: '17.0.0'
           distribution: 'zulu'
           cache: 'maven'
-          server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
-          settings-path: ${{ github.workspace }} # location for the settings.xml file
       - name: run integration tests
         run: mvn --batch-mode -f girders-demos/girders-demo-test/pom.xml install
     
