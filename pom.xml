@@ -68,6 +68,13 @@
     </developer>
   </developers>
 
+  <scm>
+    <connection>https://github.com/netceteragroup/girders.git</connection>
+    <developerConnection>https://github.com/netceteragroup/girders.git</developerConnection>
+    <url>https://github.com/netceteragroup/girders</url>
+  </scm>
+
+
   <modules>
     <module>girders-platform-bom</module>
     <module>girders-parent</module>
