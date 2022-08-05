@@ -29,6 +29,7 @@ env:
 
 jobs:
   log-the-inputs:
+    name: log the inputs
     runs-on: ubuntu-latest
     steps:
       - run: |

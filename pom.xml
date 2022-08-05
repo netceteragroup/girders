@@ -69,11 +69,25 @@
   </developers>
 
   <scm>
-    <connection>https://github.com/netceteragroup/girders.git</connection>
-    <developerConnection>https://github.com/netceteragroup/girders.git</developerConnection>
+    <connection>scm:git:https://github.com/netceteragroup/girders.git</connection>
+    <developerConnection>scm:git:https://github.com/netceteragroup/girders.git</developerConnection>
     <url>https://github.com/netceteragroup/girders</url>
   </scm>
 
+<!--  <distributionManagement>-->
+<!--    <repository>-->
+<!--      <id>nexus</id>-->
+<!--      <name>nexus</name>-->
+<!--      <url>${distribution.release.url}</url>-->
+<!--      <uniqueVersion>false</uniqueVersion>-->
+<!--    </repository>-->
+<!--    <snapshotRepository>-->
+<!--      <id>nexus</id>-->
+<!--      <name>nexus</name>-->
+<!--      <url>${distribution.snapshot.url}</url>-->
+<!--      <uniqueVersion>false</uniqueVersion>-->
+<!--    </snapshotRepository>-->
+<!--  </distributionManagement>-->
 
   <modules>
     <module>girders-platform-bom</module>
