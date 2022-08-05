@@ -3,6 +3,7 @@
 
 version: 2
 updates:
+  # Checks for outdated maven dependencies
   - package-ecosystem: "maven"
     directory: "/" 
     schedule:
@@ -12,4 +13,11 @@ updates:
     commit-message:
       prefix: "[dependabot]"
       include: "scope"
+    # Checks for outdated github actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+
     
