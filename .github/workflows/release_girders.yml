@@ -44,10 +44,6 @@ jobs:
       contents: read
       packages: write
     steps:
-      - name: Configure git user
-        run: |
-          git config user.email "girders@netcetera.com"
-          git config user.name "Github Actions Bot"
       - name: Checkout
         uses: actions/checkout@v3
       - name: Set up JDK 11
@@ -56,6 +52,10 @@ jobs:
           java-version: '11.0.11'
           distribution: 'zulu'
           cache: 'maven'
+      - name: Configure git user
+        run: |
+          git config user.email "girders@netcetera.com"
+          git config user.name "Github Actions Bot"
       - name: Maven clean
         run: mvn --batch-mode clean release:clean
         shell: bash
