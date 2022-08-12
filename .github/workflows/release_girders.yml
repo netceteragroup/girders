@@ -39,10 +39,6 @@ jobs:
   build_release:
     name: build girders release
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      packages: write
-      deployments: write
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
