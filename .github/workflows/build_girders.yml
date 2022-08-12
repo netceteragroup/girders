@@ -28,6 +28,7 @@ jobs:
       with:
         java-version: '11.0.11'
         distribution: 'zulu'
+        server-id: 'ossrh' # Value of the distributionManagement/repository/id field of the pom.xml
         cache: 'maven'
     - name: Cache SonarCloud packages
       uses: actions/cache@v3
@@ -40,10 +41,10 @@ jobs:
         mvn --batch-mode clean
         mvn --batch-mode -Ppedantic deploy
       shell: bash
-      with:
-        server-id: 'ossrh' # Value of the distributionManagement/repository/id field of the pom.xml
-        server-username: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
-        server-password: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
+      env:
+        MAVEN_USERNAME: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
+        MAVEN_CENTRAL_TOKEN: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
+        MAVEN_GPG_PASSPHRASE: ${{ secrets.PGP_PASSPHRASE }}
     - name: upload surefire report
       if: ${{ failure() }}
       uses: actions/upload-artifact@v3
