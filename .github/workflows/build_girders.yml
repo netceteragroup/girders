@@ -40,6 +40,9 @@ jobs:
         path: ~/.sonar/cache
         key: ${{ runner.os }}-sonar
         restore-keys: ${{ runner.os }}-sonar
+    - name: log settings
+      run: |
+        cat .m2/settings.xml
     - name: build girders
       run: |
         mvn --batch-mode clean
