@@ -38,8 +38,12 @@ jobs:
     - name: build girders
       run: |
         mvn --batch-mode clean
-        mvn --batch-mode -Ppedantic install
+        mvn --batch-mode -Ppedantic deploy
       shell: bash
+      with:
+        server-id: 'ossrh' # Value of the distributionManagement/repository/id field of the pom.xml
+        server-username: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
+        server-password: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
     - name: upload surefire report
       if: ${{ failure() }}
       uses: actions/upload-artifact@v3
