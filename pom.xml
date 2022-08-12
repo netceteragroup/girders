@@ -74,8 +74,8 @@
   </issueManagement>
 
   <scm>
-    <connection>scm:git:git@github.com:netceteragroup/girders.git</connection>
-    <developerConnection>scm:git:git@github.com:netceteragroup/girders.git</developerConnection>
+    <connection>scm:git:https://github.com/netceteragroup/girders.git</connection>
+    <developerConnection>scm:git:https://github.com/netceteragroup/girders.git</developerConnection>
     <url>https://github.com/netceteragroup/girders</url>
     <tag>HEAD</tag>
   </scm>
