@@ -27,10 +27,11 @@ env:
 
 jobs:
   log-the-inputs:
-    name: log the inputs
+    name: log the input params
     runs-on: ubuntu-latest
     steps:
-      - run: |
+      - name: log the input params
+        run: |
           echo "Release version: $RELEASE_VERSION"
           echo "Development version: $DEVELOPMENT_VERSION"
           echo "Publish to: $PUBLISH_TO"
