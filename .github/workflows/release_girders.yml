@@ -55,10 +55,10 @@ jobs:
           distribution: 'zulu'
           cache: 'maven'
           server-id: 'ossrh' # Value of the distributionManagement/repository/id field of the pom.xml
-          server-username: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
-          server-password: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
+          server-username: MAVEN_USERNAME # same name as below env variable
+          server-password: MAVEN_PASSWORD # same name as below env variable
           gpg-private-key: ${{ secrets.PGP_PRIVATE_KEY }}
-          gpg-passphrase: ${{ secrets.PGP_PASSPHRASE }}
+          gpg-passphrase: GPG_PASSPHRASE # same name as below env variable
       - name: Configure git user
         run: |
           git config user.email "girders@netcetera.com"
@@ -75,6 +75,6 @@ jobs:
         env:
           MAVEN_USERNAME: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
-          MAVEN_GPG_PASSPHRASE: ${{ secrets.PGP_PASSPHRASE }}
+          GPG_PASSPHRASE: ${{ secrets.PGP_PASSPHRASE }}
 
 
