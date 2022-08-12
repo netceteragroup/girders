@@ -140,7 +140,7 @@
           <artifactId>maven-release-plugin</artifactId>
           <version>${maven-release-plugin.version}</version>
           <configuration>
-            <scmCommentPrefix>[maven-release-plugin]</scmCommentPrefix>
+            <scmCommentPrefix>[maven-release-plugin] </scmCommentPrefix>
             <tagNameFormat>girders-@{project.version}</tagNameFormat>
           </configuration>
         </plugin>
