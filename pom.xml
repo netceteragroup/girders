@@ -120,6 +120,8 @@
     <maven-surefire-report-plugin.version>2.22.2</maven-surefire-report-plugin.version>
     <oss-trema-maven-plugin.version>0.3.0</oss-trema-maven-plugin.version>
     <versions-maven-plugin.version>2.8.1</versions-maven-plugin.version>
+    <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version>
+    <maven-war-plugin.version>3.3.2</maven-war-plugin.version>
 
     <!-- OWASP Dependency Check default property values -->
     <dependency.check.report.dir>${project.build.directory}/dependency-check</dependency.check.report.dir>
@@ -136,6 +138,16 @@
   <build>
     <pluginManagement>
       <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-checkstyle-plugin</artifactId>
+          <version>${maven-checkstyle-plugin.version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>${maven-war-plugin.version}</version>
+        </plugin>
         <plugin>
           <artifactId>maven-release-plugin</artifactId>
           <version>${maven-release-plugin.version}</version>
