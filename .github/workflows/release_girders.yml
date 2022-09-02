@@ -63,10 +63,14 @@ jobs:
         run: mvn --batch-mode clean release:clean
         shell: bash
       - name: Maven release:prepare
-        run: mvn --batch-mode -DdryRun=${{ env.PUBLISH_TO == 'none (dry run)' }} -DdevelopmentVersion=$DEVELOPMENT_VERSION -DreleaseVersion=$RELEASE_VERSION release:prepare release:perform
+        run: mvn --batch-mode -DdryRun=${{ env.PUBLISH_TO == 'none (dry run)' }} -DdevelopmentVersion=$DEVELOPMENT_VERSION -DreleaseVersion=$RELEASE_VERSION release:prepare
+        shell: bash
+      - name: Maven release:perform
+        run: mvn --batch-mode -DdryRun=${{ env.PUBLISH_TO == 'none (dry run)' }} release:perform
         shell: bash
         env:
           MAVEN_USERNAME: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
           GPG_PASSPHRASE: ${{ secrets.PGP_PASSPHRASE }}
+
 
