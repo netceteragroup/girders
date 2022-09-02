@@ -60,26 +60,30 @@ jobs:
           #server-password: MAVEN_PASSWORD # same name as below env variable
           #gpg-private-key: ${{ secrets.PGP_PRIVATE_KEY }}
           #gpg-passphrase: GPG_PASSPHRASE # same name as below env variable
-      - name: Create settings.xml file
-        uses: whelk-io/maven-settings-xml-action@v20
-        with:
-          servers: >
-            [
-              {
-                "id": "ossrh",
-                "username": "${env.MAVEN_USERNAME}",
-                "password": "${env.MAVEN_PASSWORD}"
-              },
-              {
-                "id": "gpg.passphrase",
-                "passphrase": "${env.GPG_PASSPHRASE}"
-              },
-              {
-                "id": "github",
-                "username": "${env.GIT_USER}",
-                "username": "${env.GIT_PASSWORD}"
-              }
-            ]
+      - name: Create settings.xml
+        run: |
+          cat <<EOF > $HOME/.m2/settings.xml
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+           <servers>          
+             <server>
+              <id>ossrh</id>
+              <username>${env.MAVEN_USERNAME}</username>
+              <password>${env.MAVEN_PASSWORD}</password>          
+             </server>
+             <server>
+              <id>gpg.passphrase</id>
+              <passphrase>${env.GPG_PASSPHRASE}</passphrase>
+             </server>
+             <server>
+              <id>github</id>
+              <username>${env.GIT_USER}</username>
+              <password>${env.GIT_PASSWORD}</password>
+             </server>
+           </servers>
+          </settings>
+
       - name: Configure git user
         run: |
           git config user.email "girders@netcetera.com"
