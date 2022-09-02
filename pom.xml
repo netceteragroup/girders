@@ -494,8 +494,11 @@
       </build>
     </profile>
     <profile>
-      <!-- This portion is for releases and in a separate profile because the plugins are quite time consuming -->
+      <!-- This portion is for releases and in a separate profile because the plugins are quite time-consuming -->
       <id>release</id>
+      <properties>
+        <project.scm.id>github</project.scm.id>
+      </properties>
       <build>
         <plugins>
           <plugin>

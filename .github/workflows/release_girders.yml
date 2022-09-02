@@ -40,7 +40,11 @@ jobs:
     name: build girders release
     runs-on: ubuntu-latest
     env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      MAVEN_USERNAME: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
+      MAVEN_PASSWORD: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
+      GPG_PASSPHRASE: ${{ secrets.PGP_PASSPHRASE }}
+      GIT_USER: ${{ secrets.GITHUB_ACTOR }}
+      GIT_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -50,12 +54,32 @@ jobs:
           java-version: '11.0.11'
           distribution: 'zulu'
           cache: 'maven'
-          #overwrite-settings: false
-          server-id: 'ossrh' # Value of the distributionManagement/repository/id field of the pom.xml
-          server-username: MAVEN_USERNAME # same name as below env variable
-          server-password: MAVEN_PASSWORD # same name as below env variable
-          gpg-private-key: ${{ secrets.PGP_PRIVATE_KEY }}
-          gpg-passphrase: GPG_PASSPHRASE # same name as below env variable
+          overwrite-settings: false
+          #server-id: 'ossrh' # Value of the distributionManagement/repository/id field of the pom.xml
+          #server-username: MAVEN_USERNAME # same name as below env variable
+          #server-password: MAVEN_PASSWORD # same name as below env variable
+          #gpg-private-key: ${{ secrets.PGP_PRIVATE_KEY }}
+          #gpg-passphrase: GPG_PASSPHRASE # same name as below env variable
+      - name: Create settings.xml file
+        uses: whelk-io/maven-settings-xml-action@v20
+          with:
+            servers: >
+              [
+                {
+                  "id": "ossrh",
+                  "username": "${env.MAVEN_USERNAME}",
+                  "password": "${env.MAVEN_PASSWORD}"
+                },
+                {
+                  "id": "gpg.passphrase",
+                  "passphrase": "${env.GPG_PASSPHRASE}"
+                },
+                {
+                  "id": "github",
+                  "username": "${env.GIT_USER}",
+                  "username": "${env.GIT_PASSWORD}"
+                }
+              ]
       - name: Configure git user
         run: |
           git config user.email "girders@netcetera.com"
@@ -70,13 +94,5 @@ jobs:
         run: mvn --batch-mode -DdryRun=${{ env.PUBLISH_TO == 'none (dry run)' }} -DdevelopmentVersion=$DEVELOPMENT_VERSION -DreleaseVersion=$RELEASE_VERSION release:prepare
         shell: bash
       - name: Maven release:perform
-        run: mvn --batch-mode -DdryRun=${{ env.PUBLISH_TO == 'none (dry run)' }} release:perform -Dusername=$GIT_USER -Dpassword=$GIT_PASSWORD
+        run: mvn --batch-mode -DdryRun=${{ env.PUBLISH_TO == 'none (dry run)' }} release:perform
         shell: bash
-        env:
-          MAVEN_USERNAME: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
-          MAVEN_PASSWORD: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
-          GPG_PASSPHRASE: ${{ secrets.PGP_PASSPHRASE }}
-          GIT_USER: ${{ secrets.GITHUB_ACTOR }}
-          GIT_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
-
-
