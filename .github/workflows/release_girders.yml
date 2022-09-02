@@ -50,6 +50,7 @@ jobs:
           java-version: '11.0.11'
           distribution: 'zulu'
           cache: 'maven'
+          #overwrite-settings: false
           server-id: 'ossrh' # Value of the distributionManagement/repository/id field of the pom.xml
           server-username: MAVEN_USERNAME # same name as below env variable
           server-password: MAVEN_PASSWORD # same name as below env variable
@@ -62,15 +63,20 @@ jobs:
       - name: Maven clean
         run: mvn --batch-mode clean release:clean
         shell: bash
+      - name: Print settings.xml
+        run: |
+          echo "Settings.xml: $(cat $HOME/.m2/settings.xml)"
       - name: Maven release:prepare
         run: mvn --batch-mode -DdryRun=${{ env.PUBLISH_TO == 'none (dry run)' }} -DdevelopmentVersion=$DEVELOPMENT_VERSION -DreleaseVersion=$RELEASE_VERSION release:prepare
         shell: bash
       - name: Maven release:perform
-        run: mvn --batch-mode -DdryRun=${{ env.PUBLISH_TO == 'none (dry run)' }} release:perform
+        run: mvn --batch-mode -DdryRun=${{ env.PUBLISH_TO == 'none (dry run)' }} release:perform -Dusername=$GIT_USER -Dpassword=$GIT_PASSWORD
         shell: bash
         env:
           MAVEN_USERNAME: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
           GPG_PASSPHRASE: ${{ secrets.PGP_PASSPHRASE }}
+          GIT_USER: ${{ secrets.GITHUB_ACTOR }}
+          GIT_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
 
 
