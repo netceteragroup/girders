@@ -7,7 +7,7 @@
   <parent>
     <groupId>com.netcetera.girders</groupId>
     <artifactId>girders-libs</artifactId>
-    <version>5.0.10</version>
+    <version>5.0.11-SNAPSHOT</version>
   </parent>
 
   <artifactId>girders-ratelimit</artifactId>
