@@ -43,7 +43,7 @@ jobs:
       MAVEN_USERNAME: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
       MAVEN_PASSWORD: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
       GPG_PASSPHRASE: ${{ secrets.PGP_PASSPHRASE }}
-      GIT_USER: ${{ secrets.GITHUB_ACTOR }}
+      GIT_USER: git
       GIT_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout
