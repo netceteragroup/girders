@@ -62,24 +62,24 @@ jobs:
           #gpg-passphrase: GPG_PASSPHRASE # same name as below env variable
       - name: Create settings.xml file
         uses: whelk-io/maven-settings-xml-action@v20
-          with:
-            servers: >
-              [
-                {
-                  "id": "ossrh",
-                  "username": "${env.MAVEN_USERNAME}",
-                  "password": "${env.MAVEN_PASSWORD}"
-                },
-                {
-                  "id": "gpg.passphrase",
-                  "passphrase": "${env.GPG_PASSPHRASE}"
-                },
-                {
-                  "id": "github",
-                  "username": "${env.GIT_USER}",
-                  "username": "${env.GIT_PASSWORD}"
-                }
-              ]
+        with:
+          servers: >
+            [
+              {
+                "id": "ossrh",
+                "username": "${env.MAVEN_USERNAME}",
+                "password": "${env.MAVEN_PASSWORD}"
+              },
+              {
+                "id": "gpg.passphrase",
+                "passphrase": "${env.GPG_PASSPHRASE}"
+              },
+              {
+                "id": "github",
+                "username": "${env.GIT_USER}",
+                "username": "${env.GIT_PASSWORD}"
+              }
+            ]
       - name: Configure git user
         run: |
           git config user.email "girders@netcetera.com"
