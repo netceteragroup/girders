@@ -76,5 +76,5 @@ jobs:
         run: mvn --batch-mode -DdryRun=${{ env.PUBLISH_TO == 'none (dry run)' }} -DdevelopmentVersion=$DEVELOPMENT_VERSION -DreleaseVersion=$RELEASE_VERSION release:prepare
         shell: bash
       - name: Maven release:perform
-        run: mvn -X -e --batch-mode -DdryRun=${{ env.PUBLISH_TO == 'none (dry run)' }} release:perform
+        run: mvn -X -e --batch-mode -DdryRun=${{ env.PUBLISH_TO == 'none (dry run)' }} org.apache.maven.plugins:maven-release-plugin:2.5.3:perform
         shell: bash
