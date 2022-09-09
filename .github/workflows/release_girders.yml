@@ -72,7 +72,6 @@ jobs:
         shell: bash
       - name: Maven release:perform
         run: |
-          echo ${{ secrets.GITHUB_TOKEN }}
           git config user.email "girders@netcetera.com"
           git config user.name "Github Actions Bot"
           git config remote.origin.url 'https://${{ secrets.GITHUB_TOKEN }}@github.com/netceteragroup/girders.git
