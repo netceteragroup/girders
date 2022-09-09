@@ -43,8 +43,6 @@ jobs:
       MAVEN_USERNAME: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
       MAVEN_PASSWORD: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
       GPG_PASSPHRASE: ${{ secrets.PGP_PASSPHRASE }}
-      GIT_USER: git
-      GIT_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -54,14 +52,11 @@ jobs:
           java-version: '11.0.11'
           distribution: 'zulu'
           cache: 'maven'
-          overwrite-settings: false
-          #server-id: 'ossrh' # Value of the distributionManagement/repository/id field of the pom.xml
-          #server-username: MAVEN_USERNAME # same name as below env variable
-          #server-password: MAVEN_PASSWORD # same name as below env variable
-          #gpg-private-key: ${{ secrets.PGP_PRIVATE_KEY }}
-          #gpg-passphrase: GPG_PASSPHRASE # same name as below env variable
-      - name: Copy settings.xml to the right folder
-        run: cp ${GITHUB_WORKSPACE}/.github/settings.xml $HOME/.m2/settings.xml
+          server-id: 'ossrh' # Value of the distributionManagement/repository/id field of the pom.xml
+          server-username: MAVEN_USERNAME # same name as below env variable
+          server-password: MAVEN_PASSWORD # same name as below env variable
+          gpg-private-key: ${{ secrets.PGP_PRIVATE_KEY }}
+          gpg-passphrase: GPG_PASSPHRASE # same name as below env variable
       - name: Configure git user
         run: |
           git config user.email "girders@netcetera.com"
