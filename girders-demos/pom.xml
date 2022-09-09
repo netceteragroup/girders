@@ -6,7 +6,7 @@
   <parent>
     <groupId>com.netcetera.girders</groupId>
     <artifactId>girders-parent</artifactId>
-    <version>5.0.11</version>
+    <version>5.0.12-SNAPSHOT</version>
     <relativePath>../girders-parent</relativePath>
   </parent>
 
@@ -28,7 +28,7 @@
 
     <!-- version properties -->
     <bootstrap.version>4.6.1</bootstrap.version>
-    <girders.version>5.0.11</girders.version>
+    <girders.version>5.0.12-SNAPSHOT</girders.version>
     <jquery.version>3.6.0</jquery.version>
     <jquery-cookie.version>1.4.1-1</jquery-cookie.version>
     <webjars-locator.version>0.45</webjars-locator.version>
