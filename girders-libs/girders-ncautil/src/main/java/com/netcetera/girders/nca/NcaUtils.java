@@ -77,7 +77,7 @@ public final class NcaUtils {
   }
 
   /**
-   * Returns true, if the given <tt>id</tt> is a valid <i>complete</i> Netcetera project id.
+   * Returns true, if the given {@code id} is a valid <i>complete</i> Netcetera project id.
    *
    * @param id String to be tested.
    *
@@ -103,8 +103,8 @@ public final class NcaUtils {
    *
    * @return A valid NCA project id in this format: xyz-012-3
    *
-   * @throws NullPointerException     if either <tt>tag</tt> or <tt>number</tt> is <tt>null</tt>.
-   * @throws IllegalArgumentException if either <tt>tag</tt> or <tt>number</tt> have the wrong
+   * @throws NullPointerException     if either {@code tag} or {@code number} is {@code null}.
+   * @throws IllegalArgumentException if either {@code tag} or {@code number} have the wrong
    *                                  format.
    */
   public static String completeProjectId(String tag, String number)
@@ -115,13 +115,13 @@ public final class NcaUtils {
   /**
    * Calculates the checksum for the given project tag and number.
    *
-   * @param tag    The company part of the project id, format: <tt>[a-zA-Z]{3}</tt>.
-   * @param number The number of the project, format: <tt>[0-9]{3}</tt>.
+   * @param tag    The company part of the project id, format: {@code [a-zA-Z]{3}}.
+   * @param number The number of the project, format: {@code [0-9]{3}}.
    *
-   * @return The project id checksum, a string with length <tt>1</tt>.
+   * @return The project id checksum, a string with length {@code 1}.
    *
-   * @throws NullPointerException     if either <tt>tag</tt> or <tt>number</tt> is <tt>null</tt>.
-   * @throws IllegalArgumentException if either <tt>tag</tt> or <tt>number</tt> have the wrong
+   * @throws NullPointerException     if either {@code tag} or {@code number} is {@code null}.
+   * @throws IllegalArgumentException if either {@code tag} or {@code number} have the wrong
    *                                  format.
    */
   @SuppressWarnings({"StandardVariableNames", "CharUsedInArithmeticContext"})
