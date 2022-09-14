@@ -522,6 +522,33 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
+            <configuration>
+              <author>true</author>
+              <version>true</version>
+              <source>${jdk.version}</source>
+              <detectJavaApiLink>false</detectJavaApiLink>
+              <detectLinks>false</detectLinks>
+              <detectOfflineLinks>false</detectOfflineLinks>
+              <failOnError>false</failOnError>
+              <groups>
+                <group>
+                  <title>Girders Libraries</title>
+                  <packages>com.netcetera.girders.*</packages>
+                </group>
+                <group>
+                  <title>Girders Auto Configuration</title>
+                  <packages>com.netcetera.girders.autoconfigure*</packages>
+                </group>
+                <group>
+                  <title>Girders Demo Showcase Application</title>
+                  <packages>com.netcetera.girders.demo.showcase*</packages>
+                </group>
+                <group>
+                  <title>Girders Demo Admin Server</title>
+                  <packages>com.netcetera.girders.demo.adminserver*</packages>
+                </group>
+              </groups>
+            </configuration>
             <executions>
               <execution>
                 <id>attach-javadocs</id>
