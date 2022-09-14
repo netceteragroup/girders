@@ -4,6 +4,11 @@
 
 # Girders 4
 
+## Documentation
+
+Documentation of Girders features for the latest release can be found here:
+https://netceteragroup.github.io/girders/
+
 ## Modules
 
 The following gives an overview of the main modules (or groups of modules) provided by Girders:
@@ -78,7 +83,29 @@ To deploy the demo application to a Tomcat Application Server in IntelliJ IDEA, 
 Note that the Tomcat run configuration `girders-demos` contains a VM parameter with a master password for the encrypted
 configuration properties (`-Djasypt.encryptor.password=girders`).
 
-## Releases
-SNAPSHOTS:
-https://oss.sonatype.org/content/repositories/snapshots/
+## Maintenance
 
+### Release HOWTO
+
+There is a dedicated (github actions) workflow for creating Girders releases and publishing them to the central maven repository.
+#### To create a new release:
+1. Go to [the release workflow](https://github.com/netceteragroup/girders/actions/workflows/release_girders.yml)
+2. Click on `run workflow`
+3. Enter the release version (e.g. `6.1.0`)
+4. Enter the next snapshot version (e.g. `6.1.1-SNAPSHOT`)
+5. Click on `Run workflow`
+
+> The workflow will publish to the maven repository and create new release notes.
+> 
+> :warning: It can take up to four hours until the published artifacts are
+
+#### After release verification
+1. Make sure that the documentation was deployed in the latest version: https://netceteragroup.github.io/girders/
+2. Check if the artifact is in the maven central repository: https://oss.sonatype.org/
+3. Update the generated release notes: https://github.com/netceteragroup/girders/releases
+
+
+### Dependency updates
+
+Dependabot is configured to automatically create (up to five) pull requests for dependency updates.
+For manual dependency updates, there are still the Intellij run configurations which use the `versions-maven-plugin`.

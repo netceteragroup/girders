@@ -6,3 +6,7 @@
   <version>${girders.version}/version>
 </dependency>
 ```
+
+## Documentation of latest release
+
+https://netceteragroup.github.io/girders
