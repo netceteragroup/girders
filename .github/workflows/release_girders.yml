@@ -37,7 +37,7 @@ jobs:
           echo "Publish to: $PUBLISH_TO"
 
   build_release:
-    name: build ${{ env.RELEASE_VERSION }}
+    name: build girders release
     runs-on: ubuntu-latest
     env:
       MAVEN_USERNAME: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
