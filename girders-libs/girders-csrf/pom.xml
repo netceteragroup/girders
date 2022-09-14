@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.netcetera.girders</groupId>
     <artifactId>girders-libs</artifactId>
-    <version>5.0.13</version>
+    <version>5.0.14-SNAPSHOT</version>
   </parent>
 
   <artifactId>girders-csrf</artifactId>
