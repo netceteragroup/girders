@@ -26,7 +26,7 @@ env:
   PUBLISH_TO: ${{ inputs.publishTo }}
 
 jobs:
-  log-the-inputs:
+  log_inputs:
     name: log the input params
     runs-on: ubuntu-latest
     steps:
@@ -70,3 +70,28 @@ jobs:
       - name: Maven release:perform
         run: mvn --batch-mode -Prelease -DdryRun=${{ env.PUBLISH_TO == 'none (dry run)' }} org.apache.maven.plugins:maven-release-plugin:2.5.3:perform
         shell: bash
+      - name: Add 'latest' tag
+        uses: EndBug/latest-tag@latest
+  deploy_github_page:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout latest
+        uses: actions/checkout@v3
+        with:
+          ref: latest
+      - name: Build maven site
+        run: mvn site:site
+        shell: bash
+      - name: Setup Pages
+        uses: actions/configure-pages@v2
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          # Upload entire repository
+          path: 'target/site/'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
