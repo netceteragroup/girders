@@ -60,7 +60,7 @@ jobs:
       - name: Configure git user
         run: |
           git config user.email "girders@netcetera.com"
-          git config user.name "Github Actions Bot"
+          git config user.name "GithubActionsBot"
       - name: Maven clean
         run: mvn --batch-mode clean release:clean
         shell: bash
@@ -70,12 +70,10 @@ jobs:
       - name: Maven release:prepare
         run: mvn --batch-mode -DdryRun=${{ env.PUBLISH_TO == 'none (dry run)' }} -DdevelopmentVersion=$DEVELOPMENT_VERSION -DreleaseVersion=$RELEASE_VERSION release:prepare
         shell: bash
-      - name: Git config again
+      - name: Maven release:perform
         run: |
           git config user.email "girders@netcetera.com"
-          git config user.name "Github Actions Bot"
-          git config remote.origin.url 'https://${{ secrets.GITHUB_TOKEN }}@github.com/netceteragroup/girders.git
-        shell: bash
-      - name: Maven release:perform
-        run: mvn -X -e --batch-mode -Prelease -DdryRun=${{ env.PUBLISH_TO == 'none (dry run)' }} org.apache.maven.plugins:maven-release-plugin:2.5.3:perform
+          git config user.name "GithubActionsBot"
+          git config remote.origin.url 'https://${{ secrets.GITHUB_TOKEN }}@github.com/netceteragroup/girders.git'
+          mvn -X -e --batch-mode -Prelease -DdryRun=${{ env.PUBLISH_TO == 'none (dry run)' }} org.apache.maven.plugins:maven-release-plugin:2.5.3:perform
         shell: bash
