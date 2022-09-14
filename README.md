@@ -1,4 +1,5 @@
 [![Build](https://github.com/netceteragroup/girders/actions/workflows/build_girders.yml/badge.svg)](https://github.com/netceteragroup/girders/actions/workflows/build_girders.yml)
+[![License](https://img.shields.io/github/license/netceteragroup/girders)](https://github.com/netceteragroup/girders/blob/master/LICENSE)
 
 # Girders 4
 
@@ -75,3 +76,8 @@ To deploy the demo application to a Tomcat Application Server in IntelliJ IDEA, 
 
 Note that the Tomcat run configuration `girders-demos` contains a VM parameter with a master password for the encrypted
 configuration properties (`-Djasypt.encryptor.password=girders`).
+
+## Releases
+SNAPSHOTS:
+https://oss.sonatype.org/content/repositories/snapshots/
+
