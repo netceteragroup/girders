@@ -9,6 +9,7 @@
   <packaging>pom</packaging>
   <name>Girders</name>
   <description>Netcetera technology stack and components based on Spring Boot.</description>
+  <url>https://github.com/netceteragroup/girders</url>
   <inceptionYear>2008</inceptionYear>
 
   <organization>
