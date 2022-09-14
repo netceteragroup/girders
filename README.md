@@ -1,3 +1,5 @@
+[![Build](https://github.com/netceteragroup/girders/actions/workflows/build_girders.yml/badge.svg)](https://github.com/netceteragroup/girders/actions/workflows/build_girders.yml)
+
 # Girders 4
 
 ## Modules
