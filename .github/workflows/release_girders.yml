@@ -53,10 +53,10 @@ jobs:
           distribution: 'zulu'
           cache: 'maven'
           server-id: 'ossrh' # Value of the distributionManagement/repository/id field of the pom.xml
-          server-username: MAVEN_USERNAME # same name as below env variable
-          server-password: MAVEN_PASSWORD # same name as below env variable
+          server-username: MAVEN_USERNAME # same name as above env variable
+          server-password: MAVEN_PASSWORD # same name as above env variable
           gpg-private-key: ${{ secrets.PGP_PRIVATE_KEY }}
-          gpg-passphrase: GPG_PASSPHRASE # same name as below env variable
+          gpg-passphrase: GPG_PASSPHRASE # same name as above env variable
       - name: Configure git user
         run: |
           git config user.email "girders@netcetera.com"
@@ -64,9 +64,6 @@ jobs:
       - name: Maven clean
         run: mvn --batch-mode clean release:clean
         shell: bash
-      - name: Print settings.xml
-        run: |
-          echo "Settings.xml: $(cat $HOME/.m2/settings.xml)"
       - name: Maven release:prepare
         run: mvn --batch-mode -DdryRun=${{ env.PUBLISH_TO == 'none (dry run)' }} -DdevelopmentVersion=$DEVELOPMENT_VERSION -DreleaseVersion=$RELEASE_VERSION release:prepare
         shell: bash
@@ -75,5 +72,5 @@ jobs:
           git config user.email "girders@netcetera.com"
           git config user.name "GithubActionsBot"
           git config remote.origin.url 'https://${{ secrets.GITHUB_TOKEN }}@github.com/netceteragroup/girders.git'
-          mvn -X -e --batch-mode -Prelease -DdryRun=${{ env.PUBLISH_TO == 'none (dry run)' }} org.apache.maven.plugins:maven-release-plugin:2.5.3:perform
+          mvn --batch-mode -Prelease -DdryRun=${{ env.PUBLISH_TO == 'none (dry run)' }} org.apache.maven.plugins:maven-release-plugin:2.5.3:perform
         shell: bash
