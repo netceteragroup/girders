@@ -1,5 +1,6 @@
 [![Build](https://github.com/netceteragroup/girders/actions/workflows/build_girders.yml/badge.svg)](https://github.com/netceteragroup/girders/actions/workflows/build_girders.yml)
 [![License](https://img.shields.io/github/license/netceteragroup/girders)](https://github.com/netceteragroup/girders/blob/master/LICENSE)
+[![Maven Central](https://img.shields.io/maven-central/v/com.netcetera.girders/girders)](https://search.maven.org/search?q=com.netcetera.girders)
 
 # Girders 4
 
