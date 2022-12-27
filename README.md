@@ -2,7 +2,7 @@
 [![License](https://img.shields.io/github/license/netceteragroup/girders)](https://github.com/netceteragroup/girders/blob/master/LICENSE)
 [![Maven Central](https://img.shields.io/maven-central/v/com.netcetera.girders/girders)](https://search.maven.org/search?q=com.netcetera.girders)
 
-# Girders 4
+# Girders 5
 
 ## Documentation
 
