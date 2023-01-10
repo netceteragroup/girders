@@ -9,6 +9,7 @@ import io.micrometer.core.annotation.Timed;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import net.jperf.aop.Profiled;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -26,6 +27,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 @RequestMapping("/circuitbreaker")
 @Slf4j
 @RequiredArgsConstructor
+@ComponentScan("io.github.resilience4j.circuitbreaker.*")
 class CircuitBreakerController {
 
   private final CircuitBreakerService circuitBreakerService;

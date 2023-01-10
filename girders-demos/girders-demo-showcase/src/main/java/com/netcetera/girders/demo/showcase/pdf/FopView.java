@@ -1,14 +1,14 @@
 package com.netcetera.girders.demo.showcase.pdf;
 
 import com.netcetera.girders.fop.FopTemplate;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.apache.fop.apps.FOPException;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.view.AbstractView;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.xml.transform.Source;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.stream.StreamSource;

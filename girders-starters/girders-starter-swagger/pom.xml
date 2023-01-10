@@ -24,10 +24,10 @@
     </dependency>
 
     <!-- necessary for Java 9 builds -->
-    <dependency>
-      <groupId>org.glassfish.jaxb</groupId>
-      <artifactId>jaxb-runtime</artifactId>
-    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>org.glassfish.jaxb</groupId>-->
+<!--      <artifactId>jaxb-runtime</artifactId>-->
+<!--    </dependency>-->
 
 
   </dependencies>

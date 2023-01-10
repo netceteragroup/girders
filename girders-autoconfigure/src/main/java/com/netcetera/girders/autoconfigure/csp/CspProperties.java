@@ -3,6 +3,8 @@ package com.netcetera.girders.autoconfigure.csp;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.stereotype.Component;
 
 import static com.google.common.base.Strings.isNullOrEmpty;
 
@@ -12,6 +14,8 @@ import static com.google.common.base.Strings.isNullOrEmpty;
 @ConfigurationProperties(prefix = "girders.csp", ignoreUnknownFields = false)
 @Getter
 @Setter
+@Component
+@EnableConfigurationProperties
 public class CspProperties {
 
   /**

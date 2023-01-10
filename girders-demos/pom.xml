@@ -24,7 +24,7 @@
 
   <properties>
     <nca.project.id>nca-266-7</nca.project.id>
-    <jdk.version>11</jdk.version>
+    <jdk.version>17</jdk.version>
 
     <!-- version properties -->
     <bootstrap.version>4.6.2</bootstrap.version>

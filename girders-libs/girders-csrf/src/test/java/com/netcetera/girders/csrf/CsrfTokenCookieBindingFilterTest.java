@@ -1,15 +1,15 @@
 package com.netcetera.girders.csrf;
 
+import jakarta.servlet.Filter;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.http.Cookie;
 import org.junit.jupiter.api.Test;
 import org.springframework.mock.web.MockFilterChain;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.security.web.csrf.DefaultCsrfToken;
 
-import javax.servlet.Filter;
-import javax.servlet.FilterChain;
-import javax.servlet.ServletRequest;
-import javax.servlet.http.Cookie;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -51,12 +51,10 @@ class CsrfTokenCookieBindingFilterTest {
     assertNotNull(cookie);
     assertEquals("CSRF-TOKEN", cookie.getName());
     assertEquals("testToken", cookie.getValue());
-    assertEquals(0, cookie.getVersion());
     assertNull(cookie.getDomain());
     assertEquals("testContextPath", cookie.getPath());
     assertFalse(cookie.getSecure());
     assertFalse(cookie.isHttpOnly());
-    assertNull(cookie.getComment());
     assertEquals(-1, cookie.getMaxAge());
   }
 
@@ -77,12 +75,10 @@ class CsrfTokenCookieBindingFilterTest {
     assertNotNull(cookie);
     assertEquals("CSRF-TOKEN", cookie.getName());
     assertEquals("testToken", cookie.getValue());
-    assertEquals(0, cookie.getVersion());
     assertNull(cookie.getDomain());
     assertEquals("testPath", cookie.getPath());
     assertFalse(cookie.getSecure());
     assertFalse(cookie.isHttpOnly());
-    assertNull(cookie.getComment());
     assertEquals(-1, cookie.getMaxAge());
   }
 

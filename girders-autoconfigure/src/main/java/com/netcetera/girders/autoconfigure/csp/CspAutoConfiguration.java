@@ -1,6 +1,7 @@
 package com.netcetera.girders.autoconfigure.csp;
 
 import com.netcetera.girders.csp.CspViolationReportServlet;
+import jakarta.servlet.ServletContext;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -9,7 +10,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.web.header.writers.ContentSecurityPolicyHeaderWriter;
 
-import javax.servlet.ServletContext;
 
 /**
  * Spring Boot auto configuration for the Content Security Policy (CSP) feature.
