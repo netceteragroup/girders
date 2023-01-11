@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.client.ClientHttpRequestFactory;
 import org.springframework.http.client.SimpleClientHttpRequestFactory;
+import org.springframework.http.client.support.BasicAuthenticationInterceptor;
 import org.springframework.web.client.RestTemplate;
 
 import static java.util.Collections.singletonList;
@@ -14,7 +15,7 @@ public class TestConfiguration {
   @Bean("testRestTemplate")
   public RestTemplate restTemplate() {
     RestTemplate template = new RestTemplate();
-   // template.setInterceptors(singletonList(new BasicAuthorizationInterceptor("monitoring", "monitoring")));
+    template.setInterceptors(singletonList(new BasicAuthenticationInterceptor("monitoring", "monitoring")));
     return template;
   }
 

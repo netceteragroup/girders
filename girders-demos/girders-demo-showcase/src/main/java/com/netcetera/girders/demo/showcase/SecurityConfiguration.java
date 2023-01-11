@@ -2,8 +2,6 @@ package com.netcetera.girders.demo.showcase;
 
 import com.netcetera.girders.autoconfigure.csp.CspProperties;
 import com.netcetera.girders.csrf.CsrfTokenCookieBindingFilter;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

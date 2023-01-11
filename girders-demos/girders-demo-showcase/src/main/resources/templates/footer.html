@@ -14,11 +14,11 @@
         </div>
         <div class="col-md-6 text-right">
           <div>
-            <form th:action="@{/logout}" th:method="post" th:if="${#request?.userPrincipal?.name?.length() > 0}">
-              <span th:text="${#request?.userPrincipal?.name}" />&nbsp;&nbsp;&nbsp;
+            <form th:action="@{/logout}" th:method="post" th:if="${#authentication?.principal?.name?.length() > 0}">
+              <span th:text="${#authentication.principal.name}" />&nbsp;&nbsp;&nbsp;
               <input class="btn btn-link btn-sm" type="submit" th:value="#{footer.logout}" />
             </form>
-            <div th:if="${#request?.userPrincipal?.name?.length() <= 0}">
+            <div th:if="${#authentication?.principal?.name?.length() <= 0}">
               <a th:href="@{/login}" th:text="#{footer.login}" />
             </div>
             <br />
