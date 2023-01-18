@@ -42,7 +42,7 @@ jobs:
         restore-keys: ${{ runner.os }}-sonar
     - name: build girders
       run: |
-        mvn --batch-mode clean
+        mvn --batch-mode clean package
         mvn --batch-mode -Ppedantic deploy
       shell: bash
       env:
