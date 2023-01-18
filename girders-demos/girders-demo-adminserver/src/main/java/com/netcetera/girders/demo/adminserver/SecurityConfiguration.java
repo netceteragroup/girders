@@ -1,9 +1,11 @@
 package com.netcetera.girders.demo.adminserver;
 
 import de.codecentric.boot.admin.server.config.AdminServerProperties;
+import jakarta.servlet.DispatcherType;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
@@ -16,6 +18,7 @@ import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
  * {@link Configuration} for the Spring Boot Admin Server application.
  */
 @Configuration
+@EnableWebSecurity
 public class SecurityConfiguration {
 
   private String adminContextPath;
@@ -63,9 +66,13 @@ public class SecurityConfiguration {
         .permitAll()
         .requestMatchers(adminContextPath + "/assets/**")
         .permitAll()
+        .requestMatchers(adminContextPath + "/variables.css")
+        .permitAll()
         .requestMatchers(adminContextPath + "/login")
         .permitAll()
         .requestMatchers(adminContextPath + "/logout")
+        .permitAll()
+        .dispatcherTypeMatchers(DispatcherType.ASYNC)
         .permitAll();
 
     // Authorize the Spring Boot Admin Client registration endpoint to be accessed only with user in
