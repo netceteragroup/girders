@@ -1,6 +1,5 @@
 #org.springframework.context.ApplicationListener
-com.netcetera.girders.autoconfigure.ehcache.EhCacheSystemPropertyInitializer
-com.netcetera.girders.autoconfigure.terracotta.TerracottaSystemPropertyInitializer
+
 #org.springframework.boot.autoconfigure.EnableAutoConfiguration
 com.netcetera.girders.autoconfigure.common.CommonAutoConfiguration
 com.netcetera.girders.autoconfigure.cache.CacheAutoConfiguration
