@@ -1,0 +1,3 @@
+org.springframework.context.ApplicationListener=\
+com.netcetera.girders.autoconfigure.ehcache.EhCacheSystemPropertyInitializer,\
+com.netcetera.girders.autoconfigure.terracotta.TerracottaSystemPropertyInitializer
