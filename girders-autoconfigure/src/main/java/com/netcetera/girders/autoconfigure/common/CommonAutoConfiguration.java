@@ -2,7 +2,7 @@ package com.netcetera.girders.autoconfigure.common;
 
 import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.boot.autoconfigure.AutoConfiguration;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -11,7 +11,7 @@ import java.util.Properties;
 /**
  * Spring Boot auto configuration for the common feature.
  */
-@Configuration
+@AutoConfiguration
 @Slf4j
 public class CommonAutoConfiguration {
 

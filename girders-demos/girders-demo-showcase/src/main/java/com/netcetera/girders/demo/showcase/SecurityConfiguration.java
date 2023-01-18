@@ -3,7 +3,6 @@ package com.netcetera.girders.demo.showcase;
 import com.netcetera.girders.autoconfigure.csp.CspProperties;
 import com.netcetera.girders.csrf.CsrfTokenCookieBindingFilter;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -21,7 +20,6 @@ import org.springframework.security.web.header.writers.ContentSecurityPolicyHead
  */
 @Configuration
 @EnableWebSecurity
-@ComponentScan("com.netcetera.girders.autoconfigure.*")
 @EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true, jsr250Enabled = true)
 public class SecurityConfiguration {
 

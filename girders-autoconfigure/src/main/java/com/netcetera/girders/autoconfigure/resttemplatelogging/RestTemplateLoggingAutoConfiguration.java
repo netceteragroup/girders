@@ -4,6 +4,7 @@ import com.netcetera.girders.resttemplatelogging.JsonLogFormatter;
 import com.netcetera.girders.resttemplatelogging.LogFormatter;
 import com.netcetera.girders.resttemplatelogging.LoggingClientHttpRequestInterceptor;
 import com.netcetera.girders.resttemplatelogging.PrettyPrintLogFormatter;
+import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
@@ -12,7 +13,6 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.boot.web.client.RestTemplateCustomizer;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 
 /**
@@ -20,7 +20,7 @@ import org.springframework.context.annotation.Configuration;
  * responses.
  */
 @SuppressWarnings("MethodMayBeStatic")
-@Configuration
+@AutoConfiguration
 @AutoConfigureAfter(RestTemplateAutoConfiguration.class)
 @ConditionalOnClass(LoggingClientHttpRequestInterceptor.class)
 @ConditionalOnBean(RestTemplateBuilder.class)

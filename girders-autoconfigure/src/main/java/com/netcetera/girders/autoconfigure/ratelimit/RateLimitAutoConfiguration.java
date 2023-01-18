@@ -11,11 +11,11 @@ import com.netcetera.girders.web.ClientIpAddress;
 import io.micrometer.core.instrument.MeterRegistry;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.EmbeddedValueResolverAware;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.util.StringValueResolver;
 
 import java.util.List;
@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * Auto configuration for annotation based rate limit support.
  */
-@Configuration
+@AutoConfiguration
 @ConditionalOnClass(RateLimit.class)
 @EnableConfigurationProperties(RateLimitProperties.class)
 public class RateLimitAutoConfiguration implements EmbeddedValueResolverAware {
