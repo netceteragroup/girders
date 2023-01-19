@@ -47,10 +47,9 @@
     <pdfbox.version>2.0.26</pdfbox.version>
     <poi.version>5.2.2</poi.version>
     <spring-boot.version>3.0.0</spring-boot.version>
-    <spring-boot-admin.version>3.0.0-M8</spring-boot-admin.version>
-    <spring-cloud.version>2021.0.5</spring-cloud.version>
+    <spring-boot-admin.version>3.0.0-M9</spring-boot-admin.version>
+    <spring-cloud.version>2022.0.0</spring-cloud.version>
     <spring-web-flow.version>2.5.1.RELEASE</spring-web-flow.version>
-    <springfox.version>3.0.0</springfox.version>
     <openapi.version>2.0.2</openapi.version>
     <token-bucket.version>1.7</token-bucket.version>
     <xmlgraphics-commons.version>2.7</xmlgraphics-commons.version>
@@ -73,11 +72,6 @@
         <version>${spring-cloud.version}</version>
         <type>pom</type>
         <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-properties-migrator</artifactId>
-        <scope>runtime</scope>
       </dependency>
 
       <!-- Girders -->

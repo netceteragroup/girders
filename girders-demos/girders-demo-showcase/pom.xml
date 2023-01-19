@@ -138,13 +138,6 @@
       <groupId>org.webjars</groupId>
       <artifactId>webjars-locator</artifactId>
     </dependency>
-    <!-- TODO gbachmei 2020-08-17: temporarily managing version of io.github.classgraph:classgraph manually because of
-          divergence of transitive dependencies; remove explicit management once dependencies converge again.
-          artifacts causing the divergence: io.springfox:springfox-swagger2, org.webjars:webjars-locator -->
-    <dependency>
-      <groupId>io.github.classgraph</groupId>
-      <artifactId>classgraph</artifactId>
-    </dependency>
     <dependency>
       <groupId>org.webjars</groupId>
       <artifactId>jquery</artifactId>
