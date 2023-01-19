@@ -54,14 +54,6 @@
         <artifactId>webjars-locator</artifactId>
         <version>${webjars-locator.version}</version>
       </dependency>
-      <!-- TODO gbachmei 2020-08-17: temporarily managing version of io.github.classgraph:classgraph manually because of
-            divergence of transitive dependencies in girders-demo-showcase; remove explicit management once dependencies
-            converge again -->
-      <dependency>
-        <groupId>io.github.classgraph</groupId>
-        <artifactId>classgraph</artifactId>
-        <version>${classgraph.version}</version>
-      </dependency>
       <dependency>
         <groupId>org.webjars</groupId>
         <artifactId>jquery</artifactId>
