@@ -22,17 +22,6 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-cache</artifactId>
     </dependency>
-    <!-- necessary for Java 9 builds -->
-    <dependency>
-      <groupId>org.glassfish.jaxb</groupId>
-      <artifactId>jaxb-runtime</artifactId>
-      <exclusions>
-        <exclusion>
-          <groupId>org.eclipse.angus</groupId>
-          <artifactId>angus-activation</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
 
     <!-- test -->
     <dependency>
