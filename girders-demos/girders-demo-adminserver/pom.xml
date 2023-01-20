@@ -37,7 +37,6 @@
     <dependency>
       <groupId>de.codecentric</groupId>
       <artifactId>spring-boot-admin-starter-server</artifactId>
-      <version>3.0.0-M8</version>
     </dependency>
   </dependencies>
 
