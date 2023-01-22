@@ -1,5 +1,7 @@
 package com.netcetera.girders.demo.showcase.mail;
 
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.Validator;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.mail.MailException;
 import org.springframework.mail.SimpleMailMessage;
@@ -9,8 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.Validator;
+
 import java.util.Set;
 
 import static java.lang.String.format;

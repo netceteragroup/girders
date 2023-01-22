@@ -39,11 +39,6 @@
         <ignoreVersion type="regex">200.*</ignoreVersion>
       </ignoreVersions>
     </rule>
-    <rule groupId="org.apache.tomcat.embed" artifactId="tomcat-embed-core">
-      <ignoreVersions>
-        <ignoreVersion type="regex">9\..*</ignoreVersion>
-      </ignoreVersions>
-    </rule>
 
     <!-- TODO corsin 2020-01-13 [NCA266-745]: Update to Jasypt Spring Boot 3.0.0 -->
     <rule groupId="com.github.ulisesbocchio" artifactId="jasypt-spring-boot-starter">

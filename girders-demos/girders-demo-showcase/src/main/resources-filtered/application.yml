@@ -31,7 +31,9 @@ server:
 
 # Actuators
 management:
-  info.git.mode: full
+  info:
+    git.mode: full
+    env.enabled: true
   endpoints:
     enabled-by-default: true
     web.exposure.include: '*'

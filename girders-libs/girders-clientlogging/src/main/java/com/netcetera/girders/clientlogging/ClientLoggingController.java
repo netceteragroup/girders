@@ -1,13 +1,13 @@
 package com.netcetera.girders.clientlogging;
-
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 
 import static org.springframework.http.HttpStatus.OK;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
@@ -17,8 +17,8 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
  */
 @RequestMapping("/log")
 @Slf4j
-@Api(value = "log", tags = "girders", consumes = "application/json", produces = "application/json",
-    description = "Logging")
+@RestController
+@Tag(name = "girders", description = "Logging")
 public class ClientLoggingController {
 
   /**
@@ -28,29 +28,18 @@ public class ClientLoggingController {
    */
   @PostMapping(consumes = APPLICATION_JSON_VALUE)
   @ResponseStatus(OK)
-  @ApiOperation(value = "Add log message",
-      notes = "Add a log message from a client to the server-side logging component.")
+  @Operation(summary = "Add log message",
+      description = "Add a log message from a client to the server-side logging component.")
   public void post(@RequestBody ClientLogEntry clientLogEntry) {
 
     checkPreconditions(clientLogEntry);
 
     switch (clientLogEntry.getLogLevel().toUpperCase()) {
-      case "INFO":
-        logger.info(clientLogEntry.joinValues());
-        break;
-      case "WARN":
-        logger.warn(clientLogEntry.joinValues());
-        break;
-      case "ERROR":
-        logger.error(clientLogEntry.joinValues());
-        break;
-      case "LOG":
-        logger.trace(clientLogEntry.joinValues());
-        break;
-      case "DEBUG":
-      default:
-        logger.debug(clientLogEntry.joinValues());
-        break;
+      case "INFO" -> logger.info(clientLogEntry.joinValues());
+      case "WARN" -> logger.warn(clientLogEntry.joinValues());
+      case "ERROR" -> logger.error(clientLogEntry.joinValues());
+      case "LOG" -> logger.trace(clientLogEntry.joinValues());
+      default -> logger.debug(clientLogEntry.joinValues());
     }
   }
 

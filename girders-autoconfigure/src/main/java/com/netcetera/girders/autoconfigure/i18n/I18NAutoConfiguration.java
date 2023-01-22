@@ -4,6 +4,7 @@ import com.netcetera.girders.i18n.MessageSourceDecorator;
 import io.micrometer.core.instrument.MeterRegistry;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -12,12 +13,10 @@ import org.springframework.boot.autoconfigure.context.MessageSourceAutoConfigura
 import org.springframework.boot.autoconfigure.context.MessageSourceProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.MessageSource;
-import org.springframework.context.annotation.Configuration;
-
 /**
  * Spring Boot auto configuration for the I18N feature.
  */
-@Configuration
+@AutoConfiguration
 @ConditionalOnClass(MessageSourceDecorator.class)
 @ConditionalOnMissingBean(value = MessageSource.class, search = SearchStrategy.CURRENT)
 @EnableConfigurationProperties(I18NProperties.class)

@@ -1,15 +1,14 @@
 package com.netcetera.girders.demo.showcase.pdf;
 
 import com.netcetera.girders.demo.showcase.jdbc.Project;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.view.AbstractView;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.awt.Color;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
-import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.web.client.RestTemplate;
@@ -34,9 +34,7 @@ class HealthTest {
   @LocalServerPort
   private int port;
 
-  // TODO gbachmei 2021-09-06: re-enable test once github build is set up, fix test failure
   @Test
-  @Disabled
   void testHealth() {
     String url = "http://localhost:" + port + "/demo-showcase/actuator/health";
     JsonNode result = client.getForObject(url, JsonNode.class);

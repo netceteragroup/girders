@@ -1,8 +1,8 @@
 package com.netcetera.girders.clientlogging;
 
 import com.google.common.base.Joiner;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,7 +14,7 @@ import java.time.format.DateTimeFormatter;
  */
 @Getter
 @Setter
-@ApiModel(description = "Data object for a log statement from the client")
+@Schema(description = "Data object for a log statement from the client")
 public class ClientLogEntry {
 
   private static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern(
@@ -23,37 +23,37 @@ public class ClientLogEntry {
   /**
    * Time from the client.
    */
-  @ApiModelProperty(name = "client timestamp", value = "Timestamp in format yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
+  @Schema(name = "client timestamp", description = "Timestamp in format yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
   private ZonedDateTime clientTime;
 
   /**
    * Level of the log message.
    */
-  @ApiModelProperty(name = "logLevel", value = "DEBUG, INFO, WARN or ERROR", example = "INFO", required = true)
+  @Schema(name = "logLevel", description = "DEBUG, INFO, WARN or ERROR", example = "INFO", required = true)
   private String logLevel;
 
   /**
    * Message from the client.
    */
-  @ApiModelProperty(name = "message", value = "Log message", example = "Hello World", required = true)
+  @Schema(name = "message", description = "Log message", example = "Hello World", required = true)
   private String message;
 
   /**
    * Exception cause. Only valid for client side exceptions.
    */
-  @ApiModelProperty(name = "cause", value = "Cause of the log statement", example = "An error occurred")
+  @Schema(name = "cause", description = "Cause of the log statement", example = "An error occurred")
   private String cause;
 
   /**
    * Exception stack trace. Only valid for client side exceptions.
    */
-  @ApiModelProperty(name = "stacktrace", value = "Stack trace for the problem")
+  @Schema(name = "stacktrace", description = "Stack trace for the problem")
   private String stackTrace;
 
   /**
    * URL on which exception happened. Only valid for client side exceptions.
    */
-  @ApiModelProperty(name = "url", value = "URL on which the error happened", example = "/calculation.js")
+  @Schema(name = "url", description = "URL on which the error happened", example = "/calculation.js")
   private String url;
 
   /**

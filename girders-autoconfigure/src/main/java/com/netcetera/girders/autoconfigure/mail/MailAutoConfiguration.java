@@ -4,10 +4,12 @@ package com.netcetera.girders.autoconfigure.mail;
 import com.netcetera.girders.autoconfigure.mail.MailAutoConfiguration.MailSenderCondition;
 import com.netcetera.girders.mail.GirdersMailSender;
 import io.micrometer.core.instrument.MeterRegistry;
+import jakarta.mail.Session;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.boot.autoconfigure.condition.AnyNestedCondition;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
@@ -20,10 +22,8 @@ import org.springframework.boot.autoconfigure.mail.MailSenderValidatorAutoConfig
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Conditional;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 
-import javax.mail.Session;
 import java.util.Properties;
 
 import static com.google.common.base.Strings.emptyToNull;
@@ -31,7 +31,7 @@ import static com.google.common.base.Strings.emptyToNull;
 /**
  * Spring Boot auto configuration for the mail feature.
  */
-@Configuration
+@AutoConfiguration
 @ConditionalOnClass(GirdersMailSender.class)
 @EnableConfigurationProperties({GirdersMailProperties.class, MailProperties.class})
 @ConditionalOnMissingBean(value = JavaMailSenderImpl.class, search = SearchStrategy.CURRENT)

@@ -8,20 +8,18 @@ import org.apache.fop.apps.FopFactoryBuilder;
 import org.apache.fop.configuration.ConfigurationException;
 import org.apache.fop.configuration.DefaultConfigurationBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.xml.sax.SAXException;
-
 import javax.xml.transform.URIResolver;
 import java.io.IOException;
 
 /**
  * Spring Boot auto configuration for the I18N feature.
  */
-@Configuration
+@AutoConfiguration
 @ConditionalOnClass(FopTemplate.class)
 @EnableConfigurationProperties(FopProperties.class)
 public class FopAutoConfiguration {
@@ -74,12 +72,10 @@ public class FopAutoConfiguration {
    * @throws IOException            if the initialisation failed
    * @throws ConfigurationException if the processing of the configuration
    *                                failed
-   * @throws SAXException           if the processing of the configuration
-   *                                failed
    */
   @ConditionalOnMissingBean(FopFactory.class)
   @Bean
-  public FopFactory fopFactory() throws IOException, ConfigurationException, SAXException {
+  public FopFactory fopFactory() throws IOException, ConfigurationException {
     FopFactoryBuilder fopFactoryBuilder = new FopFactoryBuilder(properties.getBase());
     fopFactoryBuilder.ignoreNamespace("http://www.w3.org/2001/XMLSchema-instance");
     fopFactoryBuilder.setConfiguration(

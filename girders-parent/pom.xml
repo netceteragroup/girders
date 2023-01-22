@@ -16,8 +16,8 @@
   <description>Girders Parent</description>
 
   <properties>
-    <java.source.version>11</java.source.version>
-    <java.target.version>11</java.target.version>
+    <java.source.version>17</java.source.version>
+    <java.target.version>17</java.target.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
     <!-- plugin versions -->

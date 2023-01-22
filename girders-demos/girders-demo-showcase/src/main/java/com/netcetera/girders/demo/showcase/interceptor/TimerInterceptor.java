@@ -1,12 +1,13 @@
 package com.netcetera.girders.demo.showcase.interceptor;
 
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
+import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import lombok.extern.slf4j.Slf4j;
+
 
 /**
  * {HandlerInterceptor} that measures the time for the processing of the request
@@ -14,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @Slf4j
 @Component
-public class TimerInterceptor extends HandlerInterceptorAdapter {
+public class TimerInterceptor implements HandlerInterceptor {
 
   private static final String ATTRIBUTE_START = "timerStart";
   private static final String ATTRIBUTE_STOP = "timerStop";

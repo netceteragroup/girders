@@ -6,9 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.ImportAutoConfiguration;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+
+import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.header.writers.ContentSecurityPolicyHeaderWriter;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
@@ -49,15 +51,15 @@ class CspAutoConfigurationTest {
   }
 
   @Configuration
-  static class TestConfiguration extends WebSecurityConfigurerAdapter {
+  static class TestConfiguration  {
 
     @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
     private ContentSecurityPolicyHeaderWriter cspHeaderWriter;
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-      http.headers().addHeaderWriter(cspHeaderWriter);
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+      return http.headers().addHeaderWriter(cspHeaderWriter).and().build();
     }
   }
 

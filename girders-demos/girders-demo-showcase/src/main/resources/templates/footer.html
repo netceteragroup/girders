@@ -14,11 +14,11 @@
         </div>
         <div class="col-md-6 text-right">
           <div>
-            <form th:action="@{/logout}" th:method="post" th:if="${#request?.userPrincipal?.name?.length() > 0}">
-              <span th:text="${#request?.userPrincipal?.name}" />&nbsp;&nbsp;&nbsp;
+            <form th:action="@{/logout}" th:method="post" sec:authorize="isAuthenticated()" >
+              <span th:text="${#authentication.principal.username}" />
               <input class="btn btn-link btn-sm" type="submit" th:value="#{footer.logout}" />
             </form>
-            <div th:if="${#request?.userPrincipal?.name?.length() <= 0}">
+            <div sec:authorize="hasRole('ROLE_ANONYMOUS')">
               <a th:href="@{/login}" th:text="#{footer.login}" />
             </div>
             <br />
@@ -31,6 +31,7 @@
             />
           </div>
         </div>
+      </div>
     </footer>
   </body>
 </html>

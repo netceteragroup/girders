@@ -11,7 +11,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
  * {@link Controller} for the root resource.
  */
 @Controller
-@RequestMapping("")
+@RequestMapping("/")
 @Slf4j
 public class HomeController {
 
