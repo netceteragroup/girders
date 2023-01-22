@@ -12,7 +12,8 @@
   <url>https://github.com/netceteragroup/girders</url>
   <inceptionYear>2008</inceptionYear>
 
-  <organization>
+
+<organization>
     <name>Netcetera AG</name>
     <url>http://netcetera.com</url>
   </organization>
@@ -108,7 +109,7 @@
     <!--plugin versions-->
     <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
     <directory-maven-plugin.version>1.0</directory-maven-plugin.version>
-    <jacoco-maven-plugin.version>0.8.7</jacoco-maven-plugin.version>
+    <jacoco-maven-plugin.version>0.8.8</jacoco-maven-plugin.version>
     <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
     <maven-enforcer-plugin.version>3.1.0</maven-enforcer-plugin.version>
     <maven-site-plugin.version>3.9.1</maven-site-plugin.version>

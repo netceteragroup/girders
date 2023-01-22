@@ -25,7 +25,8 @@
   <properties>
     <nca.project.id>nca-266-7</nca.project.id>
     <jdk.version>17</jdk.version>
-
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
     <!-- version properties -->
     <bootstrap.version>4.6.2</bootstrap.version>
     <girders.version>5.1.1-SNAPSHOT</girders.version>
