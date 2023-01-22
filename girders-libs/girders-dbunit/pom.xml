@@ -73,12 +73,6 @@
     <dependency>
       <groupId>org.glassfish.jaxb</groupId>
       <artifactId>jaxb-runtime</artifactId>
-      <exclusions>
-        <exclusion>
-          <groupId>org.eclipse.angus</groupId>
-          <artifactId>angus-activation</artifactId>
-        </exclusion>
-      </exclusions>
     </dependency>
     <dependency>
       <groupId>com.h2database</groupId>
