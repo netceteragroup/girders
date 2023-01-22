@@ -11,6 +11,7 @@
 
   <artifactId>girders-demo-showcase</artifactId>
   <version>5.1.1-SNAPSHOT</version>
+  <packaging>war</packaging>
   <name>Girders - Demos - Showcase</name>
   <description>Girders Demo Showcase Application</description>
 
