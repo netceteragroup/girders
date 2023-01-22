@@ -34,9 +34,7 @@ class HealthTest {
   @LocalServerPort
   private int port;
 
-  // TODO gbachmei 2021-09-06: re-enable test once github build is set up, fix test failure
   @Test
-  @Disabled
   void testHealth() {
     String url = "http://localhost:" + port + "/demo-showcase/actuator/health";
     JsonNode result = client.getForObject(url, JsonNode.class);
