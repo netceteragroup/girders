@@ -1,14 +1,15 @@
 package com.netcetera.girders.demo.showcase.mail;
 
 import com.google.common.collect.Sets;
-import jakarta.validation.ConstraintViolation;
-import jakarta.validation.Validator;
 import org.junit.jupiter.api.Test;
 import org.springframework.mail.MailSendException;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.ui.ExtendedModelMap;
 import org.springframework.ui.Model;
+
+import javax.validation.ConstraintViolation;
+import javax.validation.Validator;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;

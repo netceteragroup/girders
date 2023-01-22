@@ -4,14 +4,12 @@ import com.netcetera.girders.autoconfigure.csp.CspProperties;
 import com.netcetera.girders.csrf.CsrfTokenCookieBindingFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.provisioning.UserDetailsManager;
-import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.csrf.CsrfFilter;
 import org.springframework.security.web.header.writers.ContentSecurityPolicyHeaderWriter;
 
@@ -19,11 +17,9 @@ import org.springframework.security.web.header.writers.ContentSecurityPolicyHead
  * {@link Configuration} for the security layer.
  */
 @Configuration
-@EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true, jsr250Enabled = true)
-public class SecurityConfiguration {
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-
+  private static final String ROLE_USER = "USER";
   private static final String ROLE_ADMIN = "ADMIN";
   private static final String ROLE_MONITORING = "MONITORING";
 
@@ -49,25 +45,18 @@ public class SecurityConfiguration {
   @Bean
   public UserDetailsService userDetailsService() {
     UserDetailsManager manager = new InMemoryUserDetailsManager();
-    manager.createUser(
-        User.withDefaultPasswordEncoder().username("user").password("user").roles("USER").build());
-    manager.createUser(User.withDefaultPasswordEncoder()
-        .username("admin")
-        .password("admin")
-        .roles("ADMIN", "USER")
+    manager.createUser(User.withDefaultPasswordEncoder().username("user").password("user").roles("USER").build());
+    manager.createUser(User.withDefaultPasswordEncoder().username("admin").password("admin").roles("ADMIN", "USER")
         .build());
-    manager.createUser(User.withDefaultPasswordEncoder()
-        .username("monitoring")
-        .password("monitoring")
-        .roles("MONITORING")
-        .build());
+    manager.createUser(User.withDefaultPasswordEncoder().username("monitoring").password("monitoring")
+        .roles("MONITORING").build());
     return manager;
   }
 
   // CHECKSTYLE:OFF
 
-  @Bean
-  public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+  @Override
+  protected void configure(HttpSecurity http) throws Exception {
 
     // Configure CSP and CSRF
     configureForCspFeature(http);
@@ -81,18 +70,14 @@ public class SecurityConfiguration {
     http.logout().logoutUrl("/logout").permitAll();
 
     // Allow access to public content (HTML assets, log resource)
-    http.authorizeHttpRequests()
-        .requestMatchers("/webjars/**", "/styles/**", "/js/**", "/images/**")
-        .permitAll();
-    http.authorizeHttpRequests().requestMatchers("/log").permitAll();
+    http.authorizeRequests().antMatchers("/webjars/**", "/styles/**", "/js/**", "/images/**").permitAll();
+    http.authorizeRequests().antMatchers("/log").permitAll();
 
     // Restrict access to actuator endpoints to users with admin or monitoring roles
-    http.authorizeHttpRequests()
-        .requestMatchers("/actuator/**")
-        .hasAnyRole(ROLE_ADMIN, ROLE_MONITORING);
+    http.authorizeRequests().antMatchers("/actuator/**").hasAnyRole(ROLE_ADMIN, ROLE_MONITORING);
 
     // Open access to everything else, i.e. the application itself
-    return http.authorizeHttpRequests().anyRequest().permitAll().and().build();
+    http.authorizeRequests().anyRequest().permitAll();
   }
 
   @SuppressWarnings("ProhibitedExceptionDeclared")
@@ -108,10 +93,10 @@ public class SecurityConfiguration {
     // disable CSRF protection for the CSP violation report endpoint since the
     // browser will do POSTs w/o a CSRF token in the request parameters and HTTP
     // headers
-    http.csrf().ignoringRequestMatchers(cspProperties.getReportUrl());
+    http.csrf().ignoringAntMatchers(cspProperties.getReportUrl());
 
     // disable CSRF protection for the logout endpoint
-    http.csrf().ignoringRequestMatchers("/logout");
+    http.csrf().ignoringAntMatchers("/logout");
   }
 
   // CHECKSTYLE:ON

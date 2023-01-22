@@ -24,7 +24,7 @@ public class GirdersStarterCacheIntegrationTest {
   @EnableAutoConfiguration
   @Configuration
   @EnableCaching
-  @PropertySource("classpath:cache.properties")
+  @PropertySource("cache.properties")
   static class CacheConfiguration {
 
     @Bean

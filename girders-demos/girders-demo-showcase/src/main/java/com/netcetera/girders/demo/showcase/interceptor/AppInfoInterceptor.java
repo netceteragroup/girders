@@ -1,17 +1,18 @@
 package com.netcetera.girders.demo.showcase.interceptor;
 
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-import org.springframework.web.servlet.HandlerInterceptor;
+import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * Handler interceptor that adds version information to the request.
  */
 @Component
-class AppInfoInterceptor implements HandlerInterceptor {
+class AppInfoInterceptor extends HandlerInterceptorAdapter {
 
   private static final String ATTRIBUTE_APP_VERSION = "appVersion";
 

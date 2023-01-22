@@ -1,7 +1,6 @@
 package com.netcetera.girders.dbunit;
 
 import com.netcetera.girders.dbunit.dataset.DataSetProvider;
-import jakarta.persistence.NoResultException;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -14,6 +13,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.transaction.support.TransactionTemplate;
 
+import javax.persistence.NoResultException;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;

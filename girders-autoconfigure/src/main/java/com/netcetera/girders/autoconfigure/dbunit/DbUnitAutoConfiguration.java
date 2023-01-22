@@ -3,13 +3,13 @@ package com.netcetera.girders.autoconfigure.dbunit;
 import com.netcetera.girders.dbunit.AbstractDbTestCase;
 import com.netcetera.girders.dbunit.DbTestCaseConfigurationProperties;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingClass;
 import org.springframework.boot.autoconfigure.condition.SearchStrategy;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 import static org.apache.commons.lang3.StringUtils.isEmpty;
 import static org.apache.commons.lang3.StringUtils.isNotEmpty;
@@ -24,7 +24,7 @@ import static org.apache.commons.lang3.StringUtils.isNotEmpty;
  * </ul>
  */
 @Slf4j
-@AutoConfiguration
+@Configuration
 @ConditionalOnClass(AbstractDbTestCase.class)
 @ConditionalOnMissingBean(value = DbTestCaseConfigurationProperties.class, search = SearchStrategy.CURRENT)
 @EnableConfigurationProperties(DbUnitProperties.class)

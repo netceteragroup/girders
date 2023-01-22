@@ -14,11 +14,21 @@
   <description>Starter for Swagger support</description>
 
   <dependencies>
-
     <dependency>
-      <groupId>org.springdoc</groupId>
-      <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+      <groupId>io.springfox</groupId>
+      <artifactId>springfox-boot-starter</artifactId>
     </dependency>
+    <dependency>
+      <groupId>io.swagger</groupId>
+      <artifactId>swagger-annotations</artifactId>
+    </dependency>
+
+    <!-- necessary for Java 9 builds -->
+    <dependency>
+      <groupId>org.glassfish.jaxb</groupId>
+      <artifactId>jaxb-runtime</artifactId>
+    </dependency>
+
 
   </dependencies>
 

@@ -1,7 +1,7 @@
 package com.netcetera.girders.resttemplatelogging;
 
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatusCode;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.client.ClientHttpResponse;
 
 import java.io.ByteArrayInputStream;
@@ -28,7 +28,7 @@ final class BufferingClientHttpResponseWrapper implements ClientHttpResponse {
 
 
   @Override
-  public HttpStatusCode getStatusCode() throws IOException {
+  public HttpStatus getStatusCode() throws IOException {
     return response.getStatusCode();
   }
 

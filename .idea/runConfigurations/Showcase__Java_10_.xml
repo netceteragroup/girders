@@ -1,12 +1,11 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Showcase" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+  <configuration default="false" name="Showcase (Java 10)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
     <module name="girders-demo-showcase" />
     <option name="SPRING_BOOT_MAIN_CLASS" value="com.netcetera.girders.demo.showcase.GirdersDemoShowcaseApplication" />
     <option name="ACTIVE_PROFILES" value="dev" />
     <option name="VM_PARAMETERS" value="-Djasypt.encryptor.password=girders" />
-    <option name="ALTERNATIVE_JRE_PATH" />
-    <module name="girders-demo-showcase" />
-    <envs />
+    <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+    <option name="ALTERNATIVE_JRE_PATH" value="10" />
     <method />
   </configuration>
 </component>

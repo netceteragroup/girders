@@ -11,6 +11,7 @@
 
   <artifactId>girders-demo-showcase</artifactId>
   <version>5.1.1-SNAPSHOT</version>
+  <packaging>war</packaging>
   <name>Girders - Demos - Showcase</name>
   <description>Girders Demo Showcase Application</description>
 
@@ -124,19 +125,27 @@
       <artifactId>spring-boot-starter-thymeleaf</artifactId>
     </dependency>
     <dependency>
-      <groupId>org.thymeleaf.extras</groupId>
-      <artifactId>thymeleaf-extras-springsecurity6</artifactId>
-    </dependency>
-    <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-devtools</artifactId>
       <optional>true</optional>
+    </dependency>
+
+    <dependency>
+      <groupId>de.codecentric</groupId>
+      <artifactId>spring-boot-admin-starter-client</artifactId>
     </dependency>
 
     <!-- the webjars-locator enables version-agnostic references to webjars resources -->
     <dependency>
       <groupId>org.webjars</groupId>
       <artifactId>webjars-locator</artifactId>
+    </dependency>
+    <!-- TODO gbachmei 2020-08-17: temporarily managing version of io.github.classgraph:classgraph manually because of
+          divergence of transitive dependencies; remove explicit management once dependencies converge again.
+          artifacts causing the divergence: io.springfox:springfox-swagger2, org.webjars:webjars-locator -->
+    <dependency>
+      <groupId>io.github.classgraph</groupId>
+      <artifactId>classgraph</artifactId>
     </dependency>
     <dependency>
       <groupId>org.webjars</groupId>
@@ -149,10 +158,6 @@
     <dependency>
       <groupId>org.webjars</groupId>
       <artifactId>bootstrap</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>de.codecentric</groupId>
-      <artifactId>spring-boot-admin-starter-client</artifactId>
     </dependency>
     <dependency>
       <groupId>commons-collections</groupId>

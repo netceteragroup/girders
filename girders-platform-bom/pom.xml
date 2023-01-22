@@ -43,14 +43,16 @@
     <ant.version>1.10.12</ant.version>
     <guava.version>31.1-jre</guava.version>
     <jasypt-spring-boot.version>3.0.2</jasypt-spring-boot.version>
+    <javax.activation.version>1.2.0</javax.activation.version>
     <jperf.version>1.0.3</jperf.version>
     <pdfbox.version>2.0.26</pdfbox.version>
     <poi.version>5.2.2</poi.version>
-    <spring-boot.version>3.0.0</spring-boot.version>
-    <spring-boot-admin.version>3.0.0-M9</spring-boot-admin.version>
-    <spring-cloud.version>2022.0.0</spring-cloud.version>
+    <spring-boot.version>2.7.3</spring-boot.version>
+    <spring-boot-admin.version>2.7.4</spring-boot-admin.version>
+    <spring-cloud.version>2021.0.3</spring-cloud.version>
     <spring-web-flow.version>2.5.1.RELEASE</spring-web-flow.version>
-    <openapi.version>2.0.2</openapi.version>
+    <springfox.version>3.0.0</springfox.version>
+    <swagger.version>1.6.6</swagger.version>
     <token-bucket.version>1.7</token-bucket.version>
     <xmlgraphics-commons.version>2.7</xmlgraphics-commons.version>
   </properties>
@@ -296,6 +298,7 @@
         </exclusions>
       </dependency>
 
+      <!-- Spring Boot Admin -->
       <dependency>
         <groupId>de.codecentric</groupId>
         <artifactId>spring-boot-admin-dependencies</artifactId>
@@ -364,11 +367,22 @@
 
       <!-- Swagger -->
       <dependency>
-        <groupId>org.springdoc</groupId>
-        <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-        <version>2.0.2</version>
+        <groupId>io.springfox</groupId>
+        <artifactId>springfox-boot-starter</artifactId>
+        <version>${springfox.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.swagger</groupId>
+        <artifactId>swagger-annotations</artifactId>
+        <version>${swagger.version}</version>
       </dependency>
 
+      <!-- javax.activation is disabled by default in the JDK and will be removed in a future version -->
+      <dependency>
+        <groupId>com.sun.activation</groupId>
+        <artifactId>javax.activation</artifactId>
+        <version>${javax.activation.version}</version>
+      </dependency>
 
       <!-- Apache PDFBox -->
       <dependency>
