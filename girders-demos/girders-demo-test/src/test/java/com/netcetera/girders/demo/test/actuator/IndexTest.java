@@ -48,7 +48,6 @@ class IndexTest {
   private int port;
 
   @Test
-  @Disabled
   @SneakyThrows
   void testGet() {
     String url = "http://localhost:" + port + "/demo-showcase/";
