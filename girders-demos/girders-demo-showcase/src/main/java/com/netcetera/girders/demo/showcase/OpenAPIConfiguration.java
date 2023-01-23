@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * {@link Configuration} for the Swagger API documentation.
+ * {@link Configuration} for the Open API documentation.
  */
 @Configuration
 public class OpenAPIConfiguration {
@@ -20,9 +20,9 @@ public class OpenAPIConfiguration {
   private String appVersion;
 
   /**
-   * Factory method for the Swagger API configuration.
+   * Factory method for the Open API configuration.
    *
-   * @return Swagger API configuration
+   * @return Open API configuration
    */
   @Bean
   public OpenAPI girdersOpenAPI() {

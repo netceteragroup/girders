@@ -1,6 +1,6 @@
 # Web Services
 
-Girders 4 does not provide explicit support for Web Services anymore. Our recommendation is to use the [web service
+Girders 5 does not provide explicit support for Web Services anymore. Our recommendation is to use the [web service
 support of Spring Boot](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-webservices),
 based on [Spring Web Services](https://docs.spring.io/spring-ws/docs/current/reference/) and JAX-WS:
 

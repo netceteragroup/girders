@@ -1,10 +1,10 @@
 # Logging
 
-Girders 4 uses [slf4j](https://www.slf4j.org/) as logging API and [logback](https://logback.qos.ch/) as logging backend.
+Girders 6 uses [slf4j](https://www.slf4j.org/) as logging API and [logback](https://logback.qos.ch/) as logging backend.
  Spring Boot supports different logging backends, but Logback is the default. That's why we decided to also go with
- logback as the default in Girders 4.
+ logback as the default in Girders 6.
 
-You can add the Girders 4 logging support by adding the logging starter of Spring Boot:
+You can add the Girders 6 logging support by adding the logging starter of Spring Boot:
 
     <dependency>
       <groupId>com.netcetera.girders</groupId>

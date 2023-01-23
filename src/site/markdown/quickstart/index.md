@@ -63,7 +63,7 @@ pom.xml:
         <nca.project.id>YOUR_PROJECT_ID</nca.project.id>
         
         <!-- Set the major version number of Java that you want to use -->
-        <jdk.version>9</jdk.version>
+        <jdk.version>17</jdk.version>
         
         <!-- This is the version of Girders you want to use. Ideally, this is the only version number that you have
           to configure for the dependency management. -->

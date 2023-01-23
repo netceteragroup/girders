@@ -9,4 +9,4 @@ frameworks.
 [Spring HATEOAS](http://projects.spring.io/spring-hateoas/) can be used to implement REST APIs that follow the concepts
 of **Hypermedia As The Engine Of Application State (HATEOAS)**.
 
-Last but not least, Girders 4 also supports [Swagger](./swagger.html) for defining and documenting REST APIs.
+Last but not least, Girders 6 also supports [OpenApi](./swagger.html) for defining and documenting REST APIs.

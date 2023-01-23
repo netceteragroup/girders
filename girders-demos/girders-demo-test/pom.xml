@@ -83,7 +83,7 @@
     </dependency>
     <dependency>
       <groupId>com.netcetera.girders</groupId>
-      <artifactId>girders-starter-swagger</artifactId>
+      <artifactId>girders-starter-openapi</artifactId>
     </dependency>
     <dependency>
       <groupId>com.netcetera.girders</groupId>

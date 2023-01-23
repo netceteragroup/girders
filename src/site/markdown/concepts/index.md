@@ -9,6 +9,8 @@ Girders has always been heavily based on **Java** and the
 Framework that has a very big overlap with Girders. It addresses many of the same issues. For Girders 4 we have
 therefore decided to replace many of the existing Girders 3 components with components from Spring Boot. Girders has
 essentially become an **extension of Spring Boot**.
+With Girders 6 we continue to go in this direction with migration of all features with Spring Boot 3.0.
+
 
 ## Core Principles
 
@@ -24,11 +26,11 @@ essentially become an **extension of Spring Boot**.
 ## Foundation
 
 |:---------|:------------|
-| Java 8, 9 and 10 | We support Java 8, 9 and 10 for developing and running applications based on Girders. Girders itself is built on Java 8, but we also make sure that you can use Girders in Java 9 and Java 10 applications. Girders dependencies have to be added as automatic modules in Java 9 and later. |
-| Spring Framework 5 | Since its inception, Girders is based on the Spring Framework and leverages a lot of its features and design principles. |
-| Spring Boot 2 | With Girders 4 we have also added Spring Boot to the Girders platform. The design of Girders 4 is based heavily on the ideas of Spring Boot. |
-| Spring Security 5 | Spring Security is the foundation for everything related to security and access control. |
-| JUnit 5 | Girders 4 uses JUnit 5 and provides dependencies for JUnit 5. You can still use JUnit 4 in your applications, but you have to configure this yourself. |
+| Java 17 | We support Java 17+ for developing and running applications based on Girders. Girders itself is built on Java 17.
+| Spring Framework 6 | Since its inception, Girders is based on the Spring Framework and leverages a lot of its features and design principles. |
+| Spring Boot 3 | With Girders 6 we have also added Spring Boot 3.0 to the Girders platform. The design of Girders 6 is based heavily on the ideas of Spring Boot. |
+| Spring Security 6 | Spring Security is the foundation for everything related to security and access control. |
+| JUnit 5 | Girders 6 uses JUnit 5 and provides dependencies for JUnit 5. You can still use JUnit 4 in your applications, but you have to configure this yourself. |
 
 ## Architecture and Design
 

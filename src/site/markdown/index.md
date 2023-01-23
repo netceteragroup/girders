@@ -11,16 +11,16 @@ dependencies, libraries and frameworks that we use in our projects. Furthermore,
 configuration and samples that aim at speeding up the development and maintenance of applications based on Girders.
 
 ## Getting Started
-If you are new to Girders 4 and not familiar with Spring Boot, we recommend that you first study the
-[documentation and guides of Spring Boot](https://projects.spring.io/spring-boot/). Girders 4 is based on Spring Boot
+If you are new to Girders 6 and not familiar with Spring Boot, we recommend that you first study the
+[documentation and guides of Spring Boot](https://projects.spring.io/spring-boot/). Girders 6 is based on Spring Boot
 and relies heavily on its design and the concepts. Next we recommend you have a quick look at the
-[concepts of Girders 4](./concepts/index.html).
+[concepts of Girders 6](./concepts/index.html).
 
 From here, you basically have two possibilities:
 
 |:---------|:---------|
-| [Getting Started](./quickstart/index.html) | Information about how to set up a **brand new application based on Girders 4** and Spring Boot 2. |
-| [Girders 3 Migration Guide](https://plaza.netcetera.com/wiki/x/zR1MCw) | Information about how to migration an existing application based on **Girders 3 to Girders 4** and Spring Boot 2. |
+| [Getting Started](./quickstart/index.html) | Information about how to set up a **brand new application based on Girders 6** and Spring Boot 3. |
+| [Girders 6 Migration Guide](https://plaza.netcetera.com/wiki/display/girders/Migration+from+Girders+5+to+Girders+6) | Information about how to migration an existing application based on **Girders 3 to Girders 4** and Spring Boot 2. |
 
 ## Documentation
 

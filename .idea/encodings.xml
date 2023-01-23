@@ -99,5 +99,8 @@
     <file url="file://$PROJECT_DIR$/girders-starters/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../src/main/resources-filtered" charset="UTF-8" />
   </component>
 </project>

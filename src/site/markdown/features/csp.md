@@ -22,7 +22,7 @@ To add such a header to HTTP responses, an auto configured bean of type `Content
 
 ```java
 @Configuration
-public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+public class SecurityConfiguration {
 
   private final ContentSecurityPolicyHeaderWriter cspHeaderWriter;
   private final CspProperties cspProperties;
@@ -33,17 +33,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     this.cspProperties = cspProperties;
   }
 
-  @Override
-  protected void configure(HttpSecurity http) throws Exception {
+  @Bean
+  public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
     // enable CSP protection by registering the auto configured header writer
     http.headers().addHeaderWriter(cspHeaderWriter);
-
-    // if you have CSRF enabled and you use CSP violation reporting,
-    // you should disable CSRF protection for the CSP violation report endpoint
-    // since the CSRF servlet filter expects a HTTP header or request parameter
-    // containing a valid CSRF token which is not sent by the browser
-    // when POSTing the CSP violation report (this would result in a 403)
-    http.csrf().ignoringAntMatchers(cspProperties.getReportUrl());
 
     // ... other Spring Security configurations ...
   }

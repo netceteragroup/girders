@@ -1,3 +1,3 @@
 # Advanced
 
-In this section, we discuss some more advanced topics related to Girders 4.
+In this section, we discuss some more advanced topics related to Girders 6.

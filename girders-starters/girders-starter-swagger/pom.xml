@@ -9,7 +9,7 @@
     <version>5.1.1-SNAPSHOT</version>
   </parent>
 
-  <artifactId>girders-starter-swagger</artifactId>
+  <artifactId>girders-starter-openapi</artifactId>
   <name>Girders - Starters - Swagger</name>
   <description>Starter for Swagger support</description>
 
