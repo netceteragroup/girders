@@ -35,7 +35,6 @@ class HealthTest {
   private int port;
 
   @Test
-  @Disabled
   void testHealth() {
     String url = "http://localhost:" + port + "/demo-showcase/actuator/health";
     JsonNode result = client.getForObject(url, JsonNode.class);
