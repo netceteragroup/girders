@@ -6,7 +6,7 @@
   <parent>
     <groupId>com.netcetera.girders</groupId>
     <artifactId>girders-libs</artifactId>
-    <version>6.0.0-RC2</version>
+    <version>6.0.0-RC3-SNAPSHOT</version>
   </parent>
 
   <artifactId>girders-cache</artifactId>
