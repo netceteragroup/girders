@@ -86,6 +86,8 @@ jobs:
         uses: actions/checkout@v3
         with:
           ref: girders-${{ env.RELEASE_VERSION }}
+          java-version: '17.0.0'
+          distribution: 'zulu'
       - name: Build maven site
         run: mvn site:site
         shell: bash
