@@ -2,7 +2,7 @@ package com.netcetera.girders.demo.test.actuator;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.netcetera.girders.demo.test.TestConfiguration;
-import org.junit.jupiter.api.Disabled;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,9 +22,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT,
     classes = com.netcetera.girders.demo.showcase.GirdersDemoShowcaseApplication.class,
-    properties = "girders.crypto.text=disabled")
+    properties = { "girders.crypto.text=disabled", "management.health.ldap.enabled=false" })
 @Import(TestConfiguration.class)
 @ExtendWith(SpringExtension.class)
+@Slf4j
 class HealthTest {
 
   @Autowired
@@ -38,6 +39,8 @@ class HealthTest {
   void testHealth() {
     String url = "http://localhost:" + port + "/demo-showcase/actuator/health";
     JsonNode result = client.getForObject(url, JsonNode.class);
+    // TODO: Remove this tmp line
+    logger.info("Actuator health result:\n {}", result.toPrettyString());
     assertEquals("UP", result.path("status").asText());
   }
 
