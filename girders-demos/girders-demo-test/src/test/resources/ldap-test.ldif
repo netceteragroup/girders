@@ -1,0 +1,30 @@
+dn: dc=netcetera,dc=com
+objectclass: top
+objectclass: domain
+objectclass: extensibleObject
+dc: netcetera
+
+# Organizational Units
+dn: ou=people,dc=netcetera,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: people
+
+# Create People
+dn: uid=shelby,ou=people,dc=netcetera,dc=com
+objectclass: top
+objectclass: account
+cn: Thomas
+sn: Shelby
+uid: shelby
+mail: thomas.shelby@sth.com
+employeeType: ncg-employee
+
+dn: uid=john,ou=people,dc=netcetera,dc=com
+objectclass: top
+objectclass: account
+cn: John
+sn: Smith
+uid: john
+mail: john.smith@sth.com
+employeeType: ncg-employee
