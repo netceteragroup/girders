@@ -1,0 +1,13 @@
+spring.ldap:
+  urls: ldap://localhost:8389
+  base: dc=netcetera,dc=com
+  username: uid=admin
+  password: secret
+
+spring.ldap.embedded:
+  ldif: classpath:ldap-test.ldif
+  base-dn: ${spring.ldap.base}
+  port: 8389
+  credential.username: uid=admin
+  credential.password: secret
+  validation.enabled: false
