@@ -5,6 +5,7 @@ import com.netcetera.girders.ldap.GirdersLdapMarkerInterface;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -12,7 +13,6 @@ import org.springframework.boot.autoconfigure.ldap.LdapAutoConfiguration;
 import org.springframework.boot.autoconfigure.ldap.LdapProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 import org.springframework.ldap.core.LdapOperations;
 import org.springframework.ldap.core.LdapTemplate;
@@ -29,7 +29,7 @@ import org.springframework.ldap.pool.validation.DefaultDirContextValidator;
 @ConditionalOnMissingBean(LdapOperations.class)
 @AutoConfigureBefore(LdapAutoConfiguration.class)
 @EnableConfigurationProperties({LdapPoolingProperties.class, LdapProperties.class})
-@Configuration
+@AutoConfiguration
 public class LdapTemplateAutoConfiguration {
 
   private final LdapPoolingProperties ldapPoolingProperties;
