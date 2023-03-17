@@ -3,10 +3,10 @@ create table project (
   title varchar(255) not null
 );
 
-insert into project (id, title) values ('NCA-020-1', 'Education');
-insert into project (id, title) values ('NCA-099-9', 'AO, CTO and Principal Architects');
-insert into project (id, title) values ('NCA-100-0', 'Themas and Capability Profile');
-insert into project (id, title) values ('NCA-118-9', 'Knowledge Management Commission');
-insert into project (id, title) values ('NCA-163-0', 'Netcetera University');
-insert into project (id, title) values ('NCA-266-7', 'Girders');
-insert into project (id, title) values ('NCA-366-3', 'Girders Plus');
+insert into project (id, title) values ('NCA-321-1', 'Education');
+insert into project (id, title) values ('NCA-321-2', 'Architects');
+insert into project (id, title) values ('NCA-321-3', 'Party');
+insert into project (id, title) values ('NCA-321-4', 'Knowledge');
+insert into project (id, title) values ('NCA-321-5', 'Netcetera');
+insert into project (id, title) values ('NCA-321-6', 'Girders');
+insert into project (id, title) values ('NCA-321-7', 'Girders Plus');
