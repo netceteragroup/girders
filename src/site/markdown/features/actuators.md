@@ -49,7 +49,7 @@ You can provide information for the `/actuator/info` endpoint in the configurati
 are free to choose the structure that you like. We recommend adding the following properties:
 
     info.app:
-      project: ${nca.project.id}
+      project: "your-project-id"
       name: ${project.artifactId}
       version: ${project.version}
       girders.version: ${girders.version}

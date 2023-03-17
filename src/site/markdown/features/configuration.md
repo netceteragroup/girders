@@ -60,7 +60,7 @@ Here is an example for an `application.yml` configuration file:
       main.banner-mode: 'off'
        
     info.app:
-      project: ${nca.project.id}
+      project: "your-project-id"
       name: ${project.artifactId}
       version: ${project.version}
       girders.version: ${girders.version}
