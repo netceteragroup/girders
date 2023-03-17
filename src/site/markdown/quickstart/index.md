@@ -1,8 +1,7 @@
 # Getting Started
 
-The [Girders Showcase Demo Application](https://extranet.netcetera.biz/bitbucket/projects/NCA266GIRD/repos/girders-boot/browse/girders-demos/girders-demo-showcase)
-is a good starting point for setting up a new project base on Girders. If you do not want to start with this
-application, this section gives you a quick step-by-step guide.
+The Girders Showcase Demo Application is a good starting point for setting up a new project base on Girders. 
+If you do not want to start with this application, this section gives you a quick step-by-step guide.
 
 ## Requirements
 

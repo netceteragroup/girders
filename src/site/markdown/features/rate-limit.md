@@ -1,7 +1,6 @@
 # Rate Limiting
 
-Girders provides basic support for applying rate limits to method calls. Read about use cases and options for rate
-limiting [in Themas](https://plaza.netcetera.com/wiki/x/xR3iCQ).
+Girders provides basic support for applying rate limits to method calls.
 
 Rate limits are defined via annotations and enforced using a [token bucket](https://en.wikipedia.org/wiki/Token_bucket)
 implementation.
