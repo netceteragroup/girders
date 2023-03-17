@@ -16,11 +16,7 @@ If you are new to Girders 6 and not familiar with Spring Boot, we recommend that
 and relies heavily on its design and the concepts. Next we recommend you have a quick look at the
 [concepts of Girders 6](./concepts/index.html).
 
-From here, you basically have two possibilities:
-
-|:---------|:---------|
-| [Getting Started](./quickstart/index.html) | Information about how to set up a **brand new application based on Girders 6** and Spring Boot 3. |
-| [Girders 6 Migration Guide](https://plaza.netcetera.com/wiki/display/girders/Migration+from+Girders+5+to+Girders+6) | Information about how to migration an existing application based on **Girders 3 to Girders 4** and Spring Boot 2. |
+From here on, we recommend the [quickstart guide](./quickstart/index.html).
 
 ## Documentation
 
