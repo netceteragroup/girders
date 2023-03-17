@@ -53,53 +53,53 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="girders" target="1.5" />
-      <module name="girders-autoconfigure" target="11" />
-      <module name="girders-cache" target="11" />
-      <module name="girders-clientlogging" target="11" />
-      <module name="girders-csp" target="11" />
-      <module name="girders-csrf" target="11" />
-      <module name="girders-dbunit" target="11" />
-      <module name="girders-demo-adminserver" target="11" />
-      <module name="girders-demo-showcase" target="11" />
-      <module name="girders-demo-test" target="11" />
-      <module name="girders-demos" target="1.5" />
-      <module name="girders-fop" target="11" />
-      <module name="girders-i18n" target="11" />
-      <module name="girders-ldap" target="11" />
+      <module name="girders-autoconfigure" target="17" />
+      <module name="girders-cache" target="17" />
+      <module name="girders-clientlogging" target="17" />
+      <module name="girders-csp" target="17" />
+      <module name="girders-csrf" target="17" />
+      <module name="girders-dbunit" target="17" />
+      <module name="girders-demo-adminserver" target="17" />
+      <module name="girders-demo-showcase" target="17" />
+      <module name="girders-demo-test" target="17" />
+      <module name="girders-demos" target="17" />
+      <module name="girders-fop" target="17" />
+      <module name="girders-i18n" target="17" />
+      <module name="girders-ldap" target="17" />
       <module name="girders-libs" target="1.5" />
-      <module name="girders-logging" target="11" />
-      <module name="girders-mail" target="11" />
-      <module name="girders-ncautil" target="11" />
+      <module name="girders-logging" target="17" />
+      <module name="girders-mail" target="17" />
+      <module name="girders-ncautil" target="17" />
       <module name="girders-parent" target="1.5" />
-      <module name="girders-perfmon" target="11" />
+      <module name="girders-perfmon" target="17" />
       <module name="girders-platform-bom" target="1.5" />
-      <module name="girders-ratelimit" target="11" />
-      <module name="girders-resttemplatelogging" target="11" />
-      <module name="girders-starter-cache" target="11" />
-      <module name="girders-starter-circuitbreaker" target="11" />
-      <module name="girders-starter-clientlogging" target="11" />
-      <module name="girders-starter-crypto" target="11" />
-      <module name="girders-starter-csp" target="11" />
-      <module name="girders-starter-csrf" target="11" />
-      <module name="girders-starter-dbunit" target="11" />
-      <module name="girders-starter-fop" target="11" />
-      <module name="girders-starter-i18n" target="11" />
-      <module name="girders-starter-ldap" target="11" />
-      <module name="girders-starter-logging" target="11" />
-      <module name="girders-starter-mail" target="11" />
-      <module name="girders-starter-ncautil" target="11" />
-      <module name="girders-starter-pdfbox" target="11" />
-      <module name="girders-starter-perfmon" target="11" />
-      <module name="girders-starter-poi" target="11" />
-      <module name="girders-starter-ratelimit" target="11" />
-      <module name="girders-starter-resttemplatelogging" target="11" />
+      <module name="girders-ratelimit" target="17" />
+      <module name="girders-resttemplatelogging" target="17" />
+      <module name="girders-starter-cache" target="17" />
+      <module name="girders-starter-circuitbreaker" target="17" />
+      <module name="girders-starter-clientlogging" target="17" />
+      <module name="girders-starter-crypto" target="17" />
+      <module name="girders-starter-csp" target="17" />
+      <module name="girders-starter-csrf" target="17" />
+      <module name="girders-starter-dbunit" target="17" />
+      <module name="girders-starter-fop" target="17" />
+      <module name="girders-starter-i18n" target="17" />
+      <module name="girders-starter-ldap" target="17" />
+      <module name="girders-starter-logging" target="17" />
+      <module name="girders-starter-mail" target="17" />
+      <module name="girders-starter-ncautil" target="17" />
+      <module name="girders-starter-pdfbox" target="17" />
+      <module name="girders-starter-perfmon" target="17" />
+      <module name="girders-starter-poi" target="17" />
+      <module name="girders-starter-ratelimit" target="17" />
+      <module name="girders-starter-resttemplatelogging" target="17" />
       <module name="girders-starter-swagger" target="11" />
-      <module name="girders-starter-test" target="11" />
-      <module name="girders-starter-validation" target="11" />
-      <module name="girders-starter-web" target="11" />
-      <module name="girders-starter-webflow" target="11" />
+      <module name="girders-starter-test" target="17" />
+      <module name="girders-starter-validation" target="17" />
+      <module name="girders-starter-web" target="17" />
+      <module name="girders-starter-webflow" target="17" />
       <module name="girders-starters" target="1.5" />
-      <module name="girders-web" target="11" />
+      <module name="girders-web" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>
