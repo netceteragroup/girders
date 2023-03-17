@@ -9,5 +9,3 @@ Add the module by including the following dependency in your POM:
       <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-starter-ncautil</artifactId>
     </dependency>
-
-Check out the [Javadoc documentation of the `girders-ncautil` module](../../apidocs/com/netcetera/girders/ncautil/package-summary.html) for more information.

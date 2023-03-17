@@ -101,7 +101,6 @@
     <jdk.version>17</jdk.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <site.baseurl>dav:http://builddoc.netcetera.com/dav/projects/${nca.project.id}/${project.version}/</site.baseurl>
     <coverage.minimum>0.8</coverage.minimum>
 
     <license.dir>${project.basedir}</license.dir>

@@ -38,7 +38,6 @@
     <directory-maven-plugin.version>1.0</directory-maven-plugin.version>
 
     <owasp-cvss-limit>11</owasp-cvss-limit>
-    <site.baseurl>dav:http://builddoc.netcetera.com/dav/projects/${nca.project.id}/${project.version}/demo/</site.baseurl>
   </properties>
 
   <dependencyManagement>
