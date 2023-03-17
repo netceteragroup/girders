@@ -37,12 +37,11 @@
       <item name="License" href="license.html"/>
       <item name="Team" href="team.html"/>
       <item name="Contributing" href="contributing.html"/>
-      <item name="Release Notes" href="https://plaza.netcetera.com/wiki/x/BCRMCw"/>
+      <item name="Release Notes" href="https://github.com/netceteragroup/girders/releases"/>
     </menu>
     <menu name="Documentation">
       <item name="Concepts" href="concepts/index.html"/>
       <item name="Getting Started" href="quickstart/index.html"/>
-      <item name="Migration Guide" href="https://plaza.netcetera.com/wiki/x/zR1MCw"/>
       <item name="Features" href="features/index.html">
         <item name="Actuators" href="features/actuators.html"/>
         <item name="Admin Server" href="features/adminserver.html"/>
