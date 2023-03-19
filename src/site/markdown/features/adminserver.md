@@ -4,7 +4,7 @@ Spring Boot Admin Server is a community project that provides an admin interface
 
 To learn more about Spring Boot Admin Server, visit the Spring Boot Admin [GitHub page](https://github.com/codecentric/spring-boot-admin).
 
-Check out the [Girders Showcase Admin Application](https://extranet.netcetera.biz/bitbucket/projects/NCA266GIRD/repos/girders-boot/browse/girders-demos/girders-demo-adminserver)
+Check out the [Girders Showcase Admin Application](https://github.com/netceteragroup/girders/tree/master/girders-demos/girders-demo-adminserver)
 to see how to setup Spring Boot Admin application and configure your Girders application to connect to the SBA Server.
 
 For a more detailed documentation and how to setup you application and Spring Boot Admin Server you can check out the 
@@ -19,7 +19,7 @@ The Spring Boot Admin Server does not come with predefined authentication implem
 different authentication implementations and each depend on the use-case. The Girders team implemented one simple
 authentication configuration to showcase how this can work.
 
-The implementation can be found in the [SecurityConfiguration.java](https://extranet.netcetera.biz/bitbucket/projects/NCA266GIRD/repos/girders-boot/browse/girders-demos/girders-demo-adminserver/src/main/java/com/netcetera/girders/demo/adminserver/SecurityConfiguration.java) 
+The implementation can be found in the [SecurityConfiguration.java](https://github.com/netceteragroup/girders/blob/master/girders-demos/girders-demo-adminserver/src/main/java/com/netcetera/girders/demo/adminserver/SecurityConfiguration.java) 
 Spring configuration.
 
 The Spring Boot Admin Server Showcase application requires authentication with username and password when using the UI
@@ -27,7 +27,7 @@ application and when registering a Spring Boot instance. The username and passwo
 UI application is `admin`. 
 
 The authentication values for authenticating a Spring Boot instance to the Spring Boot Admin Server are 
-configured in the `application.yml` [properties file](https://extranet.netcetera.biz/bitbucket/projects/NCA266GIRD/repos/girders-boot/browse/girders-demos/girders-demo-showcase/src/main/resources-filtered/application.yml),
+configured in the `application.yml` [properties file](https://github.com/netceteragroup/girders/blob/master/girders-demos/girders-demo-showcase/src/main/resources-filtered/application.yml),
 under `spring.boot.admin.client.username` and `spring.boot.admin.client.password`.
 
 ### Spring Boot instance

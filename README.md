@@ -97,7 +97,7 @@ There is a dedicated (github actions) workflow for creating Girders releases and
 
 > The workflow will publish to the maven repository and create new release notes.
 > 
-> :warning: It can take up to four hours until the published artifacts are
+> :warning: It can take up to four hours until the published artifacts are visible.
 
 #### After release verification
 1. Make sure that the documentation was deployed in the latest version: https://netceteragroup.github.io/girders/

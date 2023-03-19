@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--suppress XmlUnboundNsPrefix -->
-<ncabuild>
-  <ncamaven>
-    <java version="17.0.0"/>
-    <maven version="3.6.3"/>
-  </ncamaven>
-</ncabuild>
-

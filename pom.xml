@@ -97,11 +97,9 @@
   </modules>
 
   <properties>
-    <nca.project.id>nca-266-7</nca.project.id>
     <jdk.version>17</jdk.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <site.baseurl>dav:http://builddoc.netcetera.com/dav/projects/${nca.project.id}/${project.version}/</site.baseurl>
     <coverage.minimum>0.8</coverage.minimum>
 
     <license.dir>${project.basedir}</license.dir>
@@ -295,30 +293,6 @@
             <goals>
               <goal>report</goal>
             </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-enforcer-plugin</artifactId>
-        <version>${maven-enforcer-plugin.version}</version>
-        <executions>
-          <execution>
-            <id>enforce-property</id>
-            <phase>validate</phase>
-            <goals>
-              <goal>enforce</goal>
-            </goals>
-            <configuration>
-              <rules>
-                <requireProperty>
-                  <property>nca.project.id</property>
-                  <message>nca.project.id must be specified</message>
-                  <regex>^(?!must-be-overridden).+$</regex>
-                  <regexMessage>nca.project.id must be specified</regexMessage>
-                </requireProperty>
-              </rules>
-            </configuration>
           </execution>
         </executions>
       </plugin>

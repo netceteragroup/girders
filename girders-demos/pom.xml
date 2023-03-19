@@ -23,7 +23,6 @@
   </modules>
 
   <properties>
-    <nca.project.id>nca-266-7</nca.project.id>
     <jdk.version>17</jdk.version>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
@@ -38,7 +37,6 @@
     <directory-maven-plugin.version>1.0</directory-maven-plugin.version>
 
     <owasp-cvss-limit>11</owasp-cvss-limit>
-    <site.baseurl>dav:http://builddoc.netcetera.com/dav/projects/${nca.project.id}/${project.version}/demo/</site.baseurl>
   </properties>
 
   <dependencyManagement>

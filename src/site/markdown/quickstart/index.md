@@ -1,8 +1,7 @@
 # Getting Started
 
-The [Girders Showcase Demo Application](https://extranet.netcetera.biz/bitbucket/projects/NCA266GIRD/repos/girders-boot/browse/girders-demos/girders-demo-showcase)
-is a good starting point for setting up a new project base on Girders. If you do not want to start with this
-application, this section gives you a quick step-by-step guide.
+The Girders Showcase Demo Application is a good starting point for setting up a new project base on Girders. 
+If you do not want to start with this application, this section gives you a quick step-by-step guide.
 
 ## Requirements
 
@@ -18,23 +17,9 @@ them:
 
 https://projects.spring.io/spring-boot/
 
-## Build Configuration
-
-Set up a configuration file for NCA build using the latest versions for Java and Maven.
-
-ncabuild.xml:
-
-    <?xml version="1.0" encoding="UTF-8"?>
-    <ncabuild>
-      <ncamaven>
-        <java version="LATEST_JAVA_VERSION"/>
-        <maven version="LATEST_MAVEN_VERSION"/>
-      </ncamaven>
-    </ncabuild>
-
 ## Maven POM
 
-Next, set up a basic POM for your project.
+Set up a basic POM for your project.
 
 pom.xml:
 
@@ -44,14 +29,6 @@ pom.xml:
              xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
       <modelVersion>4.0.0</modelVersion>
       
-      <!-- We recommend using the Netcetera Parent POM, but this is not a requirement for using Girders -->
-      <parent>
-        <groupId>com.netcetera.nca-301-5.maven.pom</groupId>
-        <artifactId>nca-parent</artifactId>
-        <version>LATEST_PARENT_POM_VERSION</version>
-        <relativePath/>
-      </parent>
-      
       <!-- Names and identifiers for your project -->
       <groupId>com.netcetera.YOUR_PROJECT_ID</groupId>
       <artifactId>YOUR_PROJECT_NAME</artifactId>
@@ -59,9 +36,7 @@ pom.xml:
       <name>${project.artifactId}</name>
       <packaging>jar</packaging>
       
-      <properties>
-        <nca.project.id>YOUR_PROJECT_ID</nca.project.id>
-        
+      <properties> 
         <!-- Set the major version number of Java that you want to use -->
         <jdk.version>17</jdk.version>
         
@@ -176,7 +151,7 @@ src/main/resources/application.yml:
         allow-bean-definition-overriding: true
   
     info.app:
-      project: ${nca.project.id}
+      project: "project-id"
       name: ${project.artifactId}
       version: ${project.version}
       girders.version: ${girders.version}
