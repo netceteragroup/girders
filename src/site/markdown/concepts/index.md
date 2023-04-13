@@ -6,7 +6,7 @@ libraries and combine them into a platform for developing **server-side Java app
 Girders has always been heavily based on **Java** and the
 **[Spring Framework](https://projects.spring.io/spring-framework/)**. Since version 4, we also leverage
 **[Spring Boot](https://projects.spring.io/spring-boot/)** in Girders. Spring Boot is an extension of the Spring
-Framework that has a very big overlap with Girders. It addresses many of the same issues. For Girders 4 we have
+Framework that has a very big overlap with Girders. It addresses many of the same issues. For Girders we have
 therefore decided to replace many of the existing Girders 3 components with components from Spring Boot. Girders has
 essentially become an **extension of Spring Boot**.
 With Girders 6 we continue to go in this direction with migration of all features with Spring Boot 3.0.

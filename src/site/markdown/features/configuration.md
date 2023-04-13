@@ -15,7 +15,7 @@ properties such as a database URL into the `ApplicationContext`. Spring Boot wil
 Or you create the beans for `DataSource` or `JdbcTemplate` yourself in one of your `@Configuration` classes. Spring Boot
 detects that there are already beans in the `ApplicationContext` and does not create its default beans.
 
-Girders 4 also provides auto-configuration support for most of its functionality.
+Girders 6 also provides auto-configuration support for most of its functionality.
 
 ## Application Context Configuration
 
@@ -23,9 +23,9 @@ For your application code, we recommend using Java and Annotation-based configur
 can be defined in an `@Configuration` class or you can use component-scanning with component annotations
 (`@Service`, `@Repository`, `@RestController`, ...) for the beans of your application.
 
-## Recommended ApplicationContext Configuration in Girders 4
+## Recommended ApplicationContext Configuration in Girders
 
-Our recommendation for Girders 4 applications is to use the **auto-configuration** features of Spring Boot and Girders 4
+Our recommendation for Girders 6 applications is to use the **auto-configuration** features of Spring Boot and Girders
 as much as possible and provide the remaining configuration for your application in **`@Configuration`** classes. We
 recommend creating multiple `@Configuration` classes to modularize the configuration. **Component-scanning** can be
 used, but we recommend limiting component-scanning to small sub-packages. For the configuration of beans, we recommend
@@ -45,7 +45,7 @@ define structured interfaces for configuration properties which are strongly typ
 
 The `application.yml` is baked into the application artifact (JAR or WAR file) and shipped and deployed together with
 with the application code. It must therefore only contain configuration properties that are **not environment-specific**
-or sensible defaults for properties that are environment-specific. In Girders 4, we recommend following the
+or sensible defaults for properties that are environment-specific. In Girders, we recommend following the
 [12 factor app configuration approach](https://12factor.net/config). With this
 pattern, you only put default configuration into the application bundle itself. All the configuration that is
 environment-specific is injected into the application from the outside. You might still managed this configuration

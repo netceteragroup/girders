@@ -5,7 +5,7 @@ not perform that way it is supposed to, use a profiler to analyze the problem. T
 Girders is only for monitoring performance parameters continuously in production environments. Basically it relates to
 profiling as logging relates to debugging. It is an additional tool, but definitely not a replacement.**
 
-Girders 4 supports two different mechanisms for monitoring performance by timing and metering operations. The first
+Girders supports two different mechanisms for monitoring performance by timing and metering operations. The first
 method is the metering support of Spring Boot. It is based on the [micrometer](https://micrometer.io) library. The other
 method is the Girders `perfmon` feature, based on the [jperf](http://sovaa.github.io/jperf/) library.
 

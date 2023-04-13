@@ -8,7 +8,7 @@ If you do not want to start with this application, this section gives you a quic
 We assume that you have installed the current versions of the following:
 
 * Java Development Kit (JDK)
-* NCA Maven
+* Maven
 * Intellij IDEA (other IDEs work as well)
 
 If you are not yet familiar with Spring Boot, we strongly recommend you head over there first. Girders is heavily based
@@ -30,7 +30,7 @@ pom.xml:
       <modelVersion>4.0.0</modelVersion>
       
       <!-- Names and identifiers for your project -->
-      <groupId>com.netcetera.YOUR_PROJECT_ID</groupId>
+      <groupId>YOUR_PROJECT_ID</groupId>
       <artifactId>YOUR_PROJECT_NAME</artifactId>
       <version>1.0.0-SNAPSHOT</version>
       <name>${project.artifactId}</name>
@@ -189,9 +189,9 @@ you need to import all the modules used by your application. The basic setup loo
 This is the main class for your application. The example below supports both running your application as a standalone
 Spring Boot application as well as the deployment as a WAR web application into a Java application server:
 
-src/main/java/com/netcetera/YOUR_PROJECT_SHORTNAME/Application.java:
+src/main/java/com/YOUR_ORGANIZATION_NAME/YOUR_PROJECT_SHORTNAME/Application.java:
 
-    package com.netcetera.YOUR_PROJECT_SHORTNAME;
+    package com.YOUR_ORGANIZATION_NAME.YOUR_PROJECT_SHORTNAME;
     
     import org.springframework.boot.SpringApplication;
     import org.springframework.boot.autoconfigure.SpringBootApplication;
