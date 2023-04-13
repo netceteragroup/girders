@@ -10,8 +10,8 @@
   </parent>
 
   <artifactId>girders-starter-openapi</artifactId>
-  <name>Girders - Starters - Swagger</name>
-  <description>Starter for Swagger support</description>
+  <name>Girders - Starters - OpenApi</name>
+  <description>Starter for OpenApi support</description>
 
   <dependencies>
 

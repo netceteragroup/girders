@@ -75,6 +75,8 @@
     <file url="file://$PROJECT_DIR$/girders-starters/girders-starter-mail/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/girders-starters/girders-starter-ncautil/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/girders-starters/girders-starter-ncautil/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/girders-starters/girders-starter-openapi/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/girders-starters/girders-starter-openapi/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/girders-starters/girders-starter-pdfbox/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/girders-starters/girders-starter-pdfbox/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/girders-starters/girders-starter-perfmon/src/main/java" charset="UTF-8" />
@@ -85,8 +87,6 @@
     <file url="file://$PROJECT_DIR$/girders-starters/girders-starter-ratelimit/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/girders-starters/girders-starter-resttemplatelogging/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/girders-starters/girders-starter-resttemplatelogging/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/girders-starters/girders-starter-swagger/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/girders-starters/girders-starter-swagger/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/girders-starters/girders-starter-test/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/girders-starters/girders-starter-test/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/girders-starters/girders-starter-validation/src/main/java" charset="UTF-8" />
