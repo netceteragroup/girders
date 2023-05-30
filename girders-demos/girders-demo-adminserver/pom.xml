@@ -6,11 +6,11 @@
   <parent>
     <groupId>com.netcetera.girders.demos</groupId>
     <artifactId>girders-demos</artifactId>
-    <version>6.1.0</version>
+    <version>6.1.1-SNAPSHOT</version>
   </parent>
 
   <artifactId>girders-demo-adminserver</artifactId>
-  <version>6.1.0</version>
+  <version>6.1.1-SNAPSHOT</version>
   <name>Girders - Demos - Admin Server</name>
   <description>Girders Demo Admin Server</description>
 
