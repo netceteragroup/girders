@@ -26,7 +26,7 @@
     <module>girders-starter-web</module>
     <module>girders-starter-perfmon</module>
     <module>girders-starter-clientlogging</module>
-    <module>girders-starter-swagger</module>
+    <module>girders-starter-openapi</module>
     <module>girders-starter-cache</module>
     <module>girders-starter-validation</module>
     <module>girders-starter-test</module>
