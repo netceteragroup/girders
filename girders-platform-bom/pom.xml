@@ -37,7 +37,7 @@
     <dbunit.version>2.7.3</dbunit.version>
     <fontbox.version>2.0.26</fontbox.version>
     <fop.version>2.8</fop.version>
-    <guava.version>31.1-jre</guava.version>
+    <guava.version>32.1.1-jre</guava.version>
     <jasypt-spring-boot.version>3.0.2</jasypt-spring-boot.version>
     <jperf.version>1.0.3</jperf.version>
     <pdfbox.version>2.0.26</pdfbox.version>
