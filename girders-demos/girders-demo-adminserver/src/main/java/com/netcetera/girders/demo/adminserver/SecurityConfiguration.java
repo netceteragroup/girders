@@ -62,12 +62,13 @@ public class SecurityConfiguration {
     successHandler.setDefaultTargetUrl(adminContextPath + '/');
 
     // Allow static content and login page
-    http.authorizeHttpRequests(requests -> requests.requestMatchers(new AntPathRequestMatcher(adminContextPath + "/assets/**"),
-        new AntPathRequestMatcher(adminContextPath + "/variables.css"),
-        new AntPathRequestMatcher(adminContextPath + "/login"),
-        new AntPathRequestMatcher(adminContextPath + "/logout")
-    ).permitAll()
-        );
+    http.authorizeHttpRequests(
+        requests -> requests
+            .requestMatchers(new AntPathRequestMatcher(adminContextPath + "/assets/**"),
+                new AntPathRequestMatcher(adminContextPath + "/variables.css"),
+                new AntPathRequestMatcher(adminContextPath + "/login"),
+                new AntPathRequestMatcher(adminContextPath + "/logout"))
+            .permitAll());
     
     http.authorizeHttpRequests(requests -> requests.dispatcherTypeMatchers(DispatcherType.ASYNC).permitAll());
 
