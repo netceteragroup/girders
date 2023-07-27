@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Locale;
+
 import static org.springframework.http.HttpStatus.OK;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
@@ -34,7 +36,7 @@ public class ClientLoggingController {
 
     checkPreconditions(clientLogEntry);
 
-    switch (clientLogEntry.getLogLevel().toUpperCase()) {
+    switch (clientLogEntry.getLogLevel().toUpperCase(Locale.ROOT)) {
       case "INFO" -> logger.info(clientLogEntry.joinValues());
       case "WARN" -> logger.warn(clientLogEntry.joinValues());
       case "ERROR" -> logger.error(clientLogEntry.joinValues());

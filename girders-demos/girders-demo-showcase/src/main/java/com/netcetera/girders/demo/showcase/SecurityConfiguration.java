@@ -14,6 +14,7 @@ import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.csrf.CsrfFilter;
 import org.springframework.security.web.header.writers.ContentSecurityPolicyHeaderWriter;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 /**
  * {@link Configuration} for the security layer.
@@ -74,44 +75,46 @@ public class SecurityConfiguration {
     configureForCsrfFeature(http);
 
     // Enable both HTTP Basic Auth (for REST clients)
-    http.httpBasic().realmName("Girders Demo Application");
-
-    // Enable form login for browser users
-    http.formLogin().loginPage("/login").permitAll();
-    http.logout().logoutUrl("/logout").permitAll();
+    http.httpBasic(configurer -> configurer.realmName("Girders Demo Showcase"));
+    // Allow access to public content (HTML assets, log resource)
+    http.authorizeHttpRequests(requests -> {
+      requests.requestMatchers(new AntPathRequestMatcher("/webjars/**"),
+          new AntPathRequestMatcher("/styles/**"),
+          new AntPathRequestMatcher("/js/**"),
+          new AntPathRequestMatcher("/images/**")).permitAll();
+      requests.requestMatchers(new AntPathRequestMatcher("/log"))
+          .permitAll();
+    });
+    http.authorizeHttpRequests(requests ->
+        requests.requestMatchers(new AntPathRequestMatcher("/login"),
+            new AntPathRequestMatcher("/logout")).permitAll()
+    );
 
     // Allow access to public content (HTML assets, log resource)
-    http.authorizeHttpRequests()
-        .requestMatchers("/webjars/**", "/styles/**", "/js/**", "/images/**")
-        .permitAll();
-    http.authorizeHttpRequests().requestMatchers("/log").permitAll();
 
     // Restrict access to actuator endpoints to users with admin or monitoring roles
-    http.authorizeHttpRequests()
-        .requestMatchers("/actuator/**")
-        .hasAnyRole(ROLE_ADMIN, ROLE_MONITORING);
-
+    http.authorizeHttpRequests(requests -> requests.requestMatchers(new AntPathRequestMatcher("/actuator/**"))
+        .hasAnyRole(ROLE_ADMIN, ROLE_MONITORING));
     // Open access to everything else, i.e. the application itself
-    return http.authorizeHttpRequests().anyRequest().permitAll().and().build();
+    return http.authorizeHttpRequests(requests -> requests.anyRequest().permitAll()).build();
   }
-
   @SuppressWarnings("ProhibitedExceptionDeclared")
   private void configureForCspFeature(HttpSecurity http) throws Exception {
     // enable CSP protection by adding the auto configured header writer
-    http.headers().addHeaderWriter(cspHeaderWriter);
+    http.headers(configurer -> configurer.addHeaderWriter(cspHeaderWriter));
   }
 
-  @SuppressWarnings({"rawtypes", "ProhibitedExceptionDeclared"})
+  @SuppressWarnings("ProhibitedExceptionDeclared")
   private void configureForCsrfFeature(HttpSecurity http) throws Exception {
     http.addFilterAfter(new CsrfTokenCookieBindingFilter(), CsrfFilter.class);
 
     // disable CSRF protection for the CSP violation report endpoint since the
     // browser will do POSTs w/o a CSRF token in the request parameters and HTTP
     // headers
-    http.csrf().ignoringRequestMatchers(cspProperties.getReportUrl());
-
-    // disable CSRF protection for the logout endpoint
-    http.csrf().ignoringRequestMatchers("/logout");
+    http.csrf(csrfConfigurer -> {
+      csrfConfigurer.ignoringRequestMatchers(new AntPathRequestMatcher(cspProperties.getReportUrl()));
+      csrfConfigurer.ignoringRequestMatchers(new AntPathRequestMatcher("/logout"));
+    });
   }
 
   // CHECKSTYLE:ON
