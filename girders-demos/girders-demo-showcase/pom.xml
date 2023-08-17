@@ -6,11 +6,11 @@
   <parent>
     <groupId>com.netcetera.girders.demos</groupId>
     <artifactId>girders-demos</artifactId>
-    <version>6.2.1-SNAPSHOT</version>
+    <version>6.2.1-SNAPSHOT-SAR</version>
   </parent>
 
   <artifactId>girders-demo-showcase</artifactId>
-  <version>6.2.1-SNAPSHOT</version>
+  <version>6.2.1-SNAPSHOT-SAR</version>
   <packaging>war</packaging>
   <name>Girders - Demos - Showcase</name>
   <description>Girders Demo Showcase Application</description>
@@ -383,6 +383,21 @@
         <configuration>
           <attachClasses>true</attachClasses>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <mainClass>com.netcetera.girders.demo.showcase.GirdersDemoShowcaseApplication</mainClass>
+          <layout>WAR</layout>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>repackage</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
