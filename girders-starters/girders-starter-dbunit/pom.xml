@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.netcetera.girders</groupId>
     <artifactId>girders-starters</artifactId>
-    <version>6.2.1-SNAPSHOT-SAR</version>
+    <version>6.2.1-SNAPSHOT</version>
   </parent>
 
   <artifactId>girders-starter-dbunit</artifactId>
