@@ -40,7 +40,7 @@
     <guava.version>32.1.1-jre</guava.version>
     <jasypt-spring-boot.version>3.0.2</jasypt-spring-boot.version>
     <jperf.version>1.0.3</jperf.version>
-    <pdfbox.version>2.0.29</pdfbox.version>
+    <pdfbox.version>3.0.0</pdfbox.version>
     <poi.version>5.2.3</poi.version>
     <spring-boot.version>3.1.2</spring-boot.version>
     <spring-boot-admin.version>3.1.3</spring-boot-admin.version>
