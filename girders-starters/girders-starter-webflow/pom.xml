@@ -5,7 +5,7 @@
   <parent>
     <artifactId>girders-starters</artifactId>
     <groupId>com.netcetera.girders</groupId>
-    <version>6.2.1</version>
+    <version>6.2.2-SNAPSHOT</version>
   </parent>
 
   <artifactId>girders-starter-webflow</artifactId>
