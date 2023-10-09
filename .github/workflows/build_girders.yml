@@ -61,24 +61,6 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=girders-java
 
-  integration_tests_17:
-    name: Integration tests for Java 17
-    runs-on: ubuntu-latest
-    needs: build_girders
-    permissions:
-      contents: read
-      packages: write
-    steps:
-      - uses: actions/checkout@v3
-      - name: Set up JDK 17
-        uses: actions/setup-java@v3
-        with:
-          java-version: '17.0.0'
-          distribution: 'zulu'
-          cache: 'maven'
-      - name: run integration tests
-        run: mvn --batch-mode -f girders-demos/girders-demo-test/pom.xml install
-
   integration_tests_21:
     name: Integration tests for Java 21
     runs-on: ubuntu-latest
