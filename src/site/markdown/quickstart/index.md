@@ -38,7 +38,7 @@ pom.xml:
       
       <properties> 
         <!-- Set the major version number of Java that you want to use -->
-        <jdk.version>17</jdk.version>
+        <jdk.version>21</jdk.version>
         
         <!-- This is the version of Girders you want to use. Ideally, this is the only version number that you have
           to configure for the dependency management. -->
