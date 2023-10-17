@@ -53,7 +53,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="girders-starter-swagger" target="21" />
+      <module name="girders-starter-swagger" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

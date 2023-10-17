@@ -23,9 +23,9 @@
   </modules>
 
   <properties>
-    <jdk.version>21</jdk.version>
-    <maven.compiler.source>21</maven.compiler.source>
-    <maven.compiler.target>21</maven.compiler.target>
+    <jdk.version>17</jdk.version>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
     <!-- version properties -->
     <bootstrap.version>4.6.2</bootstrap.version>
     <girders.version>6.2.3-SNAPSHOT</girders.version>
