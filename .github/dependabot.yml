@@ -5,21 +5,23 @@ version: 2
 updates:
   # Checks for outdated maven dependencies
   - package-ecosystem: "maven"
+    patterns: *
     directory: "/" 
     schedule:
       interval: "weekly"
       day: "monday"
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 10
     commit-message:
       prefix: "[dependabot]"
       include: "scope"
     # Checks for outdated GitHub actions
   - package-ecosystem: "github-actions"
+    patterns: *
     directory: "/"
     schedule:
       interval: "weekly"
       day: "monday"
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 10
     commit-message:
       prefix: "[dependabot]"
       include: "scope"
