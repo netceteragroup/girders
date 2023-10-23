@@ -20,7 +20,7 @@
     <java.target.version>17</java.target.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <!-- plugin versions -->
-    <checkstyle.version>10.12.1</checkstyle.version>
+    <checkstyle.version>10.12.4</checkstyle.version>
     <git-commit-id-plugin.version>4.9.10</git-commit-id-plugin.version>
     <owasp-cvss-limit>7.0</owasp-cvss-limit>
   </properties>
