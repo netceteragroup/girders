@@ -104,7 +104,7 @@ jobs:
           path: 'target/site/'
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
   create_github_release_notes:
     name: create github release notes
     needs: build_release
