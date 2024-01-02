@@ -3,6 +3,7 @@ package com.netcetera.girders.demo.showcase.resttemplatelogging;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import net.jperf.aop.Profiled;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Controller;
@@ -34,7 +35,9 @@ public class RestTemplateLoggingController {
    * @param objectMapper    Mapper for input and output objects
    * @param wikipediaApiUrl URL for the Wikipedia resource
    */
-  public RestTemplateLoggingController(@NonNull RestTemplate restTemplate, @NonNull ObjectMapper objectMapper,
+  public RestTemplateLoggingController(
+      @NonNull @Qualifier("loggingRestTemplate") RestTemplate restTemplate,
+      @NonNull ObjectMapper objectMapper,
       @Value("${showcase.rest-template-logging.wikipedia-api-url}") String wikipediaApiUrl) {
     this.restTemplate = restTemplate;
     this.objectMapper = objectMapper;

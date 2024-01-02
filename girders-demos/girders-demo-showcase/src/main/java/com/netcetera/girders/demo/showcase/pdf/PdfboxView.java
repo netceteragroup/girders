@@ -7,6 +7,7 @@ import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
+import org.apache.pdfbox.pdmodel.font.Standard14Fonts.FontName;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.view.AbstractView;
 import java.awt.Color;
@@ -93,9 +94,9 @@ public class PdfboxView extends AbstractView {
     float textY = y - 15.0F;
     for (int i = 0; i < content.length; i++) {
       if (i == 0) {
-        contentStream.setFont(PDType1Font.HELVETICA_BOLD, 12.0F);
+        contentStream.setFont(new PDType1Font(FontName.HELVETICA_BOLD), 12.0F);
       } else {
-        contentStream.setFont(PDType1Font.HELVETICA, 12.0F);
+        contentStream.setFont(new PDType1Font(FontName.HELVETICA), 12.0F);
       }
       for (int j = 0; j < content[i].length; j++) {
         String text = content[i][j];
