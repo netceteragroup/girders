@@ -1,5 +1,6 @@
 package com.netcetera.girders.demo.showcase.resttemplatelogging;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,6 +19,7 @@ public class RestTemplateLoggingConfiguration {
    * @return Constructed REST template
    */
   @Bean
+  @Qualifier("loggingRestTemplate")
   public RestTemplate restTemplate(RestTemplateBuilder restTemplateBuilder) {
     return restTemplateBuilder.build();
   }
