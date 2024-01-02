@@ -35,7 +35,9 @@ public class RestTemplateLoggingController {
    * @param objectMapper    Mapper for input and output objects
    * @param wikipediaApiUrl URL for the Wikipedia resource
    */
-  public RestTemplateLoggingController(@NonNull @Qualifier("loggingRestTemplate")RestTemplate restTemplate, @NonNull ObjectMapper objectMapper,
+  public RestTemplateLoggingController(
+      @NonNull @Qualifier("loggingRestTemplate") RestTemplate restTemplate,
+      @NonNull ObjectMapper objectMapper,
       @Value("${showcase.rest-template-logging.wikipedia-api-url}") String wikipediaApiUrl) {
     this.restTemplate = restTemplate;
     this.objectMapper = objectMapper;
