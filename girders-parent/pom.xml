@@ -6,7 +6,7 @@
   <parent>
     <groupId>com.netcetera.girders</groupId>
     <artifactId>girders-platform-bom</artifactId>
-    <version>6.3.0</version>
+    <version>6.3.1-SNAPSHOT</version>
     <relativePath>../girders-platform-bom</relativePath>
   </parent>
 
