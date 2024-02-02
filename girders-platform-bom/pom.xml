@@ -178,16 +178,6 @@
       </dependency>
       <dependency>
         <groupId>com.netcetera.girders</groupId>
-        <artifactId>girders-ncautil</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.netcetera.girders</groupId>
-        <artifactId>girders-starter-ncautil</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.netcetera.girders</groupId>
         <artifactId>girders-mail</artifactId>
         <version>${project.version}</version>
       </dependency>

@@ -30,7 +30,6 @@
     <module>girders-starter-cache</module>
     <module>girders-starter-validation</module>
     <module>girders-starter-test</module>
-    <module>girders-starter-ncautil</module>
     <module>girders-starter-pdfbox</module>
     <module>girders-starter-fop</module>
     <module>girders-starter-circuitbreaker</module>

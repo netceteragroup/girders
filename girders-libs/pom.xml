@@ -27,7 +27,6 @@
     <module>girders-logging</module>
     <module>girders-clientlogging</module>
     <module>girders-cache</module>
-    <module>girders-ncautil</module>
     <module>girders-fop</module>
     <module>girders-dbunit</module>
     <module>girders-ldap</module>
