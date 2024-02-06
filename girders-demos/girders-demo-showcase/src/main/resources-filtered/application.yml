@@ -108,5 +108,4 @@ logging:
   pattern:
     console: "%d{HH:mm:ss.SSS} | %-12.12thread | %-8.8mdc{user.id} | %-6.6mdc{session.id} | %-6.6mdc{transaction.id} | %-6.6mdc{client.ip} | %highlight(%-5.5level) | %-48.48logger{32} | %message %exception%n"
   level:
-    net.jperf.TimingLogger: WARN
     ClientHttpRequest: TRACE

@@ -2,7 +2,6 @@ package com.netcetera.girders.demo.showcase.jdbc;
 
 import io.micrometer.core.annotation.Timed;
 import lombok.RequiredArgsConstructor;
-import net.jperf.aop.Profiled;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -31,7 +30,6 @@ public class ProjectRepository {
    * @return List of all the projects
    */
   @Timed
-  @Profiled(tag = "ProjectRepository.findAllProjects")
   @Transactional(readOnly = true)
   @Cacheable("projects")
   public List<Project> findAllProjects() {
@@ -44,7 +42,6 @@ public class ProjectRepository {
    * @return Number of projects in the repository
    */
   @Timed
-  @Profiled(tag = "ProjectRepository.count")
   @Transactional
   public Long count() {
     return template.queryForObject("select count(id) from project", Long.class);

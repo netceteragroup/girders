@@ -115,11 +115,6 @@
     </dependency>
     <dependency>
       <groupId>com.netcetera.girders</groupId>
-      <artifactId>girders-perfmon</artifactId>
-      <optional>true</optional>
-    </dependency>
-    <dependency>
-      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-ratelimit</artifactId>
       <optional>true</optional>
     </dependency>

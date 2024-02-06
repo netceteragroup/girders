@@ -67,10 +67,6 @@
     </dependency>
     <dependency>
       <groupId>com.netcetera.girders</groupId>
-      <artifactId>girders-starter-perfmon</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.netcetera.girders</groupId>
       <artifactId>girders-starter-poi</artifactId>
     </dependency>
     <dependency>

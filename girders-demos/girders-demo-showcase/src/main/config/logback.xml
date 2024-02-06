@@ -20,8 +20,6 @@
     </encoder>
   </appender>
 
-  <logger name="net.jperf.TimingLogger" level="WARN"/>
-
   <root level="INFO"/>
 
   <root>

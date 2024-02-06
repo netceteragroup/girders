@@ -23,7 +23,6 @@
     <module>girders-resttemplatelogging</module>
     <module>girders-i18n</module>
     <module>girders-web</module>
-    <module>girders-perfmon</module>
     <module>girders-logging</module>
     <module>girders-clientlogging</module>
     <module>girders-cache</module>
