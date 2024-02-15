@@ -59,8 +59,6 @@
         <item name="LDAP" href="features/ldap.html"/>
         <item name="Logging" href="features/logging.html"/>
         <item name="Mail" href="features/mail.html"/>
-        <item name="Metering" href="features/metering.html"/>
-        <item name="Netcetera Utilities" href="features/ncautil.html"/>
         <item name="PDF" href="features/pdf.html"/>
         <item name="Persistence" href="features/persistence.html"/>
         <item name="POI" href="features/poi.html"/>

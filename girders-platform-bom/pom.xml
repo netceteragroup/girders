@@ -39,7 +39,6 @@
     <fop.version>2.9</fop.version>
     <guava.version>32.1.1-jre</guava.version>
     <jasypt-spring-boot.version>3.0.2</jasypt-spring-boot.version>
-    <jperf.version>1.0.3</jperf.version>
     <pdfbox.version>3.0.1</pdfbox.version>
     <poi.version>5.2.3</poi.version>
     <spring-boot.version>3.2.1</spring-boot.version>
@@ -178,16 +177,6 @@
       </dependency>
       <dependency>
         <groupId>com.netcetera.girders</groupId>
-        <artifactId>girders-ncautil</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.netcetera.girders</groupId>
-        <artifactId>girders-starter-ncautil</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.netcetera.girders</groupId>
         <artifactId>girders-mail</artifactId>
         <version>${project.version}</version>
       </dependency>
@@ -199,16 +188,6 @@
       <dependency>
         <groupId>com.netcetera.girders</groupId>
         <artifactId>girders-starter-pdfbox</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.netcetera.girders</groupId>
-        <artifactId>girders-perfmon</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.netcetera.girders</groupId>
-        <artifactId>girders-starter-perfmon</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
@@ -334,28 +313,6 @@
         <groupId>org.isomorphism</groupId>
         <artifactId>token-bucket</artifactId>
         <version>${token-bucket.version}</version>
-      </dependency>
-
-      <!-- JPerf -->
-      <dependency>
-        <groupId>net.jperf</groupId>
-        <artifactId>jperf</artifactId>
-        <version>${jperf.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>commons-jexl</groupId>
-        <artifactId>commons-jexl</artifactId>
-        <version>${commons-jexl.version}</version>
-        <exclusions>
-          <exclusion>
-            <groupId>commons-logging</groupId>
-            <artifactId>commons-logging</artifactId>
-          </exclusion>
-          <exclusion>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-          </exclusion>
-        </exclusions>
       </dependency>
 
       <!-- Swagger -->

@@ -3,7 +3,6 @@ package com.netcetera.girders.demo.showcase.ldap;
 import io.micrometer.core.annotation.Timed;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import net.jperf.aop.Profiled;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.ldap.core.LdapTemplate;
 import org.springframework.ldap.filter.EqualsFilter;
@@ -30,7 +29,6 @@ class AccountRepository {
    *
    * @return List of accounts
    */
-  @Profiled(tag = "LdapRepository.findAll")
   @Timed
   @Cacheable("accounts")
   public List<Account> findAll() {

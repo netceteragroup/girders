@@ -10,7 +10,6 @@ com.netcetera.girders.autoconfigure.fop.FopAutoConfiguration
 com.netcetera.girders.autoconfigure.i18n.I18NAutoConfiguration
 com.netcetera.girders.autoconfigure.ldap.LdapTemplateAutoConfiguration
 com.netcetera.girders.autoconfigure.mail.MailAutoConfiguration
-com.netcetera.girders.autoconfigure.perfmon.PerfmonAutoConfiguration
 com.netcetera.girders.autoconfigure.ratelimit.RateLimitAutoConfiguration
 com.netcetera.girders.autoconfigure.resttemplatelogging.RestTemplateLoggingAutoConfiguration
 com.netcetera.girders.autoconfigure.web.WebAutoConfiguration

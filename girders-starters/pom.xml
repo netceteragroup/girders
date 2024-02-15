@@ -24,13 +24,11 @@
     <module>girders-starter-resttemplatelogging</module>
     <module>girders-starter-i18n</module>
     <module>girders-starter-web</module>
-    <module>girders-starter-perfmon</module>
     <module>girders-starter-clientlogging</module>
     <module>girders-starter-openapi</module>
     <module>girders-starter-cache</module>
     <module>girders-starter-validation</module>
     <module>girders-starter-test</module>
-    <module>girders-starter-ncautil</module>
     <module>girders-starter-pdfbox</module>
     <module>girders-starter-fop</module>
     <module>girders-starter-circuitbreaker</module>

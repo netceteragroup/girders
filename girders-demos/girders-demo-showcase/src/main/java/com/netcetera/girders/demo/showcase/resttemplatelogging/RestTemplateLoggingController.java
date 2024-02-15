@@ -2,7 +2,6 @@ package com.netcetera.girders.demo.showcase.resttemplatelogging;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import net.jperf.aop.Profiled;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.lang.NonNull;
@@ -53,7 +52,6 @@ public class RestTemplateLoggingController {
    */
   @SuppressWarnings("rawtypes")
   @RequestMapping(method = GET)
-  @Profiled(tag = "RestTemplateLoggingController.displayPage")
   public String displayPage(@NonNull Model model) {
     ObjectNode wikipediaArticlesResponse = restTemplate.getForObject(wikipediaApiUrl, ObjectNode.class);
 
