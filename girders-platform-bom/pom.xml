@@ -41,7 +41,7 @@
     <jasypt-spring-boot.version>3.0.2</jasypt-spring-boot.version>
     <pdfbox.version>3.0.1</pdfbox.version>
     <poi.version>5.2.3</poi.version>
-    <spring-boot.version>3.2.1</spring-boot.version>
+    <spring-boot.version>3.2.3</spring-boot.version>
     <spring-boot-admin.version>3.2.0</spring-boot-admin.version>
     <spring-cloud.version>2023.0.0</spring-cloud.version>
     <spring-web-flow.version>3.0.0</spring-web-flow.version>
