@@ -28,6 +28,9 @@ class RetainingAppenderTest {
   @BeforeEach
   void init() {
     LoggerContext context = (LoggerContext) LoggerFactory.getILoggerFactory();
+    // Resetting the context is necessary because Logback's BasicConfigurator initializes a ConsoleAppender which
+    // introduces unexpected side effects.
+    context.reset();
 
     // loggers
     ch.qos.logback.classic.Logger logger = context.getLogger(TEST_APPENDER_NAME);
@@ -85,10 +88,6 @@ class RetainingAppenderTest {
     assertThat(appenderContent, not(containsString("DEBUG" + suffix)));
   }
 
-  private String getBufferAppenderContent() {
-    return bufferingAppender.dumpCsv();
-  }
-
   @Test
   void shouldDumpDebugEventOnceErrorOccurred() {
     // given testLogger setup plus...
@@ -115,7 +114,7 @@ class RetainingAppenderTest {
   }
 
   @Test
-  void shouldSupportAppenderAttacheableMethods() {
+  void shouldSupportAppenderAttachableMethods() {
     RetainingAppender retainingAppender = new RetainingAppender();
     assertThat(retainingAppender.iteratorForAppenders().hasNext(), is(false));
     assertThat(retainingAppender.isAttached(bufferingAppender), is(false));
@@ -150,6 +149,10 @@ class RetainingAppenderTest {
     assertThat(retainingAppender.iteratorForAppenders().hasNext(), is(false));
     assertThat(retainingAppender.isAttached(bufferingAppender), is(false));
     assertThat(retainingAppender.getAppender(TEST_APPENDER_NAME), is(nullValue()));
+  }
+
+  private String getBufferAppenderContent() {
+    return bufferingAppender.dumpCsv();
   }
 
 }
