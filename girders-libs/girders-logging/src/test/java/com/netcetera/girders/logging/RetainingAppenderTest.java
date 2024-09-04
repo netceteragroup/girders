@@ -16,8 +16,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;
 
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -173,7 +173,7 @@ class RetainingAppenderTest {
     LazilyInitializedContext debugEventContext = LazilyInitializedContext.withCurrentThreadName()
         .addMdcProperty(mdcKey, debugLogMdcValue);
 
-    List<ILoggingEvent> logEvents = Lists.newArrayList(getBufferAppenderLogEvents().iterator());
+    List<ILoggingEvent> logEvents = getBufferAppenderLogEvents();
     assertThat(logEvents, containsLazilyInitializedContext(warnEventContext, errorEventContext, dumpInfoEventContext,
         traceEventContext, debugEventContext));
   }
@@ -220,8 +220,8 @@ class RetainingAppenderTest {
     return bufferingAppender.dumpCsv();
   }
 
-  private Collection<ILoggingEvent> getBufferAppenderLogEvents() {
-    return bufferingAppender.getLoggingEvents();
+  private List<ILoggingEvent> getBufferAppenderLogEvents() {
+    return new ArrayList<>(bufferingAppender.getLoggingEvents());
   }
 
   private static Matcher<? super List<ILoggingEvent>> containsLazilyInitializedContext(
