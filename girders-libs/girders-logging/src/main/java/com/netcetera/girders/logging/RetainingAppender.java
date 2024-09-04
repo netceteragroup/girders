@@ -92,6 +92,7 @@ public final class RetainingAppender extends AppenderBase<ILoggingEvent> impleme
   }
 
   private synchronized void retain(ILoggingEvent logEvent) {
+    logEvent.prepareForDeferredProcessing();
     buffer.add(logEvent);
   }
 
