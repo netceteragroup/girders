@@ -17,8 +17,7 @@
 
   <properties>
     <!-- TODO twimmer 2022-04-04: temporarily managing versions of jboss-logging manually because of
-          divergence of transitive dependencies in girders-starter-validation; remove explicit management once
-          dependencies
+          divergence of transitive dependencies in girders-starter-validation; remove explicit management once dependencies
           converge again -->
     <jboss-logging-processor.version>2.2.1.Final</jboss-logging-processor.version>
     <jboss-logging-annotations.version>2.2.1.Final</jboss-logging-annotations.version>
@@ -38,7 +37,7 @@
     <dbunit.version>2.7.3</dbunit.version>
     <fontbox.version>3.0.1</fontbox.version>
     <fop.version>2.9</fop.version>
-    <guava.version>33.4.0-jre</guava.version>
+    <guava.version>32.1.1-jre</guava.version>
     <jasypt-spring-boot.version>3.0.2</jasypt-spring-boot.version>
     <pdfbox.version>3.0.1</pdfbox.version>
     <poi.version>5.2.3</poi.version>

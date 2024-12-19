@@ -10,10 +10,10 @@ import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.ldap.LdapAutoConfiguration;
+import org.springframework.boot.autoconfigure.ldap.LdapConnectionDetails;
 import org.springframework.boot.autoconfigure.ldap.LdapProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
-import org.springframework.core.env.Environment;
 import org.springframework.ldap.core.LdapOperations;
 import org.springframework.ldap.core.LdapTemplate;
 import org.springframework.ldap.core.support.DirContextAuthenticationStrategy;
@@ -35,7 +35,7 @@ public class LdapTemplateAutoConfiguration {
   private final LdapPoolingProperties ldapPoolingProperties;
   private final LdapAutoConfiguration ldapAutoConfiguration;
   private final LdapProperties ldapProperties;
-  private final Environment environment;
+  private final LdapConnectionDetails ldapConnectionDetails;
   private final ObjectProvider<DirContextAuthenticationStrategy> dirContextAuthenticationStrategy;
 
   /**
@@ -48,13 +48,13 @@ public class LdapTemplateAutoConfiguration {
       LdapPoolingProperties ldapPoolingProperties,
       LdapProperties ldapProperties,
       @Autowired LdapAutoConfiguration ldapAutoConfiguration,
-      @Autowired Environment environment,
+      @Autowired LdapConnectionDetails ldapConnectionDetails,
       @Autowired ObjectProvider<DirContextAuthenticationStrategy> dirContextAuthenticationStrategy) {
 
     this.ldapAutoConfiguration = ldapAutoConfiguration;
     this.ldapPoolingProperties = ldapPoolingProperties;
     this.ldapProperties = ldapProperties;
-    this.environment = environment;
+    this.ldapConnectionDetails = ldapConnectionDetails;
     this.dirContextAuthenticationStrategy = dirContextAuthenticationStrategy;
   }
 
@@ -98,7 +98,7 @@ public class LdapTemplateAutoConfiguration {
     poolingContextSource
         .setMinEvictableIdleTimeMillis(ldapPoolingProperties.getMinEvictableIdleTimeMillis());
     LdapContextSource contextSource =
-        ldapAutoConfiguration.ldapContextSource(ldapProperties, environment, dirContextAuthenticationStrategy);
+      ldapAutoConfiguration.ldapContextSource(ldapConnectionDetails, ldapProperties, dirContextAuthenticationStrategy);
     contextSource.afterPropertiesSet();
     poolingContextSource.setContextSource(contextSource);
     poolingContextSource.setDirContextValidator(new DefaultDirContextValidator());
