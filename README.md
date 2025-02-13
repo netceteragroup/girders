@@ -2,6 +2,10 @@
 [![License](https://img.shields.io/github/license/netceteragroup/girders)](https://github.com/netceteragroup/girders/blob/master/LICENSE)
 [![Maven Central](https://img.shields.io/maven-central/v/com.netcetera.girders/girders)](https://search.maven.org/search?q=com.netcetera.girders)
 
+> [!IMPORTANT]  
+> Girders for Java is no longer actively maintained!
+> Please consider migrating to a spring-boot only solution.
+
 # Girders 6
 
 ## Documentation
